@@ -8,8 +8,8 @@ Begleitmaterial zum Buch [„Generative KI als Hilfe zum Lehren und Lernen“](h
 
 ## Aufbau
 
-- `index.html` – die gesamte Seite in einer Datei, ohne Build-Schritt. Änderungen an dieser Datei erscheinen nach dem Hochladen auf `main` innerhalb weniger Minuten online.
-- `.nojekyll` – leere Datei; sie weist GitHub Pages an, die Seite unverändert auszuliefern.
+- `docs/index.html` – die gesamte Seite in einer Datei, ohne Build-Schritt. Änderungen an dieser Datei erscheinen nach dem Hochladen auf `main` innerhalb weniger Minuten online.
+- `docs/.nojekyll` – leere Datei; sie weist GitHub Pages an, die Seite unverändert auszuliefern.
 
 ## Lizenz
 
