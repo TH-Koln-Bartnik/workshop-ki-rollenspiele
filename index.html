@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rollenspiele und Simulationen mit KI in der Lehre – Workshop</title>
+<meta name="description" content="Workshop-Seite: drei kurze Inputs, zwei Übungen, Prompts zum Kopieren und Links zu den Interaktionen des Buchs „Generative KI als Hilfe zum Lehren und Lernen“.">
+<style>
+:root{--rot:#c81e0f;--magenta:#b43092;--ink:#111;--paper:#fff;--g100:#f5f5f7;--g200:#e6e6ea;--g500:#6b6b73}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+a{color:var(--rot)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--magenta);outline-offset:2px}
+header.kopf{border-top:10px solid var(--rot);padding:2rem 1.25rem 1.25rem;max-width:60rem;margin:0 auto}
+header.kopf h1{font-size:clamp(1.6rem,4vw,2.4rem);line-height:1.15;margin:.2rem 0 .6rem}
+header.kopf p{margin:.2rem 0;color:var(--g500)}
+.dach{font-weight:700;color:var(--rot);letter-spacing:.04em;text-transform:uppercase;font-size:.85rem}
+nav.leiste{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--g200)}
+nav.leiste ul{list-style:none;display:flex;gap:.25rem;margin:0 auto;padding:.5rem 1.25rem;max-width:60rem;overflow-x:auto}
+nav.leiste a{display:block;white-space:nowrap;padding:.35rem .7rem;border-radius:999px;text-decoration:none;color:var(--ink);font-size:.9rem;border:1px solid var(--g200)}
+nav.leiste a:hover{border-color:var(--rot);color:var(--rot)}
+nav.leiste a.ueb{background:var(--rot);color:#fff;border-color:var(--rot)}
+main{max-width:60rem;margin:0 auto;padding:0 1.25rem 4rem}
+section{padding-top:2.2rem}
+h2{font-size:1.5rem;line-height:1.25;margin:0 0 .3rem;padding-left:.7rem;border-left:6px solid var(--rot)}
+h3{font-size:1.08rem;margin:1.4rem 0 .4rem}
+.zeit{display:inline-block;font-size:.82rem;font-weight:700;color:var(--g500);margin-bottom:.5rem;padding-left:calc(.7rem + 6px)}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:.5rem .6rem;border-bottom:1px solid var(--g200);vertical-align:top}
+th{background:var(--g100)}
+.rollbar{overflow-x:auto}
+ul.kern{padding-left:1.1rem;margin:.6rem 0}
+ul.kern li{margin:.45rem 0}
+.q{color:var(--g500);font-size:.88rem}
+.kasten{border:1px solid var(--g200);border-left:5px solid var(--magenta);background:var(--g100);padding:.8rem 1rem;margin:1rem 0;border-radius:4px}
+.kasten.auftrag{border-left-color:var(--rot);background:#fff}
+.kasten h3{margin-top:0}
+ol.schritte{padding-left:1.3rem}
+ol.schritte li{margin:.5rem 0}
+.min{font-weight:700;color:var(--rot);white-space:nowrap}
+details{border:1px solid var(--g200);border-radius:6px;margin:.6rem 0;background:#fff}
+summary{cursor:pointer;padding:.65rem .9rem;font-weight:600}
+details[open] summary{border-bottom:1px solid var(--g200)}
+.prompt{position:relative;padding:.4rem .9rem .9rem}
+pre{white-space:pre-wrap;word-wrap:break-word;background:var(--g100);border-radius:4px;padding:.9rem;margin:.5rem 0 0;font:14px/1.5 ui-monospace,Consolas,"Liberation Mono",monospace}
+button.kopie{font:inherit;font-size:.85rem;border:1px solid var(--rot);background:#fff;color:var(--rot);padding:.3rem .7rem;border-radius:4px;cursor:pointer;margin-top:.5rem}
+button.kopie:hover{background:var(--rot);color:#fff}
+.karten{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.8rem;margin:.8rem 0}
+.karte{border:1px solid var(--g200);border-radius:6px;padding:.8rem .9rem;text-decoration:none;color:var(--ink);display:block}
+.karte:hover{border-color:var(--rot)}
+.karte b{color:var(--rot);display:block;margin-bottom:.2rem}
+.karte span{font-size:.9rem;color:var(--g500)}
+ul.check{list-style:none;padding:0}
+ul.check li{margin:.35rem 0}
+ul.check label{display:flex;gap:.55rem;align-items:flex-start;cursor:pointer}
+ul.check input{margin-top:.35rem;accent-color:var(--rot)}
+.lit p{font-size:.9rem;padding-left:1.5rem;text-indent:-1.5rem;margin:.45rem 0;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--g200);margin-top:3rem;padding-top:1rem;color:var(--g500);font-size:.88rem}
+@media print{nav.leiste,button.kopie{display:none}details{border:0}details>*{display:block!important}body{font-size:11pt}section{break-inside:avoid-page}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="dach">Workshop · TH Köln · Stand 24.11.2026</div>
+  <h1>Rollenspiele und Simulationen mit KI in der Lehre</h1>
+  <p>Drei kurze Inputs, zwei Übungen, 90 Minuten. Prof. Dr. Roman Bartnik, TH Köln.</p>
+  <p>Begleitmaterial zum Buch <a href="https://th-koln-bartnik.github.io/genai4teaching/">„Generative KI als Hilfe zum Lehren und Lernen“</a>.</p>
+</header>
+
+<nav class="leiste" aria-label="Ablauf">
+  <ul>
+    <li><a href="#ablauf">Ablauf</a></li>
+    <li><a href="#input1">Input 1</a></li>
+    <li><a href="#input2">Input 2</a></li>
+    <li><a class="ueb" href="#uebung1">Übung 1</a></li>
+    <li><a href="#input3">Input 3</a></li>
+    <li><a class="ueb" href="#uebung2">Übung 2</a></li>
+    <li><a href="#weiter">Weiterlesen</a></li>
+    <li><a href="#quellen">Quellen</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<section id="ablauf">
+  <h2>Nach 90 Minuten haben Sie ein eigenes Rollenspiel gebaut und einmal getestet</h2>
+  <div class="rollbar">
+  <table>
+    <thead><tr><th>Minute</th><th>Block</th><th>Was entsteht</th></tr></thead>
+    <tbody>
+      <tr><td>0–8</td><td><a href="#input1">Input 1: Mit Sprachmodellen arbeiten</a></td><td>Vier Angaben für einen Auftrag; der 4D-Kreislauf</td></tr>
+      <tr><td>8–16</td><td><a href="#input2">Input 2: Nutzen und neue Optionen</a></td><td>Wann ein Rollenspiel wirkt; was die Forschung 2026 zeigt</td></tr>
+      <tr><td>16–41</td><td><a href="#uebung1"><b>Übung 1: Spielen und schärfen</b></a></td><td>Ein gespieltes Rollenspiel und eine Liste: Was hätte ein Mensch anders getan?</td></tr>
+      <tr><td>41–49</td><td><a href="#input3">Input 3: Erste Schritte</a></td><td>Bauplan in fünf Schritten; Testlauf; Debriefing</td></tr>
+      <tr><td>49–79</td><td><a href="#uebung2"><b>Übung 2: Eigenes Rollenspiel bauen</b></a></td><td>Rollenauftrag für Ihr Lernziel, einmal getestet, mit drei Fragen für die Nachbesprechung</td></tr>
+      <tr><td>79–90</td><td>Austausch</td><td>Ein Ergebnis je Tisch</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="q">Sie brauchen ein Sprachmodell Ihrer Wahl mit Chatfenster (ChatGPT, Claude, Gemini, Mistral oder das Angebot Ihrer Hochschule). Geben Sie keine personenbezogenen Daten von Studierenden ein.</p>
+</section>
+
+<section id="input1">
+  <h2>Ein klarer Auftrag schlägt jeden Prompt-Trick</h2>
+  <div class="zeit">Input 1 · 8 Minuten · Stand 11/2026</div>
+  <ul class="kern">
+    <li><b>Vom Chatbot zum Agenten.</b> Aktuelle Modelle planen ihren Weg selbst und nutzen Werkzeuge. Der Prompt schreibt deshalb keine Tätigkeiten mehr vor; er legt fest, was am Ende vorliegt und woran es gemessen wird.</li>
+    <li><b>Vier Angaben tragen einen Auftrag:</b> Ziel, Grund, Material, Abnahmekriterium. Beispiel für ein Abnahmekriterium: „fünf Aufgaben zu Kapitel 3, jede mit Lösungsweg, keine Zahl, die nicht im Skript steht“. <span class="q">(Anthropic, 2026)</span></li>
+    <li><b>Hausrezepte helfen selten.</b> Höflichkeit, Drohungen, Trinkgeld und „Denke Schritt für Schritt“ zeigen in systematischen Tests keine verlässliche Wirkung. <span class="q">(Meincke et al., 2025a, 2025b, 2025c)</span></li>
+    <li><b>Lange Rollen-Prompts schreibt das Modell, Sie entscheiden.</b> Was die Figur leisten soll und was sie nie tun darf, legen Sie fest. Vor dem Einsatz testen Sie mit sechs bis acht typischen Eingaben, auch unfreundlichen.</li>
+    <li><b>Der 4D-Kreislauf ordnet die Arbeit:</b> Delegation (was übernimmt die KI?), Description (wie sage ich es ihr?), Discernment (wie prüfe ich das Ergebnis?), Diligence (wie verantworte ich den Einsatz?). <span class="q">(Dakan &amp; Feller, 2025)</span></li>
+    <li><b>Ein Sprachmodell prüft keine Wahrheit.</b> Eigenes Material als Grundlage und eine eigene Prüfung dämmen Fehler ein; abstellen lassen sie sich nicht.</li>
+  </ul>
+  <div class="karten">
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/4d-kreislauf.html?rolle=simulator"><b>4D-Kreislauf, Ansicht Simulator</b><span>Zwei Schleifen, vier Kompetenzen und der Engpass beim Rollenspiel, zum Anklicken.</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/chatbot-zu-agent.html"><b>Vom Chatbot zum Agenten</b><span>Was sich seit 2022 um das Modell herum verändert hat.</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/streich-test-prompting.html"><b>Der Streich-Test</b><span>Welche Prompt-Regeln würden Sie heute streichen?</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/modellwahl-baum.html"><b>Welches Modell für welche Aufgabe?</b><span>Entscheidungsbaum; Rollenspiele brauchen ein großes Modell.</span></a>
+  </div>
+</section>
+
+<section id="input2">
+  <h2>Simulationen wirken stark, und gelernt wird im Nachgespräch</h2>
+  <div class="zeit">Input 2 · 8 Minuten</div>
+  <h3>Der didaktische Nutzen</h3>
+  <ul class="kern">
+    <li><b>Simulationen fördern komplexe Fähigkeiten.</b> Metaanalyse über 145 Studien in der Hochschule: g = 0,85. Lernende mit wenig Vorwissen profitieren von Beispielen, Fortgeschrittene von Reflexionsphasen. <span class="q">(Chernikova et al., 2020)</span></li>
+    <li><b>Die Nachbesprechung trägt den Lerngewinn.</b> Debriefings verbessern die Leistung um rund 25 Prozent (d = 0,67, 46 Stichproben). <span class="q">(Tannenbaum &amp; Cerasoli, 2013)</span></li>
+    <li><b>Zwei Grundformen.</b> <i>Role Play:</i> Studierende übernehmen eine fremde Rolle, die KI spielt das Gegenüber (Verhandlung, Beratung, Prüfungsgespräch). <i>Goal Play:</i> Studierende bleiben sie selbst und leiten eine KI-Figur an, etwa indem sie ihr ein Konzept erklären. <span class="q">(Mollick &amp; Mollick, 2024)</span></li>
+  </ul>
+  <h3>Was die KI neu möglich macht</h3>
+  <ul class="kern">
+    <li>Ein Gegenüber, das jederzeit verfügbar ist und beliebig oft dieselbe Lage spielt.</li>
+    <li>Fallvarianten mit steuerbarer Schwierigkeit durch eine geänderte Zeile im Auftrag.</li>
+    <li>Üben in der Zielsprache und mit gesprochener Sprache.</li>
+  </ul>
+  <h3>Was die Forschung 2026 zeigt</h3>
+  <ul class="kern">
+    <li><b>Die KI spielt den Durchschnitt, nicht den Einzelfall.</b> Über vier Datensätze mit mehr als 400.000 Befragten treffen Modelle die Mittelwerte gut; individuelle Abweichungen erklären sie zu 3 %, obwohl 54 % stabil wären. Ausführlichere Personas machen Antworten glaubwürdiger, nicht richtiger. <span class="q">(Ahn et al., 2026; Kuric et al., 2026; beides Preprints, keine Lehrstudien)</span></li>
+    <li><b>Getrennte Rollen wirken gezielt.</b> Randomisierter Versuch mit 100 Medizinstudierenden: Patient, sokratischer Tutor und Bewerter als getrennte Agenten. Abschlussprüfung 71,8 % gegenüber 55,6 %, am stärksten in der Gesprächsführung; die Diagnosequote blieb gleich. <span class="q">(Yang et al., 2026; Preprint)</span></li>
+    <li><b>Die KI redet zu viel.</b> Unangepasste Modelle lassen Lernenden als Tutor 5–15 % der Redezeit, Menschen rund 30 %. Die Antwortlänge gehört in den Auftrag. <span class="q">(Perczel et al., 2025; Preprint)</span></li>
+  </ul>
+  <div class="kasten">
+    <b>Folgerung für die Lehre.</b> Sagen Sie Ihren Studierenden, dass sie mit einem simulierten Durchschnitt üben, und fragen Sie in der Nachbesprechung: Wie hätte ein echtes Gegenüber reagiert?
+  </div>
+</section>
+
+<section id="uebung1">
+  <h2>Übung 1: Ein Rollenspiel spielen und das Gegenüber schärfen</h2>
+  <div class="zeit">25 Minuten · einzeln, Austausch zu zweit</div>
+  <div class="kasten auftrag">
+    <ol class="schritte">
+      <li><span class="min">10 min</span> Wählen Sie einen der drei Prompts, kopieren Sie ihn in ein neues Chatfenster und spielen Sie die Runde bis zum Feedback.</li>
+      <li><span class="min">10 min</span> Schärfen Sie das Gegenüber: Ergänzen Sie im Prompt <b>eine</b> Eigenheit, die ein echter Mensch haben könnte (ein verdecktes Interesse, Zeitdruck, eine Kränkung, knappe Antworten). Spielen Sie in einem neuen Chat noch einmal drei Züge.</li>
+      <li><span class="min">5 min</span> Notieren Sie zwei Stellen, an denen ein Mensch anders reagiert hätte, und vergleichen Sie mit Ihrer Nachbarin oder Ihrem Nachbarn.</li>
+    </ol>
+    <p><b>Prüffrage:</b> War das Gegenüber zu nett, zu ausführlich oder zu vernünftig? Was davon hat Ihre Änderung behoben?</p>
+  </div>
+
+  <details>
+    <summary>Prompt A · Role Play: Verhandlung</summary>
+    <div class="prompt">
+      <p class="q">Aus Anhang A des Buchs; angepasst und übersetzt nach dem „Negotiation Simulator“ von Mollick &amp; Mollick, More Useful Things; neu gefasst 11/2026.</p>
+<pre id="p-a">Zweck: Ein Verhandlungstraining für Studierende in einer sicheren Umgebung. Du bist erst Mentor, dann Verhandlungsgegner, dann wieder Mentor. Die Studierenden wenden Konzepte aus dem Kurs an: Fragen stellen, Wert bestimmen, BATNA (beste Alternative ohne Einigung) der eigenen und der Gegenseite, ZOPA (Einigungsbereich), erstes Angebot, Kooperation oder Wettbewerb, Beziehung über den Abschluss hinaus.
+
+Ablauf:
+1. Als Mentor: Stell dich in einem Satz vor und frag nach Verhandlungserfahrung und Hintergrund, mit plausiblen Antwortoptionen (a, b, c) und der Möglichkeit, Eigenes zu ergänzen.
+2. Schlag drei deutlich verschiedene Szenarien vor (etwa Produkt mit bekanntem Marktwert, Kunstwerk mit subjektivem Wert, mehrteilige B2B-Verhandlung) und lass eins wählen oder ein eigenes vorschlagen.
+3. Gib die Rolleninformationen: Ziel, angestrebter Bereich, Folgen bei Nichteinigung, nötiger Hintergrund. Kurz halten.
+4. Schreib „Rollenspiel beginnt“, beschreib die Szene in zwei, drei Sätzen und spiel ab dann nur die Gegenseite.
+5. Schreib „Rollenspiel endet“, sobald es eine Einigung gibt, jemand abbricht oder nach etwa zehn Runden.
+
+Regeln:
+- Als Gegenseite verfolgst du eigene Interessen und hast eine eigene, verdeckte BATNA; nur so lohnt es sich, Fragen zu stellen und Werte zu prüfen.
+- Bleib in der Rolle, bis das Rollenspiel endet, damit die Situation echt wirkt.
+- Frag nichts, was die Studierenden laut Szenario nicht wissen können.
+- Passe die Härte an die Erfahrung an: Einsteiger bekommen eine faire Gegenseite, Erfahrene auch Druck oder Bluff.
+
+Grenzfälle:
+- Bitten Studierende mitten im Spiel um Rat, antworte in einem Satz in Klammern als Mentor und spiel dann weiter.
+- Wollen sie abbrechen oder neu beginnen, beende das Spiel und gib trotzdem Feedback zum bisherigen Verlauf.
+- Drängen sie auf eine Einigung um jeden Preis, reagiere so, wie die Gegenseite es täte.
+
+Ende: Als Mentor Feedback in dieser Form: eine Sache, die gut lief (mit Zitat aus dem Verlauf), eine, die besser ginge (mit Alternative), welche Konzepte vorkamen oder fehlten, und wie die Studierenden die Verhandlung beendet haben (Beziehung gepflegt oder Sieg ausgekostet). Jede Aussage im Feedback bezieht sich auf eine Stelle im Verlauf. Zum Schluss drei Merksätze zum Mitnehmen und eine Frage zur Selbstreflexion.</pre>
+      <button class="kopie" data-ziel="p-a">Prompt kopieren</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>Prompt B · Role Play: Schwieriges Feedbackgespräch</summary>
+    <div class="prompt">
+      <p class="q">Für diesen Workshop geschrieben, nach dem Bauplan der Prompt-Sammlung (Zweck, Ablauf, Regeln, Grenzfälle, Ende). Stand 24.11.2026.</p>
+<pre id="p-b">Zweck: Ein Gesprächstraining für Lehrende. Geübt wird, einer Studentin oder einem Studenten eine unerwartet schlechte Bewertung einer Projektarbeit zu erklären, ohne die Bewertung zu verwässern und ohne die Person zu beschämen. Du bist erst Mentor, dann die Studentin oder der Student, dann wieder Mentor.
+
+Ablauf:
+1. Als Mentor: Frag in einem Satz nach Fach und Art der Arbeit und danach, was an solchen Gesprächen am schwersten fällt (a: Gegenwehr, b: Tränen, c: Schweigen, d: Eigenes).
+2. Beschreib die Lage in drei Sätzen: Note, zwei konkrete Schwächen der Arbeit, was die Person erwartet hatte.
+3. Schreib „Gespräch beginnt“ und spiel ab dann nur die Studentin oder den Studenten. Die Person eröffnet das Gespräch.
+4. Schreib „Gespräch endet“, wenn eine Vereinbarung steht, jemand abbricht oder nach etwa acht Wortwechseln.
+
+Regeln:
+- Die Person hat viel Zeit investiert und hält die Note für ungerecht. Sie hat einen Grund, den sie nicht von selbst nennt (etwa: Die Gruppe hat sie hängen lassen). Sie nennt ihn nur, wenn offen gefragt wird.
+- Antworte kurz, höchstens drei Sätze je Zug, in gesprochener Sprache. Die Lehrperson soll mehr reden als du.
+- Gib nicht nach, nur weil die Lehrperson freundlich ist. Lenk erst ein, wenn sie eine Schwäche der Arbeit an einer konkreten Stelle zeigt und einen nächsten Schritt anbietet.
+- Bleib in der Rolle, bis das Gespräch endet.
+
+Grenzfälle:
+- Bittet die Lehrperson mitten im Gespräch um Rat, antworte in einem Satz in Klammern als Mentor und spiel dann weiter.
+- Bietet die Lehrperson eine bessere Note an, um das Gespräch zu beenden, nimm an und sprich das im Feedback an.
+
+Ende: Als Mentor Feedback: eine Stelle, die gut lief (mit Zitat), eine, die besser ginge (mit Alternative), ob der verdeckte Grund zur Sprache kam, und wie groß der Redeanteil der Lehrperson etwa war. Danach eine Frage zur Selbstreflexion.</pre>
+      <button class="kopie" data-ziel="p-b">Prompt kopieren</button>
+    </div>
+  </details>
+
+  <details>
+    <summary>Prompt C · Goal Play: Der KI etwas beibringen</summary>
+    <div class="prompt">
+      <p class="q">Für diesen Workshop geschrieben, nach der Idee „Teach the AI“ (Mollick &amp; Mollick, 2024, S. 21–24). Stand 24.11.2026.</p>
+<pre id="p-c">Zweck: Lernen durch Lehren. Ich erkläre dir ein Konzept aus meinem Fach, und du spielst eine Studentin im ersten Semester, die es noch nicht kennt. Ich merke dabei, wo meine eigene Erklärung Lücken hat.
+
+Ablauf:
+1. Frag mich in einem Satz, welches Konzept ich erklären will und in welchem Fach.
+2. Schreib „Ich bin Mia, erstes Semester“ und bitte mich, anzufangen.
+3. Hör zu und stell nach jeder Erklärung genau eine Frage.
+4. Nach etwa sechs Wortwechseln oder wenn ich „Stopp“ schreibe, verlässt du die Rolle.
+
+Regeln:
+- Du weißt über das Konzept nur, was ich in diesem Gespräch gesagt habe. Nutze kein eigenes Fachwissen und keine Fachbegriffe, die ich nicht eingeführt habe.
+- Antworte kurz, höchstens zwei Sätze und eine Frage. Ich soll mehr reden als du.
+- Mach die typischen Fehler von Anfängern: Verwechsle ähnliche Begriffe, verallgemeinere ein Beispiel zu weit, frag nach einem Beispiel aus dem Alltag.
+- Sag nicht „Jetzt habe ich es verstanden“, bevor du das Konzept in eigenen Worten auf einen neuen Fall angewendet hast. Ist die Anwendung falsch, merke ich das selbst.
+- Korrigiere mich nicht, auch wenn meine Erklärung falsch ist.
+
+Grenzfälle:
+- Schweife ich vom Thema ab, frag als Mia, was das mit dem Konzept zu tun hat.
+- Bitte ich dich um die richtige Erklärung, bleib Mia und sag, dass du sie nicht kennst.
+
+Ende: Verlass die Rolle und gib mir Rückmeldung: Welche zwei Stellen meiner Erklärung waren unklar oder unvollständig (mit Zitat)? Welcher Begriff blieb unerklärt? Stell keine eigene Erklärung daneben; nenne nur die Lücken.</pre>
+      <button class="kopie" data-ziel="p-c">Prompt kopieren</button>
+    </div>
+  </details>
+</section>
+
+<section id="input3">
+  <h2>Klein anfangen, Rollen trennen, das Nachgespräch selbst führen</h2>
+  <div class="zeit">Input 3 · 8 Minuten</div>
+  <h3>Gestufter Einstieg</h3>
+  <ol class="schritte">
+    <li><b>Vorbereiteter Chat:</b> Sie geben einen fertigen Rollen-Prompt aus, ein Fall, zehn Minuten.</li>
+    <li><b>Studierende entwerfen</b> in Präsenz kleine Rollenspiele und testen sie gegenseitig.</li>
+    <li><b>Teams bauen</b> über mehrere Wochen komplexe Simulationen, mit Testprotokoll.</li>
+  </ol>
+  <p class="q">(Mollick et al., 2024; Mollick &amp; Mollick, 2024)</p>
+  <h3>Eine Runde in fünf Schritten</h3>
+  <ol class="schritte">
+    <li>Mentor begrüßt, fragt nach Erfahrung, passt die Schwierigkeit an.</li>
+    <li>Szenarien zur Auswahl; die Bühne in zwei, drei Sätzen.</li>
+    <li>Klar abgegrenzte Züge; das Gegenüber bleibt in der Rolle.</li>
+    <li>Eine folgenreiche Entscheidung gegen Ende.</li>
+    <li>Feedback mit Bezug auf Stellen im Verlauf; danach Debriefing durch Sie.</li>
+  </ol>
+  <h3>Fünf Regeln aus der Forschung</h3>
+  <ul class="kern">
+    <li><b>Rollen trennen:</b> Gegenüber, Tutor und Bewerter als getrennte Aufträge oder klar getrennte Phasen. <span class="q">(Yang et al., 2026)</span></li>
+    <li><b>Antwortlänge begrenzen:</b> „höchstens drei Sätze je Zug“. <span class="q">(Perczel et al., 2025)</span></li>
+    <li><b>Dem Gegenüber einen verdeckten Grund geben,</b> der nur auf offene Fragen herauskommt; sonst spielt es den freundlichen Durchschnitt. <span class="q">(Ahn et al., 2026)</span></li>
+    <li><b>Testen vor dem Einsatz:</b> Bleibt die Figur in der Rolle? Hält sie die Schritte ein? Was passiert bei einer unfreundlichen oder abwegigen Eingabe?</li>
+    <li><b>Das Debriefing führen Sie,</b> am Gesprächsprotokoll: Vorhersage vor dem Lauf, Vergleich danach. <span class="q">(Tannenbaum &amp; Cerasoli, 2013)</span></li>
+  </ul>
+  <div class="kasten">
+    <b>Gesprächspartner oder Rechner?</b> Für Zusammenhänge, die sich berechnen lassen (Warteschlangen, Bestände, der Bullwhip-Effekt), ist ein rechnendes Widget das verlässlichere Übungsfeld als ein Sprachmodell, das eine Rolle spielt.
+  </div>
+  <div class="karten">
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-widget-bullwhip"><b>Bullwhip-Rechner mit Vorhersage</b><span>Erst schätzen, welche Stufe der Lieferkette am stärksten schwankt, dann rechnen lassen.</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/semester-simulator.html"><b>Semester-Simulator</b><span>Ein Entscheidungsspiel mit Zustand: Sie sind Professorin Albers.</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html#sec-simulator"><b>Buchabschnitt „KI als Simulator“</b><span>Role Play, Goal Play und „Wie echt ist das Gegenüber?“.</span></a>
+  </div>
+</section>
+
+<section id="uebung2">
+  <h2>Übung 2: Ein Rollenspiel für das eigene Lernziel bauen</h2>
+  <div class="zeit">30 Minuten · einzeln oder zu zweit</div>
+  <div class="kasten auftrag">
+    <ol class="schritte">
+      <li><span class="min">3 min</span> Schreiben Sie in einem Satz auf: Was sollen Ihre Studierenden nach dem Rollenspiel <b>können</b>? Und welche Situation aus Ihrem Fach verlangt genau das?</li>
+      <li><span class="min">12 min</span> Kopieren Sie den Rollenspiel-Bauer in ein neues Chatfenster und beantworten Sie seine Fragen. Lesen Sie den Entwurf: Was hat das Modell ergänzt, was Sie nicht gesagt haben?</li>
+      <li><span class="min">10 min</span> Testen Sie den Entwurf in einem <b>neuen</b> Chat: drei Züge als gutwillige Studentin, zwei Züge mit einer abwegigen oder unfreundlichen Eingabe.</li>
+      <li><span class="min">5 min</span> Schreiben Sie drei Fragen für Ihre Nachbesprechung auf. Eine davon lautet: Wie hätte ein echtes Gegenüber reagiert?</li>
+    </ol>
+  </div>
+
+  <details open>
+    <summary>Prompt · Rollenspiel-Bauer</summary>
+    <div class="prompt">
+      <p class="q">Für diesen Workshop geschrieben, nach dem Abschnitt „Prompts schreiben lassen, ohne das Steuer abzugeben“ des Buchs. Stand 24.11.2026.</p>
+<pre id="p-bau">Ziel: Du hilfst mir, einen Rollen-Prompt für ein KI-Rollenspiel in meiner Hochschullehre zu schreiben. Am Ende liegt ein Prompt vor, den ich Studierenden geben kann.
+
+Grund: Ich bin Lehrende und will, dass Studierende eine Gesprächs- oder Entscheidungssituation aus meinem Fach üben. Was die Figur leisten soll und was sie nie tun darf, entscheide ich; die Formulierung schlägst du vor.
+
+Vorgehen:
+1. Stell mir nacheinander, eine Frage je Nachricht, diese Fragen: (a) Fach und Semester der Studierenden, (b) was sie nach dem Rollenspiel können sollen, (c) welche Situation sie üben und welche Rolle sie selbst haben, (d) wen die KI spielt und was diese Figur will, (e) was die Figur auf keinen Fall tun darf.
+2. Fass meine Antworten in fünf Zeilen zusammen und warte auf mein Okay.
+3. Schreib dann den Prompt mit diesen Teilen: Zweck, Ablauf (Mentor fragt nach Erfahrung, Szene in zwei Sätzen, Rollenspiel, Ende), Regeln, Grenzfälle, Ende mit Feedback.
+
+Abnahmekriterien für den Prompt:
+- Die Figur hat ein eigenes Interesse und einen verdeckten Grund, den sie nur auf offene Fragen nennt.
+- Die Figur antwortet mit höchstens drei Sätzen je Zug.
+- Mentor, Figur und Feedback sind klar getrennte Phasen mit sichtbarem Wechsel („Rollenspiel beginnt“, „Rollenspiel endet“).
+- Das Feedback bezieht jede Aussage auf eine Stelle im Verlauf und nennt, welches Konzept aus dem Kurs vorkam oder fehlte.
+- Der Prompt ist höchstens eine Seite lang.
+- Markiere am Ende in einer Liste alles, was du ergänzt hast, ohne dass ich es gesagt habe.</pre>
+      <button class="kopie" data-ziel="p-bau">Prompt kopieren</button>
+    </div>
+  </details>
+
+  <h3>Prüfliste vor dem ersten Einsatz</h3>
+  <ul class="check">
+    <li><label><input type="checkbox"> Das Lernziel steht in einem Satz, und die Situation verlangt genau diese Fähigkeit.</label></li>
+    <li><label><input type="checkbox"> Die Figur blieb im Test fünf Züge lang in der Rolle.</label></li>
+    <li><label><input type="checkbox"> Die Figur gab nicht nach, nur weil ich freundlich war.</label></li>
+    <li><label><input type="checkbox"> Ich habe mehr geredet als die Figur.</label></li>
+    <li><label><input type="checkbox"> Auf eine abwegige Eingabe reagierte die Figur so, wie der Prompt es vorsieht.</label></li>
+    <li><label><input type="checkbox"> Das Feedback zitierte Stellen aus dem Verlauf.</label></li>
+    <li><label><input type="checkbox"> Drei Fragen für die Nachbesprechung stehen fest; die Studierenden erfahren, dass sie mit einem simulierten Durchschnitt üben.</label></li>
+    <li><label><input type="checkbox"> Im Ablaufplan der Sitzung hat die Nachbesprechung einen eigenen Zeitblock.</label></li>
+  </ul>
+</section>
+
+<section id="weiter">
+  <h2>Weiterlesen und weiterbauen</h2>
+  <div class="karten">
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html#sec-simulator"><b>KI als Simulator</b><span>Der Buchabschnitt zu diesem Workshop, mit dem Praxisbeispiel aus Leipzig.</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-prompt-verhandlungssimulator"><b>Prompt-Sammlung, Teil Simulator</b><span>Verhandlung, Forschungsinterview, Goal Play, Pflege-Telefonat.</span></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel05-4d-phasen.html#sec-4d"><b>Das 4D-Modell</b><span>Die vier Kompetenzen im Zusammenhang.</span></a>
+    <a class="karte" href="https://www.moreusefulthings.com/prompts"><b>More Useful Things</b><span>Prompts und Blueprints von Ethan und Lilach Mollick (englisch).</span></a>
+  </div>
+</section>
+
+<section id="quellen" class="lit">
+  <h2>Quellen</h2>
+  <p>Ahn, D., Mao, C., &amp; Lee, D. (2026). <i>Item-mean surrogates: Why richer persona data fail to improve LLMs as human surrogates</i> (arXiv:2608.29455). arXiv. <a href="https://doi.org/10.48550/arXiv.2608.29455">https://doi.org/10.48550/arXiv.2608.29455</a></p>
+  <p>Anthropic. (2026). <i>Prompting best practices</i>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</a></p>
+  <p>Chernikova, O., Heitzmann, N., Stadler, M., Holzberger, D., Seidel, T., &amp; Fischer, F. (2020). Simulation-based learning in higher education: A meta-analysis. <i>Review of Educational Research, 90</i>(4), 499–541. <a href="https://doi.org/10.3102/0034654320933544">https://doi.org/10.3102/0034654320933544</a></p>
+  <p>Dakan, R., &amp; Feller, J. (2025). <i>The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education</i> (Version 1.1). <a href="https://aifluencyframework.org/">https://aifluencyframework.org/</a></p>
+  <p>Kuric, E., Demcak, P., &amp; Krajcovic, M. (2026). <i>What would GPT click: Practical effects of human-AI behavioral misalignment and the cost of synthetic participants in user experience</i> (arXiv:2605.18302). arXiv. <a href="https://doi.org/10.48550/arXiv.2605.18302">https://doi.org/10.48550/arXiv.2605.18302</a></p>
+  <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025a). <i>Prompting science report 1: Prompt engineering is complicated and contingent</i> (arXiv:2503.04818). arXiv. <a href="https://doi.org/10.48550/arXiv.2503.04818">https://doi.org/10.48550/arXiv.2503.04818</a></p>
+  <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025b). <i>Prompting science report 2: The decreasing value of chain of thought in prompting</i> (arXiv:2506.07142). arXiv. <a href="https://doi.org/10.48550/arXiv.2506.07142">https://doi.org/10.48550/arXiv.2506.07142</a></p>
+  <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025c). <i>Prompting science report 3: I'll pay you or I'll kill you – but will you care?</i> (arXiv:2508.00614). arXiv. <a href="https://doi.org/10.48550/arXiv.2508.00614">https://doi.org/10.48550/arXiv.2508.00614</a></p>
+  <p>Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., &amp; Ravipinto, D. (2024). <i>AI agents and education: Simulated practice at scale</i> (arXiv:2407.12796). arXiv. <a href="https://arxiv.org/abs/2407.12796">https://arxiv.org/abs/2407.12796</a></p>
+  <p>Mollick, E. R., &amp; Mollick, L. (2024). <i>Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts</i>. SSRN. <a href="https://doi.org/10.2139/ssrn.4802463">https://doi.org/10.2139/ssrn.4802463</a></p>
+  <p>Perczel, J., Chow, J., &amp; Demszky, D. (2025). <i>TeachLM: Post-training LLMs for education using authentic learning data</i> (arXiv:2510.05087). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.05087">https://doi.org/10.48550/arXiv.2510.05087</a></p>
+  <p>Tannenbaum, S. I., &amp; Cerasoli, C. P. (2013). Do team and individual debriefs enhance performance? A meta-analysis. <i>Human Factors, 55</i>(1), 231–245. <a href="https://doi.org/10.1177/0018720812448394">https://doi.org/10.1177/0018720812448394</a></p>
+  <p>Yang, L., Liu, H., Li, S., Jia, R., Xiao, Y., Chen, G., &amp; Lu, L. (2026). <i>Evaluating scaffolding-oriented multi-agent large language model system for clinical interview training</i> (arXiv:2609.10939). arXiv. <a href="https://doi.org/10.48550/arXiv.2609.10939">https://doi.org/10.48550/arXiv.2609.10939</a></p>
+
+  <footer>
+    <p>Roman Bartnik, TH Köln · <a href="mailto:roman.bartnik@th-koeln.de">roman.bartnik@th-koeln.de</a> · Stand 24.11.2026. Inhalte aus dem Buch „Generative KI als Hilfe zum Lehren und Lernen“ (CC BY-SA 4.0); diese Seite steht unter derselben Lizenz.</p>
+  </footer>
+</section>
+
+</main>
+
+<script>
+document.querySelectorAll('button.kopie').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.ziel), t=el.textContent, alt=b.textContent;
+    function ok(){b.textContent='Kopiert';setTimeout(function(){b.textContent=alt},1600)}
+    function hand(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Markiert – Strg+C drücken';setTimeout(function(){b.textContent=alt},2500)}
+    try{ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,hand)} else {hand()} }catch(e){hand()}
+  });
+});
+</script>
+</body>
+</html>
