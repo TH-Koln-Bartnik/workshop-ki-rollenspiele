@@ -13,6 +13,7 @@ format:
     width: 1280
     height: 720
     margin: 0.06
+    include-after-body: nachspann.html
 ---
 
 ## In fünf Schritten vom Warum zum eigenen Rollenspiel {#ablauf}
@@ -190,6 +191,94 @@ Guo, Z., & Fryer, L. K. (2024). What really elicits learners’ situational inte
 
 ::: notes
 Rollenspiele sollen Interesse wecken. Aber was heißt interessant? Hidi und Renninger unterscheiden situatives und persönliches Interesse: Das situative weckt die Lage, das persönliche bringt jemand mit, und aus dem einen kann sich das andere entwickeln, oder auch nicht. Was Sie gestalten können, ist die Situation. Guo und Fryer haben 35 Studien ausgewertet und finden sechs Quellen: Nutzwert, Neuartigkeit, kognitive Aktivierung, soziale Interaktion, praktisches Tun und Wahlmöglichkeiten. Und Geschichten bleiben hängen. Willingham nennt vier Zutaten: starke Figuren, ein zentraler Konflikt, Komplikationen und Ereignisse, die ursächlich zusammenhängen. In den Übungen bauen Sie beides in Ihre Fallstudie ein, und Sie gestalten die perfekte Lernsituation in einem absurden Rahmen: als Milliardärin, König oder mit den Wünschen eines Dschinns.
+:::
+
+## Das 4D-Schema ordnet die Planung von Rollenspielen und Simulationen {#vierd}
+
+[Planen mit dem 4D-Schema]{.dach}
+
+::: {.wahl}
+::: {.knoepfe}
+<button data-t="Was übernimmt die KI, was bleibt bei mir? Die KI spielt das Gegenüber; Lernziel und Nachbesprechung bleiben bei Ihnen. Hierher gehört die Modellwahl: nächste Folie.">Delegation</button>
+<button data-t="Wie sage ich es ihr? Ziel, Grund, Material, Abnahmekriterium; für die Figur: was sie will und was sie nie tun darf.">Description</button>
+<button data-t="Wie prüfe ich das Ergebnis? Ein Sprachmodell prüft keine Wahrheit. Sie testen das Rollenspiel vor dem Einsatz, auf vier Ebenen: übernächste Folie.">Discernment</button>
+<button data-t="Wie verantworte ich den Einsatz? Sie geben keine personenbezogenen Daten ein und sagen den Studierenden, womit sie üben.">Diligence</button>
+:::
+<p class="feld" aria-live="polite">Wählen Sie eine der vier Kompetenzen.</p>
+:::
+
+::: {.unter}
+Heute im Blick: **Modellwahl** (Delegation) · **Testen** (Discernment)
+:::
+
+::: footer
+Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/>
+:::
+
+::: notes
+Wie planen Sie ein Rollenspiel oder eine Simulation? Das 4D-Schema von Dakan und Feller gibt die Reihenfolge vor: vier Kompetenzen, vier Fragen. Klicken Sie die Knöpfe nacheinander an. Delegation: Was übernimmt die KI, was bleibt bei mir? Im Rollenspiel spielt die KI das Gegenüber; Lernziel und Nachbesprechung bleiben bei Ihnen. Zur Delegation gehört auch die Frage, welchem Modell Sie die Arbeit geben. Description: Wie sage ich es ihr? Ziel, Grund, Material und Abnahmekriterium; für die Figur, was sie will und was sie nie tun darf. Discernment: Wie prüfe ich das Ergebnis? Ein Sprachmodell prüft keine Wahrheit, also testen Sie. Diligence: Wie verantworte ich den Einsatz? Keine personenbezogenen Daten, und die Studierenden wissen, womit sie üben. Zwei dieser Fragen sehen wir uns jetzt genauer an: die Modellwahl und das Testen.
+:::
+
+## Planen mit dem stärksten Modell, durchführen oft mit einem günstigeren {#modellwahl}
+
+[4D · Delegation · Modellwahl]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel .akzent}
+**Konzept und Detailplanung**
+starkes Frontier-Modell · Desktop-Variante
+:::
+::: {.kachel .fragment}
+**Durchführung**
+oft genügt ein günstigeres Modell
+:::
+:::
+
+::: {.unter .fragment}
+Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen?
+:::
+
+::: footer
+Empfehlung aus der Workshop-Praxis (Bartnik, 2026). Unterschiede zwischen Modellen und Arbeitsumgebungen: Mollick, E. (2026, 23. Juli). *An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)*. One Useful Thing. <https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22>
+:::
+
+::: notes
+Welches Modell nehmen Sie? Die Antwort hängt an der Phase. Für das Konzept und die Detailplanung empfehle ich ein starkes Frontier-Modell, also eines der leistungsfähigsten Modelle, die gerade zu haben sind, und zwar in der Desktop-Variante: als Programm auf Ihrem Rechner, das mit Ihren Dateien arbeiten kann. In dieser Phase entstehen die Figur, der Ablauf, der lange Rollen-Prompt und die Testfälle; hier zahlt sich jedes bisschen Urteilskraft des Modells aus. Die Durchführung ist eine andere Aufgabe. Das Modell folgt einem fertigen, geprüften Prompt, und das gelingt später oft auch mit einem günstigeren Modell gut. Das ist wichtig, weil Ihre Studierenden selten das teuerste Abo haben. Deshalb die Frage auf der Folie: Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen? Das finden Sie nur durch Testen heraus, und damit sind wir bei der nächsten Folie.
+:::
+
+## Vier Testebenen sichern die Qualität, vom Prompt bis zum Goldstandard {#tests}
+
+[4D · Discernment · Qualitätstests]{.dach}
+
+::: {.kacheln}
+::: {.kachel}
+**1 · Prüfung im Prompt**
+das Modell prüft die eigene Antwort
+:::
+::: {.kachel .fragment}
+**2 · Deterministische Prüfung**
+Code prüft feste Regeln
+:::
+::: {.kachel .fragment}
+**3 · LLM prüft LLM**
+zweites Modell bewertet · z. B. RAGAS
+:::
+::: {.kachel .akzent .fragment}
+**4 · Goldstandard**
+Testfragen mit Musterantworten
+:::
+:::
+
+::: {.unter .fragment}
+Welche Ebene hat Ihr Rollenspiel schon, welche fehlt?
+:::
+
+::: footer
+Einteilung in vier Ebenen: Bartnik (Workshop, 2026). RAGAS: Es, S., James, J., Espinosa Anke, L., & Schockaert, S. (2024). RAGAs: Automated evaluation of retrieval augmented generation. In *Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations* (S. 150–158). Association for Computational Linguistics. <https://doi.org/10.18653/v1/2024.eacl-demo.16>
+:::
+
+::: notes
+Woran merken Sie, dass Ihr Rollenspiel gut ist? Sie prüfen auf vier Ebenen, und jede fängt andere Fehler. Die erste Ebene steckt im Prompt selbst: Sie weisen das Modell an, die eigene Antwort vor der Ausgabe zu prüfen, etwa ob es in der Rolle geblieben ist. Das kostet nichts, aber das Modell ist hier Richter in eigener Sache. Die zweite Ebene ist die deterministische Prüfung. Deterministisch heißt: gleiche Eingabe, gleiches Urteil. Ein kleines Programm prüft feste Regeln, zum Beispiel die Länge der Antwort oder ein verlangtes Format. Das ist verlässlich, aber es erfasst nur, was sich zählen oder abgleichen lässt. Auf der dritten Ebene prüft ein Sprachmodell das andere: Ein zweites Modell bewertet die Antworten nach Kriterien, die Sie vorgeben. Ein bekanntes Beispiel ist RAGAS von Es und Kollegen, ein Verfahren mit Kennzahlen für Systeme, die vor dem Antworten in Dokumenten nachschlagen; es kommt ohne von Menschen geschriebene Musterantworten aus. Die vierte Ebene ist der Goldstandard: eine Sammlung von Testfragen mit Musterantworten, die Sie selbst als richtig festgelegt haben. An ihr messen Sie jede neue Fassung Ihres Prompts und jedes neue Modell. Meine Frage an Sie: Welche Ebene hat Ihr Rollenspiel schon, und welche fehlt?
 :::
 
 ## Ein Satz genügt für ein erstes Lernspiel; die Arbeit steckt in den Varianten {#lernspiele}

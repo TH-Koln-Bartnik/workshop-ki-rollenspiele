@@ -45,3 +45,7 @@ $presentation-title-slide-text-align: left;
 .reveal .auftrag li { margin: .3em 0; }
 .reveal img.qr { width: 100%; max-width: 500px; margin: 0; }
 .reveal .auftrag { font-size: .95em; }
+.reveal .wahl .knoepfe { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5em; margin-bottom: .5em; }
+.reveal .wahl button { font: inherit; font-size: .9em; font-weight: 700; border: 2px solid #e6e6ea; border-top: 6px solid #c81e0f; background: #fff; color: #111; padding: .5em .4em; cursor: pointer; }
+.reveal .wahl button[aria-pressed=true] { background: #c81e0f; border-color: #c81e0f; color: #fff; }
+.reveal .wahl .feld { margin: 0; min-height: 4.6em; padding: .6em .8em; background: #f5f5f7; font-size: .95em; }
