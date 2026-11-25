@@ -154,11 +154,16 @@ var SCHRITTE = [
   text:"Drei Züge als gutwillige Studentin, zwei mit einer abwegigen oder unfreundlichen Eingabe: Hält das Modell die Schritte ein? Gibt der Interaktionspartner nach, nur weil jemand freundlich ist? Der Testlauf gilt für alle drei Stufen.",
   bild:"Die Generalprobe vor leerem Saal.",
   wo:"Skript 5.2, Qualitätssicherung (Mollick et al., 2024)"},
- {st:1, kurz:"Runde", eb:"Stufe 1 · Durchführung",
-  titel:"Ein Modell spielt nacheinander Mentor und Gegenüber",
-  text:"Der Mentor fragt nach Erfahrung und bietet Szenarien an. Mit „Rollenspiel beginnt“ wechselt das Modell in die Rolle des Interaktionspartners, antwortet mit höchstens drei Sätzen je Zug und drängt gegen Ende auf eine folgenreiche Entscheidung. Ohne die Längengrenze redet die KI zu viel: Unangepasste Modelle lassen Lernenden 5–15 % der Redezeit (Perczel et al., 2025; Preprint).",
-  bild:"Ein Schauspieler, der auf offener Bühne den Hut wechselt.",
+ {st:1, kurz:"Mentor", eb:"Stufe 1 · Durchführung",
+  titel:"Im Chat beginnt das Modell als Mentor",
+  text:"Der Mentor fragt nach Erfahrung, passt die Schwierigkeit an und bietet Szenarien zur Auswahl. Die Bühne beschreibt er in zwei, drei Sätzen.",
+  bild:"Die Spielleiterin, die vor der Partie die Regeln erklärt.",
   etym:"Mentor: in der Odyssee der Freund, dem Odysseus seinen Sohn Telemachos anvertraut.",
+  wo:"Skript 5.2 (Mollick & Mollick, 2024)"},
+ {st:1, kurz:"Interaktionspartner", eb:"Stufe 1 · Durchführung",
+  titel:"Mit „Rollenspiel beginnt“ wird dasselbe Modell zum Interaktionspartner",
+  text:"Es bleibt in der Rolle, antwortet mit höchstens drei Sätzen je Zug und drängt gegen Ende auf eine folgenreiche Entscheidung. Ohne die Längengrenze redet die KI zu viel: Unangepasste Modelle lassen Lernenden 5–15 % der Redezeit (Perczel et al., 2025; Preprint).",
+  bild:"Ein Schauspieler, der auf offener Bühne den Hut wechselt.",
   wo:"Skript 5.2 (Mollick & Mollick, 2024)"},
  {st:1, kurz:"Feedback", eb:"Stufe 1 · Rückmeldung",
   titel:"Nach „Rollenspiel endet“ gibt dasselbe Modell Rückmeldung, mit Zitat aus dem Verlauf",
@@ -176,11 +181,16 @@ var SCHRITTE = [
   text:"Die KI arbeitet hier vor der Sitzung, als Programmierhilfe. Aus Lernziel und Fall entsteht eine HTML-Datei: HTML ist die Sprache, in der Webseiten geschrieben sind, und eine solche Datei läuft in jedem Browser, ohne Anmeldung und ohne Chatfenster.",
   bild:"Der Spieleverlag druckt Brett und Karten, bevor die erste Partie beginnt.",
   wo:"Skript 3.4; Buch, Semester-Simulator und Bullwhip-Rechner"},
- {st:2, kurz:"Seite", eb:"Stufe 2 · Durchführung und Rückmeldung",
-  titel:"Der Ablauf steht im Code: Szenen, Zustand und Auswertung sind festgelegt",
-  text:"Studierende wählen per Knopf, statt frei zu tippen. Die Seite führt Buch über Budget oder Punkte und wertet nach einer Regel aus, die Sie nachlesen können. Jeder Durchlauf ist wiederholbar; für Zusammenhänge, die sich berechnen lassen, ist sie das verlässlichere Übungsfeld als ein Modell, das eine Rolle spielt.",
+ {st:2, kurz:"Szenen", eb:"Stufe 2 · Durchführung",
+  titel:"Der Ablauf steht im Code: Studierende wählen per Knopf",
+  text:"Die Seite zeigt Szene für Szene und bietet feste Entscheidungen an, statt freie Eingaben zu erwarten. Jeder Durchlauf ist wiederholbar.",
   bild:"Ein Brettspiel: Die Regeln sind gedruckt, niemand improvisiert.",
   etym:"Code: lat. codex, Holztafel, später Buch und Gesetzessammlung.",
+  wo:"Buch, Semester-Simulator"},
+ {st:2, kurz:"Zustand · Auswertung", eb:"Stufe 2 · Rückmeldung",
+  titel:"Die Seite führt Buch und wertet nach einer Regel aus, die Sie nachlesen können",
+  text:"Budget oder Punkte stehen im Zustand der Seite; die Auswertung rechnet, sie formuliert nicht. Für Zusammenhänge, die sich berechnen lassen, ist das verlässlicher als ein Modell, das eine Rolle spielt.",
+  bild:"Der Spielstand auf dem Wertungsblock.",
   wo:"Workshop-Seite, „Gesprächspartner oder Rechner?“"},
  {st:2, kurz:"Sprechrolle", eb:"Stufe 2 · Option",
   titel:"Wo freie Sprache nötig ist, spricht ein Modell nur den Interaktionspartner",
@@ -219,7 +229,7 @@ var SCHRITTE = [
   wo:"Skript 5.1, gestufter Einstieg"}
 ];
 var LETZTER = SCHRITTE.length - 1;
-var VORHERSAGE = {richtig:1, optionen:["ein KI-Agent","die Lehrperson","die Studierenden unter sich"], abSchritt:12};
+var VORHERSAGE = {richtig:1, optionen:["ein KI-Agent","die Lehrperson","die Studierenden unter sich"], abSchritt:14};
 
 /* ================= Zeichenhilfen ================= */
 function el(tag, a, p) { var e = document.createElementNS(NS, tag); for (var k in a) { if (k === "t") e.textContent = a[k]; else e.setAttribute(k, a[k]); } (p || svg).appendChild(e); return e; }
@@ -265,55 +275,60 @@ el("text", {x:30, y:480, "class":"lbl", t:"Studierende"});
 /* ================= Elemente je Schritt (Pfeile zuerst, Kästen darüber) ================= */
 var g;
 // --- Pfeile zwischen KI-Ebene und Studierenden, je Stufe eigene Kopie
-// Stufe 1
+// Stufe 1 (Schritte 1–6)
 g = gruppe(1);              pfeil(g, [[60, 124], [60, 200]], {lbl:"Auftrag", lx:67, ly:142});
-var gPrompt = gruppe(1, 5); kasten(gPrompt, 30, 200, 150, 70, "Prompt", "Zweck · Ablauf · Regeln", {rx:3});
+g = gruppe(1, 6);           kasten(g, 30, 200, 150, 70, "Prompt", "Zweck · Ablauf · Regeln", {rx:3});
 g = gruppe(2);              kasten(g, 108, 70, 86, 54, "Testlauf", "6–8 Eingaben"); pfeil(g, [[151, 124], [151, 200]], {lbl:"Test", lx:158, ly:142});
-g = gruppe(3, 5);
-  pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Züge", lx:338, ly:402});
+g = gruppe(3, 6);
   pfeil(g, [[180, 235], [214, 235]]);
-  rahmen(g, 214, 186, 392, 150, "Ein Chat · ein Modell · drei Phasen");
-  kasten(g, 224, 232, 78, 58, "Mentor", "fragt, rahmt"); kasten(g, 314, 232, 150, 58, "Interaktionspartner", "≤ 3 Sätze je Zug");
-  pfeil(g, [[302, 261], [314, 261]]);
-g = gruppe(3);              el("text", {x:MX[1], y:505, "text-anchor":"middle", "class":"akt", t:"spielen · entscheiden"}, g);
-g = gruppe(4, 5);
-  pfeil(g, [[535, 336], [535, 458]], {lbl:"Feedback", lx:543, ly:402});
+  rahmen(g, 214, 186, 392, 150, "Ein Chat · ein Modell");
+  kasten(g, 224, 232, 78, 58, "Mentor", "fragt, rahmt");
+g = gruppe(4, 6);
+  pfeil(g, [[330, 458], [330, 290]], {beide:true, lbl:"Züge", lx:338, ly:402});
+  el("rect", {x:320, y:291, width:20, height:44, style:"fill:#fafafb"}, g);
+  spitze(g, 330, 350, 330, 337);
+  kasten(g, 314, 232, 150, 58, "Interaktionspartner", "≤ 3 Sätze je Zug"); pfeil(g, [[302, 261], [314, 261]]);
+g = gruppe(4);              el("text", {x:MX[1], y:505, "text-anchor":"middle", "class":"akt", t:"spielen · entscheiden"}, g);
+g = gruppe(5, 6);
+  pfeil(g, [[535, 290], [535, 458]], {lbl:"Feedback", lx:543, ly:402});
   kasten(g, 476, 232, 122, 58, "Mentor", "Feedback mit Zitat"); pfeil(g, [[464, 261], [476, 261]]);
-g = gruppe(4);              el("text", {x:MX[2], y:505, "text-anchor":"middle", "class":"akt", t:"lesen Feedback"}, g);
-g = gruppe(5);
+g = gruppe(5);              el("text", {x:MX[2], y:505, "text-anchor":"middle", "class":"akt", t:"lesen Feedback"}, g);
+g = gruppe(6);
   kasten(g, 628, 70, 116, 54, "Debriefing", "am Protokoll");
   el("text", {x:MX[0], y:505, "text-anchor":"middle", "class":"akt", t:"sagen vorher"}, g);
   el("text", {x:MX[3], y:505, "text-anchor":"middle", "class":"akt", t:"vergleichen"}, g);
 function protokoll(ab, bis) { var q = gruppe(ab, bis); pfeil(q, [[606, 210], [686, 210], [686, 124]], {lbl:"Protokoll", lx:646, ly:203, anker:"middle"}); }
-protokoll(5, 5);
-// Stufe 2
-g = gruppe(6, 8);           kasten(g, 30, 200, 150, 70, "Bauhelfer", "Modell schreibt den Code");
-g = gruppe(7, 8);
-  pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Klicks", lx:338, ly:402});
-  pfeil(g, [[535, 336], [535, 458]], {lbl:"Ergebnis", lx:543, ly:402});
+protokoll(6, 6);
+// Stufe 2 (Schritte 7–10)
+g = gruppe(7, 10);          kasten(g, 30, 200, 150, 70, "Bauhelfer", "Modell schreibt den Code");
+g = gruppe(8, 10);
   pfeil(g, [[180, 235], [214, 235]]);
-  rahmen(g, 214, 186, 392, 150, "HTML-Seite · Ablauf fest im Code");
-  kasten(g, 226, 228, 104, 54, "Szenen", "Wahl per Knopf"); kasten(g, 340, 228, 104, 54, "Zustand", "Budget, Punkte"); kasten(g, 474, 228, 122, 54, "Auswertung", "Regel im Code");
+  rahmen(g, 214, 186, 392, 150, "HTML-Seite · fester Ablauf");
+  pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Klicks", lx:338, ly:402});
+  kasten(g, 226, 228, 104, 54, "Szenen", "Wahl per Knopf");
+g = gruppe(9, 10);
+  pfeil(g, [[535, 290], [535, 458]], {lbl:"Ergebnis", lx:543, ly:402});
+  kasten(g, 340, 228, 104, 54, "Zustand", "Budget, Punkte"); kasten(g, 474, 228, 122, 54, "Auswertung", "Regel im Code");
   pfeil(g, [[330, 255], [340, 255]]); pfeil(g, [[444, 255], [474, 255]]);
-protokoll(7, 8);
-g = gruppe(8, 8);           kasten(g, 226, 292, 218, 34, "Sprechrolle · optional", null, {strich:true});
-// Stufe 3
-g = gruppe(9);
+protokoll(9, 10);
+g = gruppe(10, 10);         kasten(g, 226, 292, 218, 34, "Sprechrolle · optional", null, {strich:true});
+// Stufe 3 (Schritte 11–15)
+g = gruppe(11);
   pfeil(g, [[105, 458], [105, 262]], {beide:true, lbl:"Vorwissen", lx:113, ly:402});
   kasten(g, 30, 200, 150, 62, "Tutor-Agent", "gleiches Startniveau");
-g = gruppe(10);
+g = gruppe(12);
   pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Züge", lx:338, ly:402});
-  kasten(g, 240, 176, 180, 62, "Mentor-Agent", "berät, gibt Hinweise"); kasten(g, 240, 274, 180, 62, "NPC-Agent", "Gegenrolle, z. B. Investorin");
+  kasten(g, 240, 176, 180, 62, "Mentor-Agent", "gibt Hinweise"); kasten(g, 240, 274, 180, 62, "NPC-Agent", "Gegenrolle: Investorin");
   pfeil(g, [[330, 238], [330, 274]]);
-g = gruppe(11);
+g = gruppe(13);
   pfeil(g, [[535, 290], [535, 458]], {lbl:"Feedback", lx:543, ly:402});
   pfeil(g, [[420, 305], [466, 262]]);
   kasten(g, 466, 222, 138, 68, "Evaluator-Agent", "liest das Transkript");
-g = gruppe(12);
+g = gruppe(14);
   pfeil(g, [[604, 256], [626, 256]]);
   pfeil(g, [[686, 222], [686, 124]], {lbl:"Vorschlag", lx:693, ly:180});
   kasten(g, 626, 222, 120, 68, "Insights-Agent", "Muster der Gruppe");
-g = gruppe(13);
+g = gruppe(15);
   pfeil(g, [[686, 70], [686, 61], [60, 61], [60, 70]]);
   el("rect", {x:392, y:52, width:150, height:17, rx:9, style:"fill:var(--papier)"}, g);
   el("text", {x:467, y:65, "text-anchor":"middle", "class":"kopf", t:"nächster Fall, neue Runde"}, g);

@@ -69,6 +69,37 @@ Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2
 Warum sollte ein Rollenspiel beim Lernen helfen? Organisation heißt Koordination plus Motivation, und beides gilt auch für das Lernen. Der erste Hebel ist das Merken. Dunlosky und Kollegen nennen die Techniken, die wirken: testgestütztes Lernen, das Verknüpfen durch Chunking und Geschichten, die Anpassung an das Vorwissen, die zeitliche Verteilung und inhaltliche Mischung und das fragebasierte Ausarbeiten. Ein Rollenspiel testet, verknüpft und passt sich an. Der zweite Hebel ist die Motivation. Die ICAP-Theorie von Chi ordnet vier Stufen der Beteiligung: Interaktion schlägt eigenes Konstruieren, das schlägt aktive Beteiligung, und die schlägt passives Zuhören. Ein Rollenspiel setzt auf der obersten Stufe an. Meine Frage an Sie: Welcher dieser Mechanismen ist in Ihrer Lehre am schwersten umzusetzen? Wenn Sie nur einen für eine KI-Intervention wählen dürften, welcher wäre es?
 :::
 
+## Eine Simulationsübung wächst in drei Stufen; das Nachgespräch führen Sie {#stufen}
+
+[Ablauf im Überblick]{.dach}
+
+::: {.kacheln .drei}
+::: {.kachel .akzent}
+**1 · Ein Prompt**
+ein Modell · Mentor, Interaktionspartner, Feedback
+:::
+::: {.kachel .akzent .fragment}
+**2 · HTML-Seite**
+Ablauf im Code · Szenen, Zustand, Auswertung
+:::
+::: {.kachel .akzent .fragment}
+**3 · Agenten**
+Tutor · Mentor · NPC · Evaluator · Insights
+:::
+:::
+
+::: {.unter}
+[Animation öffnen: Ablauf in 16 Schritten](simulationsuebung-ablauf.html?hoersaal){target="_blank"}
+:::
+
+::: footer
+Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., & Ravipinto, D. (2024). *AI agents and education: Simulated practice at scale* (arXiv:2407.12796). arXiv. <https://doi.org/10.48550/arXiv.2407.12796> · Mollick, E. R., & Mollick, L. (2024). *Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts*. SSRN. <https://doi.org/10.2139/ssrn.4802463>
+:::
+
+::: notes
+Bevor wir in die Formen einsteigen, ein Blick auf den ganzen Ablauf. Jede Simulationsübung hat vier Phasen: Vorbereitung, Durchführung, Rückmeldung und Nachgespräch. Diese Folge bleibt gleich, egal wie aufwendig Sie bauen. Was sich ändert, ist die Zahl der KI-Helfer. Auf der ersten Stufe trägt ein einziger Prompt alles: Ein Modell ist erst Mentor, dann Interaktionspartner, dann wieder Mentor mit Feedback. Auf der zweiten Stufe steht der Ablauf im Code einer Webseite; die KI hat sie vorab geschrieben. Auf der dritten Stufe arbeiten getrennte Agenten: ein Tutor, ein Mentor, die Gegenrolle, ein Evaluator und ein Agent, der Ihnen die Transkripte zusammenfasst. Klicken Sie die Animation an und gehen Sie mit mir Schritt für Schritt durch. Achten Sie auf eine Frage: Wer führt auf der höchsten Stufe das Nachgespräch? Sie. Auf jeder Stufe.
+:::
+
 ## Erste Simulatoren sind zu einfach und zu nett {#praxis}
 
 [2a · Lernen durch Praxis]{.dach}
