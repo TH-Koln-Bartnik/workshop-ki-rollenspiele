@@ -49,3 +49,5 @@ $presentation-title-slide-text-align: left;
 .reveal .wahl button { font: inherit; font-size: .9em; font-weight: 700; border: 2px solid #e6e6ea; border-top: 6px solid #c81e0f; background: #fff; color: #111; padding: .5em .4em; cursor: pointer; }
 .reveal .wahl button[aria-pressed=true] { background: #c81e0f; border-color: #c81e0f; color: #fff; }
 .reveal .wahl .feld { margin: 0; min-height: 4.6em; padding: .6em .8em; background: #f5f5f7; font-size: .95em; }
+.reveal .kacheln.eng { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.reveal .kacheln.eng .kachel strong { font-size: .92em; hyphens: auto; }

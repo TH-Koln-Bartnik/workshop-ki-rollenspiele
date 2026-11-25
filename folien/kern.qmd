@@ -199,10 +199,10 @@ Rollenspiele sollen Interesse wecken. Aber was heißt interessant? Hidi und Renn
 
 ::: {.wahl}
 ::: {.knoepfe}
-<button data-t="Was übernimmt die KI, was bleibt bei mir? Die KI spielt das Gegenüber; Lernziel und Nachbesprechung bleiben bei Ihnen. Hierher gehört die Modellwahl: nächste Folie.">Delegation</button>
-<button data-t="Wie sage ich es ihr? Ziel, Grund, Material, Abnahmekriterium; für die Figur: was sie will und was sie nie tun darf.">Description</button>
-<button data-t="Wie prüfe ich das Ergebnis? Ein Sprachmodell prüft keine Wahrheit. Sie testen das Rollenspiel vor dem Einsatz, auf vier Ebenen: übernächste Folie.">Discernment</button>
-<button data-t="Wie verantworte ich den Einsatz? Sie geben keine personenbezogenen Daten ein und sagen den Studierenden, womit sie üben.">Diligence</button>
+<button data-t="Was übernimmt der Mensch, was die KI? Welche Übung verträgt ein simuliertes Gegenüber, welche braucht Menschen? Dazu gehört die Kenntnis der Werkzeuge, also die Modellwahl: nächste Folie.">Delegation</button>
+<button data-t="Wie sage ich der KI klar, was ich will? Rolle, Wissensstand und Verhalten der Figur festlegen: was sie will und was sie nie tun darf.">Description</button>
+<button data-t="Wie beurteile ich, was die KI liefert? Vor dem Einsatz testen, auch ob die Figur mehr als den Durchschnitt spielt. Vier Prüfebenen: übernächste Folie.">Discernment</button>
+<button data-t="Wie setze ich KI verantwortlich und offen ein? Den Studierenden sagen, dass sie mit einer Simulation üben, keine personenbezogenen Daten eingeben, das Nachgespräch selbst führen.">Diligence</button>
 :::
 <p class="feld" aria-live="polite">Wählen Sie eine der vier Kompetenzen.</p>
 :::
@@ -212,11 +212,11 @@ Heute im Blick: **Modellwahl** (Delegation) · **Testen** (Discernment)
 :::
 
 ::: footer
-Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/>
+Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/> · Anwendung auf den Simulator: Bartnik, R. (2026). *Generative KI als Hilfe zum Lehren und Lernen*, Kap. 5 und 6. <https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html>
 :::
 
 ::: notes
-Wie planen Sie ein Rollenspiel oder eine Simulation? Das 4D-Schema von Dakan und Feller gibt die Reihenfolge vor: vier Kompetenzen, vier Fragen. Klicken Sie die Knöpfe nacheinander an. Delegation: Was übernimmt die KI, was bleibt bei mir? Im Rollenspiel spielt die KI das Gegenüber; Lernziel und Nachbesprechung bleiben bei Ihnen. Zur Delegation gehört auch die Frage, welchem Modell Sie die Arbeit geben. Description: Wie sage ich es ihr? Ziel, Grund, Material und Abnahmekriterium; für die Figur, was sie will und was sie nie tun darf. Discernment: Wie prüfe ich das Ergebnis? Ein Sprachmodell prüft keine Wahrheit, also testen Sie. Diligence: Wie verantworte ich den Einsatz? Keine personenbezogenen Daten, und die Studierenden wissen, womit sie üben. Zwei dieser Fragen sehen wir uns jetzt genauer an: die Modellwahl und das Testen.
+Wie planen Sie ein Rollenspiel oder eine Simulation? Das 4D-Schema von Dakan und Feller gibt die Reihenfolge vor: vier Kompetenzen, vier Leitfragen. Klicken Sie die Knöpfe nacheinander an. Delegation: Was übernimmt der Mensch, was die KI? Für uns heißt das: Welche Übung verträgt ein simuliertes Gegenüber, und welche braucht Menschen? Zur Delegation zählen Dakan und Feller auch die Kenntnis der Werkzeuge, und dazu gehört die Wahl des Modells. Description: Wie sage ich der KI klar, was ich will? Sie legen Rolle, Wissensstand und Verhalten der Figur fest. Discernment: Wie beurteile ich, was die KI liefert? Sie testen vor dem Einsatz, und Sie prüfen, ob die Figur mehr als den Durchschnitt spielt, denn Sprachmodelle treffen das mittlere Verhalten von Menschen, nicht den Einzelfall. Diligence: Wie setze ich KI verantwortlich und offen ein? Die Studierenden wissen, dass sie mit einer Simulation üben, und das Nachgespräch führen Sie selbst. Zwei dieser Fragen sehen wir uns jetzt genauer an: die Modellwahl und das Testen.
 :::
 
 ## Planen mit dem stärksten Modell, durchführen oft mit einem günstigeren {#modellwahl}
@@ -243,29 +243,29 @@ Empfehlung aus der Workshop-Praxis (Bartnik, 2026). Unterschiede zwischen Modell
 :::
 
 ::: notes
-Welches Modell nehmen Sie? Die Antwort hängt an der Phase. Für das Konzept und die Detailplanung empfehle ich ein starkes Frontier-Modell, also eines der leistungsfähigsten Modelle, die gerade zu haben sind, und zwar in der Desktop-Variante: als Programm auf Ihrem Rechner, das mit Ihren Dateien arbeiten kann. In dieser Phase entstehen die Figur, der Ablauf, der lange Rollen-Prompt und die Testfälle; hier zahlt sich jedes bisschen Urteilskraft des Modells aus. Die Durchführung ist eine andere Aufgabe. Das Modell folgt einem fertigen, geprüften Prompt, und das gelingt später oft auch mit einem günstigeren Modell gut. Das ist wichtig, weil Ihre Studierenden selten das teuerste Abo haben. Deshalb die Frage auf der Folie: Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen? Das finden Sie nur durch Testen heraus, und damit sind wir bei der nächsten Folie.
+Welches Modell nehmen Sie? Die Antwort hängt an der Phase. Für das Konzept und die Detailplanung empfehle ich ein starkes Frontier-Modell, also eines der leistungsfähigsten Modelle, die gerade zu haben sind, und zwar in der Desktop-Variante: als Programm auf Ihrem Rechner, das mit Ihren Dateien arbeiten kann. In dieser Phase entstehen die Figur, der Ablauf, der lange Rollen-Prompt und die Testfälle; hier zahlt sich jedes bisschen Urteilskraft des Modells aus. Die Durchführung ist eine andere Aufgabe. Das Modell folgt einem fertigen, geprüften Prompt, und das gelingt später oft auch mit einem günstigeren Modell gut. Das ist wichtig, weil Ihre Studierenden selten das teuerste Abo haben. Deshalb die Frage auf der Folie: Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen? Die kostenlosen Zugänge zeigen dabei oft ein zu schwaches Bild; ob Ihr Prompt dort trägt, finden Sie nur durch Testen heraus, und damit sind wir bei der nächsten Folie.
 :::
 
-## Vier Testebenen sichern die Qualität, vom Prompt bis zum Goldstandard {#tests}
+## Keine Prüfebene genügt allein: Vier Schichten fangen verschiedene Fehler {#tests}
 
 [4D · Discernment · Qualitätstests]{.dach}
 
-::: {.kacheln}
+::: {.kacheln .eng}
 ::: {.kachel}
 **1 · Prüfung im Prompt**
-das Modell prüft die eigene Antwort
+Muster im Prompt · Selbstprüfung
 :::
 ::: {.kachel .fragment}
 **2 · Deterministische Prüfung**
-Code prüft feste Regeln
+ein Skript prüft feste Regeln
 :::
 ::: {.kachel .fragment}
 **3 · LLM prüft LLM**
-zweites Modell bewertet · z. B. RAGAS
+z. B. RAGAS · grob und relativ
 :::
 ::: {.kachel .akzent .fragment}
 **4 · Goldstandard**
-Testfragen mit Musterantworten
+Testfälle, von Fachleuten geprüft
 :::
 :::
 
@@ -274,11 +274,11 @@ Welche Ebene hat Ihr Rollenspiel schon, welche fehlt?
 :::
 
 ::: footer
-Einteilung in vier Ebenen: Bartnik (Workshop, 2026). RAGAS: Es, S., James, J., Espinosa Anke, L., & Schockaert, S. (2024). RAGAs: Automated evaluation of retrieval augmented generation. In *Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics: System Demonstrations* (S. 150–158). Association for Computational Linguistics. <https://doi.org/10.18653/v1/2024.eacl-demo.16>
+Reason, J. (2000). Human error: Models and management. *BMJ, 320*(7237), 768–770. <https://doi.org/10.1136/bmj.320.7237.768> · Es, S., James, J., Espinosa Anke, L., & Schockaert, S. (2024). RAGAs: Automated evaluation of retrieval augmented generation. In *Proceedings of the 18th Conference of the EACL: System Demonstrations* (S. 150–158). <https://doi.org/10.18653/v1/2024.eacl-demo.16> · Kamoi, R., et al. (2024). Evaluating LLMs at detecting errors in LLM responses. *COLM 2024*. <https://arxiv.org/abs/2404.03602> · Vier Ebenen: Bartnik, R. (2026), Workshop-Skript „KI in Tax, Audit & Advisory“. <https://th-koln-bartnik.github.io/workshop-ai-4-taac/>
 :::
 
 ::: notes
-Woran merken Sie, dass Ihr Rollenspiel gut ist? Sie prüfen auf vier Ebenen, und jede fängt andere Fehler. Die erste Ebene steckt im Prompt selbst: Sie weisen das Modell an, die eigene Antwort vor der Ausgabe zu prüfen, etwa ob es in der Rolle geblieben ist. Das kostet nichts, aber das Modell ist hier Richter in eigener Sache. Die zweite Ebene ist die deterministische Prüfung. Deterministisch heißt: gleiche Eingabe, gleiches Urteil. Ein kleines Programm prüft feste Regeln, zum Beispiel die Länge der Antwort oder ein verlangtes Format. Das ist verlässlich, aber es erfasst nur, was sich zählen oder abgleichen lässt. Auf der dritten Ebene prüft ein Sprachmodell das andere: Ein zweites Modell bewertet die Antworten nach Kriterien, die Sie vorgeben. Ein bekanntes Beispiel ist RAGAS von Es und Kollegen, ein Verfahren mit Kennzahlen für Systeme, die vor dem Antworten in Dokumenten nachschlagen; es kommt ohne von Menschen geschriebene Musterantworten aus. Die vierte Ebene ist der Goldstandard: eine Sammlung von Testfragen mit Musterantworten, die Sie selbst als richtig festgelegt haben. An ihr messen Sie jede neue Fassung Ihres Prompts und jedes neue Modell. Meine Frage an Sie: Welche Ebene hat Ihr Rollenspiel schon, und welche fehlt?
+Woran merken Sie, dass Ihr Rollenspiel gut ist? Keine einzelne Prüfung genügt. Die Sicherheitsforschung kennt dafür das Bild der Käsescheiben von James Reason: Jede Scheibe hat Löcher, aber an anderer Stelle, und ein Fehler kommt nur durch, wenn die Löcher aller Scheiben in einer Linie liegen. Vier Scheiben stehen Ihnen zur Verfügung. Die erste steckt im Prompt selbst: Muster im Prompt halten das Modell in seiner Antwort an, etwa die Anweisung, sich vor der Ausgabe selbst zu prüfen und offenzulegen, was nur gefolgert ist. Das kostet nichts, aber das Modell ist hier Richter in eigener Sache. Die zweite Scheibe ist die deterministische Prüfung. Deterministisch heißt: gleiche Eingabe, gleiches Urteil. Ein kleines Skript prüft mechanisch feste Regeln, zum Beispiel, ob die Antwort eines Tutors die Endzahl verrät. Das ist verlässlich, aber es erfasst nur, was sich zählen oder abgleichen lässt. Auf der dritten Scheibe prüft ein Sprachmodell das andere. Ein bekanntes Werkzeug ist RAGAS von Es und Kollegen, gebaut für Systeme, die vor dem Antworten in Dokumenten nachschlagen. Vorsicht: Sprachmodelle übersehen einen erheblichen Teil der Fehler in Modellantworten, das zeigen Kamoi und Kollegen. Diese Ebene taugt deshalb für die grobe Einschätzung und für den Vergleich, etwa ob das System nach einer Änderung am Prompt schlechter wird, nicht für ein absolutes Urteil. Die vierte Scheibe ist der Goldstandard: eine Sammlung von Testfällen mit dem erwarteten Verhalten, von Fachleuten geprüft. Nur hier tritt menschliches Fachurteil in den Prüfkreislauf ein, und dieselben Fälle laufen nach jeder Änderung erneut, wie ein TÜV-Termin nach jeder Reparatur. Meine Frage an Sie: Welche Ebene hat Ihr Rollenspiel schon, und welche fehlt?
 :::
 
 ## Ein Satz genügt für ein erstes Lernspiel; die Arbeit steckt in den Varianten {#lernspiele}
