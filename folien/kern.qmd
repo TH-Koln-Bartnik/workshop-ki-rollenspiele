@@ -1,0 +1,253 @@
+---
+pagetitle: "Rollenspiele mit KI in der Lehre – Kern-Inputs zum Übungsblatt"
+lang: de
+format:
+  revealjs:
+    theme: [default, th.scss]
+    embed-resources: true
+    slide-number: c/t
+    center: false
+    hash: true
+    controls: true
+    transition: none
+    width: 1280
+    height: 720
+    margin: 0.06
+---
+
+## In fünf Schritten vom Warum zum eigenen Rollenspiel {#ablauf}
+
+[Workshop · Simulationen und Rollenspiele mit KI]{.dach}
+
+:::: {.columns}
+::: {.column width="66%"}
+::: {.auftrag}
+1. **Warum?** Mechanismen und Lernziele
+2. **Wie?** Praxis · Kritik · Co-Creation
+3. **Interessant?** Sechs Quellen, eine Geschichte
+4. **Lernspiele** erstellen und teilen
+5. **Anwendung** auf eigene Lerninhalte
+:::
+:::
+::: {.column width="34%"}
+![](qr-seite.svg){.qr fig-alt="QR-Code zur Workshop-Seite"}
+
+[Prompts und Übungen auf der Workshop-Seite]{.unter}
+:::
+::::
+
+::: notes
+Heute bauen Sie Rollenspiele, und zwar in fünf Schritten. Zuerst fragen wir, warum ein Rollenspiel überhaupt beim Lernen hilft. Dann spielen Sie erste Formen durch: Lernen durch Praxis, durch Kritik und durch gemeinsames Erstellen. Nach der Pause geht es darum, was ein Rollenspiel interessant macht. Danach bauen Sie ein kleines Lernspiel und teilen es. Und in der letzten Stunde übertragen Sie alles auf Ihre eigenen Lerninhalte. Über den Code erreichen Sie die Workshop-Seite mit den Prompts.
+:::
+
+## Rollenspiele bedienen zwei Hebel des Lernens: Merken und Motivation {#warum}
+
+[1 · Warum?]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel .akzent}
+**Merken**
+Testen · Verknüpfen · an Vorwissen anpassen · verteilen und mischen · Warum-Fragen
+:::
+::: {.kachel .akzent .fragment}
+**Motivation**
+Individualisierung · Interaktion
+I > C > A > P
+:::
+:::
+
+::: {.unter .fragment}
+Welcher Mechanismus ist in Ihrer Lehre am schwersten umzusetzen?
+:::
+
+::: footer
+Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., & Willingham, D. T. (2013). Improving students’ learning with effective learning techniques. *Psychological Science in the Public Interest, 14*(1), 4–58. <https://doi.org/10.1177/1529100612453266> · Chi, M. T. H., Adams, J., Bogusch, E. B., Bruchok, C., Kang, S., Lancaster, M., et al. (2018). Translating the ICAP theory of cognitive engagement into practice. *Cognitive Science, 42*(6), 1777–1832. <https://doi.org/10/gd5n5p>
+:::
+
+::: notes
+Warum sollte ein Rollenspiel beim Lernen helfen? Organisation heißt Koordination plus Motivation, und beides gilt auch für das Lernen. Der erste Hebel ist das Merken. Dunlosky und Kollegen nennen die Techniken, die wirken: testgestütztes Lernen, das Verknüpfen durch Chunking und Geschichten, die Anpassung an das Vorwissen, die zeitliche Verteilung und inhaltliche Mischung und das fragebasierte Ausarbeiten. Ein Rollenspiel testet, verknüpft und passt sich an. Der zweite Hebel ist die Motivation. Die ICAP-Theorie von Chi ordnet vier Stufen der Beteiligung: Interaktion schlägt eigenes Konstruieren, das schlägt aktive Beteiligung, und die schlägt passives Zuhören. Ein Rollenspiel setzt auf der obersten Stufe an. Meine Frage an Sie: Welcher dieser Mechanismen ist in Ihrer Lehre am schwersten umzusetzen? Wenn Sie nur einen für eine KI-Intervention wählen dürften, welcher wäre es?
+:::
+
+## Erste Simulatoren sind zu einfach und zu nett {#praxis}
+
+[2a · Lernen durch Praxis]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel .akzent}
+**Role Play**
+Verhandeln · Feedback geben · Bewerbungsgespräch · Prüfungsgespräch
+:::
+::: {.kachel .akzent}
+**Goal Play**
+Escape Room · technische Fehleranalyse · Unternehmenssimulation
+:::
+:::
+
+::: {.unter .fragment}
+Feedback-Kriterien mitliefern · testen lassen · nachschärfen
+→ [Simulator Creator (Instructor Prompts)](https://www.moreusefulthings.com/instructor-prompts)
+:::
+
+::: footer
+Mollick, E. R., & Mollick, L. (2024). *Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts*. SSRN. <https://doi.org/10.2139/ssrn.4802463>
+:::
+
+::: notes
+Die erste Form ist das Lernen durch Praxis: Sie bauen einen Simulator. Im Role Play übernehmen die Studierenden eine Rolle in einem Gespräch: Sie verhandeln, geben Feedback, führen ein Bewerbungs- oder Prüfungsgespräch. Im Goal Play verfolgen sie ein Ziel in einem Szenario: ein Escape Room, eine technische Fehleranalyse, eine Unternehmenssimulation. Worauf müssen Sie achten? Die Ausgaben schwanken stark, und die KI kommt vom Lernziel ab. Die ersten Szenarien sind meist unrealistisch, in Verhandlungen zu einfach und zu nett. Liefern Sie deshalb Kriterien für das Feedback mit, lassen Sie testen und schärfen Sie nach. In der Übung nutzen Sie den Simulator Creator und bauen ein Bewerbungsgespräch für ein Praktikum.
+:::
+
+## Wer die KI kritisiert oder unterrichtet, prüft das eigene Verständnis {#kritik}
+
+[2b · Lernen durch Kritik]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel .akzent}
+**KI-Kritiker**
+KI liefert Idee, Plan oder Entwurf · Studierende kritisieren und passen an
+:::
+::: {.kachel .akzent .fragment}
+**KI-Nachhilfe**
+KI spielt die Anfängerin · Studierende erklären
+:::
+:::
+
+::: {.unter .fragment}
+Risiko: KI schweift ab · weiß mehr als ein Neuling → Situationen und Fragen vorgeben
+→ [Student Exercises](https://www.moreusefulthings.com/student-exercises)
+:::
+
+::: footer
+Mollick, E. R., & Mollick, L. (2024). *Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts*. SSRN. <https://doi.org/10.2139/ssrn.4802463>
+:::
+
+::: notes
+Die zweite Form dreht die Rollen um. Im ersten Fall ist die KI die Autorin, und Ihre Studierenden sind die Kritiker: Die KI liefert eine Geschäftsidee, einen Projektplan oder einen Textentwurf, und die Studierenden finden die Schwächen. Das lässt sich gut in Runden spielen: Die KI beginnt mit einem allgemeinen Szenario, und die Studierenden passen es Schritt für Schritt an eine bestimmte Nutzergruppe an. Im zweiten Fall spielt die KI eine Studentin, und Ihre Studierenden müssen ihr ein Konzept erklären. Zwei Risiken: Die KI schweift ab, und sie weiß mehr als ein echter Neuling. Bei wichtigen Themen geben Sie deshalb im Prompt konkrete Situationen oder Fragen vor. In den Übungen bringen Sie der KI bei, welche Fehler in Abschlussarbeiten typisch sind, und Sie kritisieren eine Geschichte zum Gruppendenken.
+:::
+
+## Co-Creation setzt Grundwissen voraus und braucht eine zweite Prüfung {#cocreation}
+
+[2c · Lernen durch Co-Creation]{.dach}
+
+::: {.kacheln .drei}
+::: {.kachel .akzent}
+**Input**
+eigenes Material · Recherche
+:::
+::: {.kachel .akzent .fragment}
+**Transformation**
+Analyse · Code für Berechnungen
+:::
+::: {.kachel .akzent .fragment}
+**Output**
+Text · Bild · Video · Podcast
+:::
+:::
+
+::: {.unter .fragment}
+Erst Grundlagen und Feedback der Lehrkraft · dann Peer-Review unter Studierenden
+:::
+
+::: footer
+Mollick, E. R., & Mollick, L. (2024). *Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts*. SSRN. <https://doi.org/10.2139/ssrn.4802463>
+:::
+
+::: notes
+Die dritte Form ist das gemeinsame Erstellen: Studierende bauen mit der KI eine Fallstudie oder ein Konzept. Denken Sie in drei Stufen. Der Input: eigenes Material oder eine Recherche, etwa mit Deep Research oder Perplexity. Die Transformation: die inhaltliche Analyse mit dem Sprachmodell und, wo gerechnet wird, Code. Der Output: ein Text, Bilder, ein Video oder ein Podcast mit NotebookLM. Diese Form passt, wenn die Studierenden das Thema in den Grundlagen schon kennen und von Ihnen erste Hinweise und Rückmeldung bekommen haben; so sind die typischen Irrtümer ausgeräumt. Und nutzen Sie Peer-Review unter den Studierenden als Qualitätskontrolle. In der Übung erstellen Sie eine Fallstudie zum wissenschaftlichen Arbeiten und reichern sie mit aktuellen Beispielen an.
+:::
+
+## Sechs Quellen machen eine Lernsituation interessant {#interesse}
+
+[3 · Wie machen wir Rollenspiele interessant?]{.dach}
+
+::: {.kacheln .drei}
+::: {.kachel .fragment}
+**1 · Nutzwert**
+:::
+::: {.kachel .fragment}
+**2 · Neuartigkeit**
+:::
+::: {.kachel .fragment}
+**3 · Kognitive Aktivierung**
+:::
+::: {.kachel .fragment}
+**4 · Soziale Interaktion**
+:::
+::: {.kachel .fragment}
+**5 · Praktisches Tun**
+:::
+::: {.kachel .fragment}
+**6 · Wahlmöglichkeiten**
+:::
+:::
+
+::: {.unter .fragment}
+Dazu eine Geschichte: Figuren · Konflikt · Komplikationen · Kausalität (Willingham, 2021)
+:::
+
+::: footer
+Guo, Z., & Fryer, L. K. (2024). What really elicits learners’ situational interest in learning activities: A scoping review of six most commonly researched types of situational interest sources in educational settings. *Current Psychology*. <https://doi.org/10.1007/s12144-024-07176-x> · Hidi, S., & Renninger, K. A. (2006). The four-phase model of interest development. *Educational Psychologist, 41*(2), 111–127. · Willingham, D. T. (2021). *Why don’t students like school?* John Wiley & Sons.
+:::
+
+::: notes
+Rollenspiele sollen Interesse wecken. Aber was heißt interessant? Hidi und Renninger unterscheiden situatives und persönliches Interesse: Das situative weckt die Lage, das persönliche bringt jemand mit, und aus dem einen kann sich das andere entwickeln, oder auch nicht. Was Sie gestalten können, ist die Situation. Guo und Fryer haben 35 Studien ausgewertet und finden sechs Quellen: Nutzwert, Neuartigkeit, kognitive Aktivierung, soziale Interaktion, praktisches Tun und Wahlmöglichkeiten. Und Geschichten bleiben hängen. Willingham nennt vier Zutaten: starke Figuren, ein zentraler Konflikt, Komplikationen und Ereignisse, die ursächlich zusammenhängen. In den Übungen bauen Sie beides in Ihre Fallstudie ein, und Sie gestalten die perfekte Lernsituation in einem absurden Rahmen: als Milliardärin, König oder mit den Wünschen eines Dschinns.
+:::
+
+## Ein Satz genügt für ein erstes Lernspiel; die Arbeit steckt in den Varianten {#lernspiele}
+
+[4 · Kleine Lernspiele erstellen und teilen]{.dach}
+
+<pre class="zeilen">Entwickle ein kleines Browserspiel zum Thema Abschlussarbeiten schreiben, gestalte es interessant und thematisch, aber vermittle dennoch die wichtigsten Erkenntnisse.</pre>
+
+::: {.kacheln .drei}
+::: {.kachel .fragment}
+**Bauen**
+ein Prompt · im Canvas
+:::
+::: {.kachel .fragment}
+**Verbessern**
+zwei Varianten
+:::
+::: {.kachel .akzent .fragment}
+**Teilen**
+Link · Datei · Colab · GitHub
+:::
+:::
+
+::: footer
+Prompt aus dem Übungsblatt „Rollenspiele mit KI in der Lehre“ (Bartnik, 14.07.2026), Übung 13.
+:::
+
+::: notes
+Ein kleines Lernspiel entsteht heute aus einem Satz. Probieren Sie es im Canvas aus: Entwickle ein kleines Browserspiel zum Thema Abschlussarbeiten schreiben. Das erste Ergebnis kommt in einer Minute. Die Arbeit beginnt danach: Verbessern Sie das Spiel und erstellen Sie zwei Varianten. Fragen Sie sich dabei: Für welche Lernziele und welche Mechanismen vom Anfang taugt ein Spiel? Und klären Sie, wie das Spiel zu Ihren Studierenden kommt: als Link, als Datei, über Google Colab oder über GitHub. Besprechen Sie am Ende mit Ihrer Nachbarin oder Ihrem Nachbarn, was schwierig war und was leicht.
+:::
+
+## Jetzt übertragen Sie die vier Bausteine auf Ihre eigenen Lerninhalte {#anwendung}
+
+[5 · Anwendung · ca. 15:00–16:00]{.dach}
+
+::: {.kacheln}
+::: {.kachel .fragment}
+**Mechanismus**
+Welcher Hebel?
+:::
+::: {.kachel .fragment}
+**Form**
+Praxis · Kritik · Co-Creation · Spiel
+:::
+::: {.kachel .fragment}
+**Interesse**
+sechs Quellen · Geschichte
+:::
+::: {.kachel .akzent .fragment}
+**Test**
+zu nett? · beim Lernziel?
+:::
+:::
+
+::: {.unter .fragment}
+→ [Workshop-Seite: Prompts, Rollenspiel-Bauer, Prüfliste](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+:::
+
+::: notes
+In der letzten Stunde arbeiten Sie an Ihren eigenen Lerninhalten. Gehen Sie die vier Bausteine des Tages durch. Erstens der Mechanismus: Welchen Hebel wollen Sie bedienen, das Merken oder die Motivation, und welchen genau? Zweitens die Form: ein Simulator, eine Kritik-Übung, eine gemeinsam erstellte Fallstudie oder ein Lernspiel. Drittens das Interesse: Welche der sechs Quellen bauen Sie ein, und welche Geschichte trägt die Übung? Viertens der Test: Ist das Gegenüber zu nett, und bleibt die KI beim Lernziel? Auf der Workshop-Seite finden Sie dafür den Rollenspiel-Bauer und eine Prüfliste.
+:::
