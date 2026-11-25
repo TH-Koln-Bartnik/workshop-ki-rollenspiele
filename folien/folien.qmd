@@ -1,0 +1,401 @@
+---
+title: "Rollenspiele und Simulationen mit KI in der Lehre"
+subtitle: "Drei Inputs zum Workshop"
+author: "Prof. Dr. Roman Bartnik, TH Köln"
+date: "25.11.2026"
+lang: de
+format:
+  revealjs:
+    theme: [default, th.scss]
+    embed-resources: true
+    slide-number: c/t
+    center: false
+    hash: true
+    controls: true
+    transition: none
+    width: 1280
+    height: 720
+    margin: 0.06
+    include-after-body: nachspann.html
+---
+
+## Ein klarer Auftrag schlägt jeden Prompt-Trick {#input1}
+
+[Input 1 · Mit Sprachmodellen arbeiten]{.dach}
+
+::: {.kacheln}
+::: {.kachel .akzent .fragment}
+**Ziel**
+Was liegt am Ende vor?
+:::
+::: {.kachel .akzent .fragment}
+**Grund**
+Wofür?
+:::
+::: {.kachel .akzent .fragment}
+**Material**
+Worauf gestützt?
+:::
+::: {.kachel .akzent .fragment}
+**Abnahmekriterium**
+Woran gemessen?
+:::
+:::
+
+::: footer
+Anthropic. (2026). *Prompting best practices*. Claude Platform Docs. <https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices>
+:::
+
+::: notes
+Aktuelle Sprachmodelle planen ihren Weg selbst und greifen zu Werkzeugen. Was heißt das für Ihren Prompt? Sie schreiben keine Tätigkeiten mehr vor. Sie legen fest, was am Ende vorliegt und woran Sie es messen. Vier Angaben tragen einen solchen Auftrag. Das Ziel: fünf Übungsaufgaben. Der Grund: Ihre Studierenden üben damit vor der Klausur. Das Material: Ihr Skript. Und das Abnahmekriterium, die Angabe, die am häufigsten fehlt: jede Aufgabe mit Lösungsweg, keine Zahl, die nicht im Skript steht. Auf der Workshop-Seite können Sie die vier Zeilen für eine eigene Aufgabe ausfüllen.
+:::
+
+## Hausrezepte zeigen in Tests keine verlässliche Wirkung
+
+[Input 1 · Mit Sprachmodellen arbeiten]{.dach}
+
+::: {.kacheln}
+::: {.kachel .fragment}
+[**Höflichkeit**]{.weg}
+„Bitte“, „Danke“
+:::
+::: {.kachel .fragment}
+[**Drohung**]{.weg}
+„Sonst wirst du abgeschaltet“
+:::
+::: {.kachel .fragment}
+[**Trinkgeld**]{.weg}
+„100 Euro für dich“
+:::
+::: {.kachel .fragment}
+[**Schritt für Schritt**]{.weg}
+„Denke Schritt für Schritt“
+:::
+:::
+
+::: footer
+Meincke, L., Mollick, E., Mollick, L., & Shapiro, D. (2025a–c). *Prompting science reports 1–3*. arXiv. <https://doi.org/10.48550/arXiv.2503.04818> · <https://doi.org/10.48550/arXiv.2506.07142> · <https://doi.org/10.48550/arXiv.2508.00614>
+:::
+
+::: notes
+Wer von Ihnen schreibt „Bitte“ in den Prompt? Und wer hat schon einmal ein Trinkgeld versprochen? Diese Hausrezepte stammen aus den ersten Jahren mit ChatGPT. Meincke und Kollegen haben sie systematisch getestet: Höflichkeit, Drohungen, Trinkgeld und „Denke Schritt für Schritt“. Keine dieser Zutaten wirkt verlässlich. Mal hilft sie bei einer Frage, mal schadet sie bei der nächsten. Die Zeit, die Sie in solche Formeln stecken, ist im Abnahmekriterium besser angelegt.
+:::
+
+## Vier Kompetenzen ordnen die Arbeit mit der KI
+
+[Input 1 · Mit Sprachmodellen arbeiten]{.dach}
+
+::: {.kacheln}
+::: {.kachel .fragment}
+**Delegation**
+Was übernimmt die KI?
+:::
+::: {.kachel .fragment}
+**Description**
+Wie sage ich es ihr?
+:::
+::: {.kachel .fragment}
+**Discernment**
+Wie prüfe ich das Ergebnis?
+:::
+::: {.kachel .fragment}
+**Diligence**
+Wie verantworte ich den Einsatz?
+:::
+:::
+
+::: {.unter .fragment}
+Rollen-Prompt: Modell schreibt · Sie entscheiden · Test mit 6–8 Eingaben
+→ [4D-Kreislauf, Ansicht Simulator](https://th-koln-bartnik.github.io/genai4teaching/interactions/4d-kreislauf.html?rolle=simulator)
+:::
+
+::: footer
+Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/>
+:::
+
+::: notes
+Der 4D-Kreislauf von Dakan und Feller ordnet die Arbeit in vier Kompetenzen. Delegation: Was übernimmt die KI, was bleibt bei mir? Im Rollenspiel spielt die KI das Gegenüber; Lernziel und Nachbesprechung bleiben bei Ihnen. Description: Das sind die vier Angaben von eben. Discernment: Ein Sprachmodell prüft keine Wahrheit. Eigenes Material und eine eigene Prüfung dämmen Fehler ein; abstellen lassen sie sich nicht. Diligence: Sie verantworten den Einsatz. Für das Rollenspiel heißt das: Den langen Rollen-Prompt schreibt das Modell, aber was die Figur leisten soll und was sie nie tun darf, entscheiden Sie. Und vor dem Einsatz testen Sie mit sechs bis acht typischen Eingaben, auch unfreundlichen.
+:::
+
+## Simulationen fördern komplexe Fähigkeiten deutlich {#input2}
+
+[Input 2 · Nutzen und neue Optionen]{.dach}
+
+[g = 0,85]{.zahl}
+
+::: {.unter}
+Metaanalyse · 145 Studien · Hochschule
+:::
+
+::: {.fragment}
+Wenig Vorwissen → Beispiele · Fortgeschrittene → Reflexion
+:::
+
+::: footer
+Chernikova, O., Heitzmann, N., Stadler, M., Holzberger, D., Seidel, T., & Fischer, F. (2020). Simulation-based learning in higher education: A meta-analysis. *Review of Educational Research, 90*(4), 499–541. <https://doi.org/10.3102/0034654320933544>
+:::
+
+::: notes
+Lohnt sich der Aufwand für ein Rollenspiel überhaupt? Die Antwort der Forschung ist deutlich. Chernikova und Kollegen haben 145 Studien aus der Hochschule ausgewertet und finden einen Effekt von g gleich 0,85 auf komplexe Fähigkeiten. Das ist viel. Die Studie zeigt auch, wem was hilft: Lernende mit wenig Vorwissen profitieren von Beispielen, Fortgeschrittene von Reflexionsphasen.
+:::
+
+## Gelernt wird im Nachgespräch
+
+[Input 2 · Nutzen und neue Optionen]{.dach}
+
+::: {.schaetz data-min="0" data-max="60" data-start="10" data-von="25" data-bis="25" data-balken='[{"l":"Mit Nachbesprechung","v":25,"t":"rund +25 %"}]'}
+<p class="frage">Um wie viel Prozent verbessert eine Nachbesprechung die Leistung?</p>
+<div class="regler"><input type="range" aria-label="Schätzung in Prozent"><output></output></div>
+<button class="aufl">Auflösen</button>
+<div class="loesung" hidden><p>d = 0,67 · 46 Stichproben</p></div>
+:::
+
+::: footer
+Tannenbaum, S. I., & Cerasoli, C. P. (2013). Do team and individual debriefs enhance performance? A meta-analysis. *Human Factors, 55*(1), 231–245. <https://doi.org/10.1177/0018720812448394>
+:::
+
+::: notes
+Bevor ich die Zahl zeige: Was schätzen Sie? Um wie viel Prozent verbessert eine Nachbesprechung die Leistung? Rufen Sie mir eine Zahl zu. (Pause, Regler stellen, auflösen.) Tannenbaum und Cerasoli finden über 46 Stichproben rund 25 Prozent. Das Rollenspiel liefert die Erfahrung; gelernt wird, wenn Sie danach darüber sprechen. Und Sie haben gerade selbst erlebt, wie eine Nachbesprechung beginnt: mit einer Vorhersage.
+:::
+
+## Role Play übt die fremde Rolle, Goal Play das eigene Erklären
+
+[Input 2 · Nutzen und neue Optionen]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel .akzent}
+**Role Play**
+Fremde Rolle · KI als Gegenüber
+Verhandlung · Beratung · Prüfungsgespräch
+:::
+::: {.kachel .akzent .fragment}
+**Goal Play**
+Sie selbst · KI-Figur anleiten
+„Erklär es Mia, erstes Semester“
+:::
+:::
+
+::: {.unter .fragment}
+Neu durch KI: jederzeit · beliebig oft · Varianten per Zeile · Zielsprache
+:::
+
+::: footer
+Mollick, E. R., & Mollick, L. (2024). *Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts*. SSRN. <https://doi.org/10.2139/ssrn.4802463>
+:::
+
+::: notes
+Es gibt zwei Grundformen. Im Role Play übernehmen Ihre Studierenden eine fremde Rolle, und die KI spielt das Gegenüber: in der Verhandlung, in der Beratung, im Prüfungsgespräch. Im Goal Play bleiben die Studierenden sie selbst und leiten eine KI-Figur an, etwa indem sie ihr ein Konzept erklären. Beide Formen spielen Sie gleich in Übung 1. Was bringt die KI, was ein menschlicher Spielpartner nicht bietet? Sie ist jederzeit verfügbar und spielt dieselbe Lage beliebig oft. Eine geänderte Zeile im Auftrag erzeugt eine neue Fallvariante. Und sie übt in der Zielsprache, auch gesprochen.
+:::
+
+## Die KI spielt den Durchschnitt, nicht den Einzelfall
+
+[Input 2 · Was die Forschung 2026 zeigt]{.dach}
+
+::: {.schaetz data-min="0" data-max="60" data-start="30" data-von="3" data-bis="3" data-balken='[{"l":"Stabil, vorhersagbar","v":54,"t":"54 %"},{"l":"Vom Modell erklärt","v":3,"t":"3 %"}]'}
+<p class="frage">Wie viel Prozent der individuellen Abweichungen erklärt das Modell?</p>
+<div class="regler"><input type="range" aria-label="Schätzung in Prozent"><output></output></div>
+<button class="aufl">Auflösen</button>
+<div class="loesung" hidden><p>Mehr Persona → glaubwürdiger, nicht richtiger</p></div>
+:::
+
+::: footer
+Ahn, D., Mao, C., & Lee, D. (2026). *Item-mean surrogates: Why richer persona data fail to improve LLMs as human surrogates* (arXiv:2608.29455). arXiv. <https://doi.org/10.48550/arXiv.2608.29455> · Kuric, E., Demcak, P., & Krajcovic, M. (2026). *What would GPT click* (arXiv:2605.18302). arXiv. <https://doi.org/10.48550/arXiv.2605.18302> · Preprints, keine Lehrstudien.
+:::
+
+::: notes
+Wie echt ist das Gegenüber? Ahn und Kollegen haben vier Datensätze mit mehr als 400.000 Befragten ausgewertet. Die Mittelwerte treffen die Modelle gut. 54 Prozent der individuellen Abweichungen vom Mittelwert sind stabil und ließen sich vorhersagen. Wie viel davon erklärt das Modell? Schätzen Sie. (Pause, auflösen.) Drei Prozent. Und ausführlichere Personas machen die Antworten glaubwürdiger, aber nicht richtiger. Beide Arbeiten sind Preprints und keine Lehrstudien. Für Ihre Lehre folgt daraus: Ihre Studierenden üben mit einem simulierten Durchschnitt. Sagen Sie es ihnen.
+:::
+
+## Getrennte Rollen heben die Prüfungsleistung von 56 auf 72 Prozent
+
+[Input 2 · Was die Forschung 2026 zeigt]{.dach}
+
+::: {.zeile}
+<span>Getrennte Agenten</span><div class="bahn"><i class="akzent" style="width:71.8%"></i></div><b>71,8 %</b>
+:::
+::: {.zeile}
+<span>Vergleichsgruppe</span><div class="bahn"><i style="width:55.6%"></i></div><b>55,6 %</b>
+:::
+
+::: {.unter .fragment}
+Patient · Tutor · Bewerter getrennt — Gewinn: Gesprächsführung · Diagnosequote gleich
+:::
+
+::: footer
+Yang, L., Liu, H., Li, S., Jia, R., Xiao, Y., Chen, G., & Lu, L. (2026). *Evaluating scaffolding-oriented multi-agent large language model system for clinical interview training* (arXiv:2609.10939). arXiv. <https://doi.org/10.48550/arXiv.2609.10939> · Preprint; randomisierter Versuch, n = 100.
+:::
+
+::: notes
+Ein randomisierter Versuch mit 100 Medizinstudierenden. Drei getrennte Agenten übernehmen drei Rollen: den Patienten, den sokratischen Tutor und den Bewerter. In der Abschlussprüfung erreicht diese Gruppe 71,8 Prozent, die Vergleichsgruppe 55,6 Prozent. Achten Sie darauf, wo der Gewinn liegt: in der Gesprächsführung. Die Diagnosequote blieb gleich. Getrennte Rollen wirken also gezielt auf das, was im Gespräch geübt wird. Auch das ist ein Preprint.
+:::
+
+## Die KI redet zu viel
+
+[Input 2 · Was die Forschung 2026 zeigt]{.dach}
+
+::: {.schaetz data-min="0" data-max="60" data-start="40" data-von="5" data-bis="15" data-balken='[{"l":"KI-Tutor, unangepasst","v":15,"t":"5–15 %"},{"l":"Menschliche Tutoren","v":30,"t":"rund 30 %"}]'}
+<p class="frage">Wie viel Prozent der Redezeit lässt ein KI-Tutor den Lernenden?</p>
+<div class="regler"><input type="range" aria-label="Schätzung in Prozent"><output></output></div>
+<button class="aufl">Auflösen</button>
+<div class="loesung" hidden><p>Antwortlänge → in den Auftrag</p></div>
+:::
+
+::: footer
+Perczel, J., Chow, J., & Demszky, D. (2025). *TeachLM: Post-training LLMs for education using authentic learning data* (arXiv:2510.05087). arXiv. <https://doi.org/10.48550/arXiv.2510.05087> · Preprint.
+:::
+
+::: notes
+Eine letzte Schätzung: Wie viel Prozent der Redezeit lässt ein unangepasstes Modell als Tutor den Lernenden? (Pause, auflösen.) Fünf bis fünfzehn Prozent. Menschliche Tutoren lassen rund dreißig. Wer übt, muss reden. Die Antwortlänge gehört deshalb in den Auftrag: höchstens drei Sätze je Zug. Achten Sie in der Übung gleich darauf, wer mehr redet, Sie oder die Figur.
+:::
+
+## Übung 1: Spielen Sie ein Rollenspiel und schärfen Sie das Gegenüber
+
+[Übung 1 · 25 Minuten]{.dach}
+
+::: {.auftrag}
+1. **10 min** · Prompt A, B oder C spielen, bis zum Feedback
+2. **10 min** · eine menschliche Eigenheit ergänzen, drei Züge neu spielen
+3. **5 min** · zwei Stellen notieren: Was hätte ein Mensch anders getan?
+:::
+
+→ [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung1](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung1)
+
+::: notes
+Jetzt sind Sie dran. Auf der Workshop-Seite finden Sie drei Prompts zum Kopieren: eine Verhandlung, ein schwieriges Feedbackgespräch und ein Goal Play, in dem Sie der KI etwas beibringen. Spielen Sie zehn Minuten. Ergänzen Sie dann eine Eigenheit, die ein echter Mensch haben könnte, und spielen Sie drei Züge neu. War das Gegenüber zu nett, zu ausführlich oder zu vernünftig?
+:::
+
+## Der Einstieg gelingt in drei Stufen {#input3}
+
+[Input 3 · Erste Schritte]{.dach}
+
+::: {.kacheln .drei}
+::: {.kachel .akzent}
+**1 · Vorbereiteter Chat**
+Fertiger Prompt · ein Fall · 10 Minuten
+:::
+::: {.kachel .fragment}
+**2 · Studierende entwerfen**
+In Präsenz · gegenseitig testen
+:::
+::: {.kachel .fragment}
+**3 · Teams bauen**
+Mehrere Wochen · Testprotokoll
+:::
+:::
+
+::: footer
+Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., & Ravipinto, D. (2024). *AI agents and education: Simulated practice at scale* (arXiv:2407.12796). arXiv. <https://arxiv.org/abs/2407.12796> · Mollick, E. R., & Mollick, L. (2024). *Instructors as innovators*. SSRN. <https://doi.org/10.2139/ssrn.4802463>
+:::
+
+::: notes
+Wie fangen Sie an? Klein. Auf der ersten Stufe geben Sie einen fertigen Rollen-Prompt aus: ein Fall, zehn Minuten Ihrer Sitzung. Das können Sie nächste Woche tun. Auf der zweiten Stufe entwerfen Studierende in Präsenz kleine Rollenspiele und testen sie gegenseitig. Auf der dritten bauen Teams über mehrere Wochen komplexe Simulationen und führen ein Testprotokoll.
+:::
+
+## Eine Runde hat fünf Schritte
+
+[Input 3 · Erste Schritte]{.dach}
+
+::: {.kacheln .fuenf}
+::: {.kachel .fragment}
+**1**
+Mentor fragt nach Erfahrung
+:::
+::: {.kachel .fragment}
+**2**
+Bühne in 2–3 Sätzen
+:::
+::: {.kachel .fragment}
+**3**
+Züge · Figur bleibt in der Rolle
+:::
+::: {.kachel .fragment}
+**4**
+Folgenreiche Entscheidung
+:::
+::: {.kachel .akzent .fragment}
+**5**
+Feedback am Verlauf → Ihr Debriefing
+:::
+:::
+
+::: footer
+Aufbau wie in Prompt A der Workshop-Seite (Anhang A des Buchs; angepasst nach dem „Negotiation Simulator“ von Mollick & Mollick, More Useful Things). <https://www.moreusefulthings.com/prompts>
+:::
+
+::: notes
+Eine Runde hat fünf Schritte, und Sie haben sie in Übung 1 alle erlebt. Ein Mentor begrüßt, fragt nach Erfahrung und passt die Schwierigkeit an. Dann stehen Szenarien zur Auswahl, und die Bühne ist in zwei, drei Sätzen beschrieben. Im Spiel sind die Züge klar abgegrenzt, und das Gegenüber bleibt in der Rolle. Gegen Ende fällt eine folgenreiche Entscheidung. Zum Schluss gibt es Feedback mit Bezug auf Stellen im Verlauf. Und danach kommen Sie: mit dem Debriefing.
+:::
+
+## Drei Befunde werden zu drei Zeilen im Prompt
+
+[Input 3 · Erste Schritte]{.dach}
+
+::: {.fragment}
+**Rollen trennen** [(Yang et al., 2026)]{.unter}
+
+<pre class="zeilen">Schreib „Rollenspiel beginnt“ und „Rollenspiel endet“. Im Spiel bist du nur die Gegenseite.</pre>
+:::
+
+::: {.fragment}
+**Länge begrenzen** [(Perczel et al., 2025)]{.unter}
+
+<pre class="zeilen">Antworte mit höchstens drei Sätzen je Zug.</pre>
+:::
+
+::: {.fragment}
+**Verdeckter Grund** [(Ahn et al., 2026)]{.unter}
+
+<pre class="zeilen">Du hast einen Grund, den du nur auf offene Fragen nennst.</pre>
+:::
+
+::: footer
+Yang et al. (2026). <https://doi.org/10.48550/arXiv.2609.10939> · Perczel et al. (2025). <https://doi.org/10.48550/arXiv.2510.05087> · Ahn et al. (2026). <https://doi.org/10.48550/arXiv.2608.29455> · Volle Angaben auf den Folien zu Input 2 und auf der Workshop-Seite; alle drei Preprints.
+:::
+
+::: notes
+Die drei Befunde von vorhin lassen sich direkt in den Prompt schreiben. Getrennte Rollen: Mentor, Figur und Feedback sind getrennte Phasen mit sichtbarem Wechsel. Die KI redet zu viel: höchstens drei Sätze je Zug. Die KI spielt den Durchschnitt: Geben Sie der Figur einen verdeckten Grund, den sie nur auf offene Fragen nennt; sonst spielt sie das freundliche Mittel. Der Rollenspiel-Bauer in Übung 2 verlangt genau diese drei Zeilen als Abnahmekriterien.
+:::
+
+## Testen und Nachbesprechen bleiben Ihre Arbeit
+
+[Input 3 · Erste Schritte]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel}
+**Vor dem Einsatz: testen**
+Bleibt die Figur in der Rolle? · Schritte eingehalten? · Abwegige Eingabe?
+:::
+::: {.kachel .akzent .fragment}
+**Danach: Debriefing**
+Vorhersage vor dem Lauf → Vergleich am Protokoll
+:::
+:::
+
+::: {.unter .fragment}
+Berechenbares (Warteschlange, Bestand, Bullwhip) → Rechner statt Rollenspiel
+:::
+
+::: footer
+Tannenbaum, S. I., & Cerasoli, C. P. (2013). Do team and individual debriefs enhance performance? A meta-analysis. *Human Factors, 55*(1), 231–245. <https://doi.org/10.1177/0018720812448394>
+:::
+
+::: notes
+Zwei Dinge stehen nicht im Prompt, weil sie Ihre Arbeit sind. Erstens testen Sie vor dem Einsatz: Bleibt die Figur in der Rolle? Hält sie die Schritte ein? Was geschieht bei einer unfreundlichen oder abwegigen Eingabe? Zweitens führen Sie das Debriefing, am Gesprächsprotokoll. Lassen Sie die Studierenden vor dem Lauf vorhersagen, wie er ausgeht, und danach vergleichen. Und eine Abgrenzung: Für Zusammenhänge, die sich berechnen lassen, etwa Warteschlangen, Bestände oder den Bullwhip-Effekt, ist ein rechnendes Widget das verlässlichere Übungsfeld als ein Sprachmodell, das eine Rolle spielt.
+:::
+
+## Übung 2: Bauen Sie ein Rollenspiel für Ihr eigenes Lernziel
+
+[Übung 2 · 30 Minuten]{.dach}
+
+::: {.auftrag}
+1. **3 min** · Lernziel in einem Satz, passende Situation
+2. **12 min** · Rollenspiel-Bauer befragen, Entwurf lesen
+3. **10 min** · im neuen Chat testen: drei Züge gutwillig, zwei abwegig
+4. **5 min** · drei Fragen für die Nachbesprechung
+:::
+
+→ [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+
+::: notes
+Jetzt bauen Sie Ihr eigenes Rollenspiel. Schreiben Sie zuerst in einem Satz auf, was Ihre Studierenden danach können sollen. Der Rollenspiel-Bauer auf der Workshop-Seite stellt Ihnen fünf Fragen und schreibt den Entwurf. Lesen Sie ihn genau: Was hat das Modell ergänzt, was Sie nicht gesagt haben? Testen Sie in einem neuen Chat und schreiben Sie drei Fragen für Ihre Nachbesprechung auf. Eine davon lautet: Wie hätte ein echtes Gegenüber reagiert?
+:::

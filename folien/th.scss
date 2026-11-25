@@ -1,0 +1,45 @@
+/*-- scss:defaults --*/
+$body-bg: #fff;
+$body-color: #111;
+$link-color: #c81e0f;
+$font-family-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+$presentation-font-size-root: 34px;
+$presentation-heading-font-weight: 700;
+$presentation-h2-font-size: 1.25em;
+$presentation-title-slide-text-align: left;
+
+/*-- scss:rules --*/
+.reveal .slides { border-top: 12px solid #c81e0f; }
+.reveal .slides section { text-align: left; }
+.reveal h2 { line-height: 1.15; margin-bottom: .6em; }
+.reveal .dach { display: block; font-size: .5em; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #c81e0f; margin-bottom: .3em; }
+.reveal .footer { font-size: .36em !important; line-height: 1.3; color: #6b6b73; text-align: left; padding: 0 9% 0 4%; box-sizing: border-box; }
+.reveal .footer a { color: #6b6b73; }
+.reveal .zahl { font-size: 4.2em; font-weight: 700; line-height: 1; color: #c81e0f; font-variant-numeric: tabular-nums; }
+.reveal .unter { color: #6b6b73; font-size: .8em; }
+.reveal .kacheln { display: grid; grid-template-columns: repeat(4, 1fr); gap: .5em; }
+.reveal .kacheln.drei { grid-template-columns: repeat(3, 1fr); }
+.reveal .kacheln.fuenf { grid-template-columns: repeat(5, 1fr); }
+.reveal .kacheln.zwei { grid-template-columns: repeat(2, 1fr); }
+.reveal .kachel { border: 2px solid #e6e6ea; border-top: 6px solid #111; padding: .6em .7em; font-size: .95em; min-height: 5.5em; }
+.reveal .kachel strong { display: block; font-size: 1.15em; margin-bottom: .2em; }
+.reveal .kachel.akzent { border-top-color: #c81e0f; }
+.reveal .kachel p { margin: 0; }
+.reveal .weg { text-decoration: line-through; color: #6b6b73; }
+.reveal .zeile { display: grid; grid-template-columns: 10em 1fr 6em; gap: .6em; align-items: center; margin: .5em 0; font-size: .95em; }
+.reveal .bahn { background: #f5f5f7; height: 1.9em; }
+.reveal .bahn i { display: block; height: 100%; background: #6b6b73; }
+.reveal .bahn i.akzent { background: #c81e0f; }
+.reveal .zeile b { font-variant-numeric: tabular-nums; }
+.reveal .schaetz .frage { font-size: 1.1em; margin: 0 0 .5em; }
+.reveal .regler { display: flex; gap: .6em; align-items: center; margin-bottom: .4em; }
+.reveal .regler input { flex: 1; accent-color: #c81e0f; height: 1.4em; }
+.reveal .regler output { font-weight: 700; min-width: 3em; text-align: right; }
+.reveal .schaetz button { font: inherit; font-size: .7em; border: 2px solid #c81e0f; background: #fff; color: #c81e0f; padding: .2em .8em; cursor: pointer; }
+.reveal .schaetz button:disabled { visibility: hidden; }
+.reveal .loesung p { font-size: .95em; margin: .5em 0 0; }
+.reveal pre.zeilen { font-size: .7em; margin: .2em 0 .7em; width: 100%; box-shadow: none; background: #f5f5f7; padding: .7em .9em; white-space: pre-wrap; }
+.reveal .auftrag { font-size: 1.05em; }
+.reveal .zeile b { white-space: nowrap; }
+.reveal .unter { margin-top: .8em; }
+.reveal .auftrag li { margin: .3em 0; }
