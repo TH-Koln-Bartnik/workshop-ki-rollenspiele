@@ -333,6 +333,10 @@ Link · Datei · Colab · GitHub
 :::
 :::
 
+::: {.unter .fragment}
+→ [Workshop-Seite, Übung 2: Eine HTML-Interaktion erstellen](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+:::
+
 ::: footer
 Prompt aus dem Übungsblatt „Rollenspiele mit KI in der Lehre“ (Bartnik, 14.07.2026), Übung 13.
 :::
@@ -365,7 +369,7 @@ zu nett? · beim Lernziel?
 :::
 
 ::: {.unter .fragment}
-→ [Workshop-Seite: Prompts, Rollenspiel-Bauer, Prüfliste](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+→ [Workshop-Seite: Prompts, Rollenspiel-Bauer, Prüfliste](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung3)
 :::
 
 ::: notes

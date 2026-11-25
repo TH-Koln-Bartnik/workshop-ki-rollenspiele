@@ -30,14 +30,14 @@ format:
 ::: {.column width="55%"}
 [th-koln-bartnik.github.io/workshop-ki-rollenspiele](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/)
 
-Drei Inputs · zwei Übungen · vier Prompts zum Kopieren
+Drei Inputs · drei Übungen · fünf Prompts zum Kopieren
 
 [Sie brauchen ein Sprachmodell mit Chatfenster. Keine personenbezogenen Daten von Studierenden eingeben.]{.unter}
 :::
 ::::
 
 ::: notes
-Bevor wir anfangen: Scannen Sie den Code oder tippen Sie die Adresse ein. Auf dieser Seite liegt alles, was Sie heute brauchen: die drei Inputs zum Nachlesen und Ausprobieren, die Aufträge für beide Übungen und vier Prompts zum Kopieren. Öffnen Sie daneben ein Sprachmodell Ihrer Wahl. Und eine Bitte: Geben Sie keine personenbezogenen Daten von Studierenden ein.
+Bevor wir anfangen: Scannen Sie den Code oder tippen Sie die Adresse ein. Auf dieser Seite liegt alles, was Sie heute brauchen: die drei Inputs zum Nachlesen und Ausprobieren, die Aufträge für alle drei Übungen und fünf Prompts zum Kopieren. Öffnen Sie daneben ein Sprachmodell Ihrer Wahl. Und eine Bitte: Geben Sie keine personenbezogenen Daten von Studierenden ein.
 :::
 
 ## Ein klarer Auftrag schlägt jeden Prompt-Trick {#input1}
@@ -381,7 +381,7 @@ Yang et al. (2026). <https://doi.org/10.48550/arXiv.2609.10939> · Perczel et al
 :::
 
 ::: notes
-Die drei Befunde von vorhin lassen sich direkt in den Prompt schreiben. Getrennte Rollen: Mentor, Figur und Feedback sind getrennte Phasen mit sichtbarem Wechsel. Die KI redet zu viel: höchstens drei Sätze je Zug. Die KI spielt den Durchschnitt: Geben Sie der Figur einen verdeckten Grund, den sie nur auf offene Fragen nennt; sonst spielt sie das freundliche Mittel. Der Rollenspiel-Bauer in Übung 2 verlangt genau diese drei Zeilen als Abnahmekriterien.
+Die drei Befunde von vorhin lassen sich direkt in den Prompt schreiben. Getrennte Rollen: Mentor, Figur und Feedback sind getrennte Phasen mit sichtbarem Wechsel. Die KI redet zu viel: höchstens drei Sätze je Zug. Die KI spielt den Durchschnitt: Geben Sie der Figur einen verdeckten Grund, den sie nur auf offene Fragen nennt; sonst spielt sie das freundliche Mittel. Der Rollenspiel-Bauer in Übung 3 verlangt genau diese drei Zeilen als Abnahmekriterien.
 :::
 
 ## Testen und Nachbesprechen bleiben Ihre Arbeit
@@ -411,9 +411,33 @@ Tannenbaum, S. I., & Cerasoli, C. P. (2013). Do team and individual debriefs enh
 Zwei Dinge stehen nicht im Prompt, weil sie Ihre Arbeit sind. Erstens testen Sie vor dem Einsatz: Bleibt die Figur in der Rolle? Hält sie die Schritte ein? Was geschieht bei einer unfreundlichen oder abwegigen Eingabe? Zweitens führen Sie das Debriefing, am Gesprächsprotokoll. Lassen Sie die Studierenden vor dem Lauf vorhersagen, wie er ausgeht, und danach vergleichen. Und eine Abgrenzung: Für Zusammenhänge, die sich berechnen lassen, etwa Warteschlangen, Bestände oder den Bullwhip-Effekt, ist ein rechnendes Widget das verlässlichere Übungsfeld als ein Sprachmodell, das eine Rolle spielt.
 :::
 
-## Übung 2: Bauen Sie ein Rollenspiel für Ihr eigenes Lernziel
+## Übung 2: Erstellen Sie eine HTML-Interaktion
 
-[Übung 2 · 30 Minuten]{.dach}
+[Übung 2 · 20 Minuten]{.dach}
+
+:::: {.columns}
+::: {.column width="68%"}
+::: {.auftrag}
+1. **3 min** · Inhalt wählen: Was sagen die Studierenden vorher?
+2. **7 min** · Interaktions-Bauer ausfüllen, im Canvas erstellen lassen
+3. **7 min** · testen: richtig, falsch, unsinnig; eine Zahl nachrechnen
+4. **3 min** · Datei herunterladen, im Browser öffnen, zeigen
+:::
+
+→ [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+:::
+::: {.column width="32%"}
+![](qr-uebung2.svg){.qr fig-alt="QR-Code zu Übung 2"}
+:::
+::::
+
+::: notes
+Am Ende des letzten Inputs stand eine Abgrenzung: Was sich berechnen lässt, gehört in ein rechnendes Widget. Ein solches Widget bauen Sie jetzt. Eine HTML-Interaktion ist eine einzelne Datei, die jeder Browser öffnet, wie ein Arbeitsblatt, das auf Eingaben antwortet. Das Sprachmodell schreibt die Datei; Sie legen fest, was sie können muss. Wählen Sie einen Inhalt, der sich schätzen, sortieren oder berechnen lässt, und füllen Sie den Interaktions-Bauer aus. Testen Sie danach wie eine Studentin: einmal richtig, einmal falsch, einmal unsinnig. Und rechnen Sie eine Zahl von Hand nach. Die Prüffrage: Müssen Ihre Studierenden nachdenken, bevor die Auflösung erscheint?
+:::
+
+## Übung 3: Bauen Sie ein Rollenspiel für Ihr eigenes Lernziel
+
+[Übung 3 · 30 Minuten]{.dach}
 
 :::: {.columns}
 ::: {.column width="68%"}
@@ -424,10 +448,10 @@ Zwei Dinge stehen nicht im Prompt, weil sie Ihre Arbeit sind. Erstens testen Sie
 4. **5 min** · drei Fragen für die Nachbesprechung
 :::
 
-→ [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+→ [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung3](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung3)
 :::
 ::: {.column width="32%"}
-![](qr-uebung2.svg){.qr fig-alt="QR-Code zu Übung 2"}
+![](qr-uebung3.svg){.qr fig-alt="QR-Code zu Übung 3"}
 :::
 ::::
 

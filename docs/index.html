@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rollenspiele und Simulationen mit KI in der Lehre – Workshop</title>
-<meta name="description" content="Workshop-Seite: drei kurze Inputs, zwei Übungen, Prompts zum Kopieren und Links zu den Interaktionen des Buchs „Generative KI als Hilfe zum Lehren und Lernen“.">
+<meta name="description" content="Workshop-Seite: drei kurze Inputs, drei Übungen, Prompts zum Kopieren und Links zu den Interaktionen des Buchs „Generative KI als Hilfe zum Lehren und Lernen“.">
 <style>
 :root{--rot:#c81e0f;--magenta:#b43092;--ink:#111;--paper:#fff;--g100:#f5f5f7;--g200:#e6e6ea;--g500:#6b6b73}
 *{box-sizing:border-box}
@@ -135,8 +135,9 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
     <li><a class="ueb" href="#uebung1">Übung 1</a></li>
     <li><a href="#interesse">Interesse</a></li>
     <li><a href="#lernspiele">Lernspiele</a></li>
-    <li><a href="#anwendung">Anwendung</a></li>
     <li><a class="ueb" href="#uebung2">Übung 2</a></li>
+    <li><a href="#anwendung">Anwendung</a></li>
+    <li><a class="ueb" href="#uebung3">Übung 3</a></li>
     <li><a href="#vertiefung">Vertiefung</a></li>
     <li><a href="#skript">Skript</a></li>
     <li><a href="#bereitstellung">Bereitstellen</a></li>
@@ -317,6 +318,55 @@ Ende: Verlass die Rolle und gib mir Rückmeldung: Welche zwei Stellen meiner Erk
   </ul>
 </section>
 
+<section id="uebung2">
+  <h2>Übung 2: Eine HTML-Interaktion erstellen</h2>
+  <div class="zeit">20 Minuten · einzeln oder zu zweit</div>
+  <p>Eine HTML-Interaktion ist eine einzelne Datei, die jeder Browser per Doppelklick öffnet, wie ein Arbeitsblatt, das auf Eingaben antwortet: ein Schätzregler, eine Sortieraufgabe, ein kleiner Rechner. Das Sprachmodell schreibt die Datei; Sie legen fest, was sie können muss, und prüfen das Ergebnis. Beispiele stehen weiter unten in der <a href="#vertiefung">Vertiefung</a>.</p>
+  <div class="kasten auftrag">
+    <ol class="schritte">
+      <li><span class="min">3 min</span> Wählen Sie einen Inhalt aus Ihrem Fach, der sich schätzen, sortieren oder berechnen lässt. Schreiben Sie in einem Satz auf: Was sollen die Studierenden <b>vorhersagen oder entscheiden</b>, bevor sie die Auflösung sehen?</li>
+      <li><span class="min">7 min</span> Kopieren Sie den Interaktions-Bauer in ein Sprachmodell mit Vorschaufenster (Canvas bei ChatGPT und Gemini, Artifacts bei Claude), füllen Sie die eckigen Klammern aus und lassen Sie die Interaktion erstellen.</li>
+      <li><span class="min">7 min</span> Testen Sie wie eine Studentin: einmal richtig, einmal falsch, einmal mit einer unsinnigen Eingabe. Rechnen Sie eine Zahl von Hand nach. Verlangen Sie dann <b>eine</b> Änderung und vergleichen Sie beide Fassungen.</li>
+      <li><span class="min">3 min</span> Laden Sie die Datei herunter, öffnen Sie sie per Doppelklick im Browser und zeigen Sie sie Ihrer Nachbarin oder Ihrem Nachbarn. Wie sie zu den Studierenden kommt, steht unter <a href="#bereitstellung">Bereitstellen</a>.</li>
+    </ol>
+    <p><b>Prüffrage:</b> Müssen die Studierenden nachdenken, bevor die Auflösung erscheint, oder können sie sich durchklicken?</p>
+  </div>
+
+  <details open>
+    <summary>Prompt · Interaktions-Bauer</summary>
+    <div class="prompt">
+      <p class="q">Für diesen Workshop geschrieben, nach dem Muster der Interaktionen dieser Seite. Stand 25.11.2026.</p>
+<pre id="p-html">Ziel: Erstelle eine kleine interaktive Übung als eine einzige HTML-Datei, die ich Studierenden geben kann.
+
+Grund: Ich bin Lehrende im Fach [Fach, Semester]. Die Studierenden sollen [Lernziel in einem Satz]. Sie sollen erst selbst schätzen oder entscheiden und danach die Auflösung mit Begründung sehen.
+
+Inhalt: [Aufgabe oder Zusammenhang, dazu die richtigen Werte oder Zuordnungen und die Quelle]. Verwende nur diese Angaben. Fehlt dir etwas, frag nach, statt es zu ergänzen.
+
+Form: [Schätzfrage mit Regler | Sortieraufgabe mit zwei Körben | kleiner Rechner mit zwei bis drei Eingaben]
+
+Abnahmekriterien:
+- Eine einzige HTML-Datei mit Stil und Skript darin; keine Bibliotheken aus dem Netz, keine Anmeldung, kein Speichern von Eingaben.
+- Die Auflösung erscheint erst nach einer eigenen Eingabe.
+- Jede Rückmeldung nennt den Grund, nicht nur „richtig“ oder „falsch“.
+- Lesbar auf dem Handy (390 Pixel Breite), bedienbar mit der Tastatur, Schrift mindestens 16 Pixel, Graustufen und eine Akzentfarbe.
+- Höchstens 60 Wörter Text auf dem Bildschirm, in deutscher Sprache.
+- Ein Knopf „Noch einmal“ setzt alles zurück.
+- Liste am Ende im Chat auf: jede Zahl und jede Aussage, die du ergänzt hast, ohne dass ich sie genannt habe.</pre>
+      <button class="kopie" data-ziel="p-html">Prompt kopieren</button>
+    </div>
+  </details>
+
+  <h3>Prüfliste vor dem ersten Einsatz</h3>
+  <ul class="check">
+    <li><label><input type="checkbox"> Jede Zahl und jede Zuordnung stammt aus meinem Material; eine habe ich von Hand nachgerechnet.</label></li>
+    <li><label><input type="checkbox"> Die Auflösung erscheint erst nach einer eigenen Eingabe.</label></li>
+    <li><label><input type="checkbox"> Eine falsche oder unsinnige Eingabe führt zu einer Rückmeldung, nicht zu einem Fehler.</label></li>
+    <li><label><input type="checkbox"> Die Datei läuft nach dem Herunterladen ohne Internetverbindung.</label></li>
+    <li><label><input type="checkbox"> Die Seite ist auf dem Handy ohne Querrollen lesbar.</label></li>
+    <li><label><input type="checkbox"> Die Studierenden geben keine persönlichen Daten ein.</label></li>
+  </ul>
+</section>
+
 <section id="anwendung">
   <h2>Vier Bausteine tragen das eigene Rollenspiel</h2>
   <div class="zeit">5 · Anwendung auf eigene Lerninhalte · <a href="folien-kern.html#/anwendung">Folie 12</a></div>
@@ -328,8 +378,8 @@ Ende: Verlass die Rolle und gib mir Rückmeldung: Welche zwei Stellen meiner Erk
   </ul>
 </section>
 
-<section id="uebung2">
-  <h2>Übung 2: Ein Rollenspiel für das eigene Lernziel bauen</h2>
+<section id="uebung3">
+  <h2>Übung 3: Ein Rollenspiel für das eigene Lernziel bauen</h2>
   <div class="zeit">30 Minuten · einzeln oder zu zweit</div>
   <div class="kasten auftrag">
     <ol class="schritte">
@@ -541,7 +591,7 @@ Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pr
   <p>Yang, L., Liu, H., Li, S., Jia, R., Xiao, Y., Chen, G., &amp; Lu, L. (2026). <i>Evaluating scaffolding-oriented multi-agent large language model system for clinical interview training</i> (arXiv:2609.10939). arXiv. <a href="https://doi.org/10.48550/arXiv.2609.10939">https://doi.org/10.48550/arXiv.2609.10939</a></p>
 
   <footer>
-    <p>Roman Bartnik, TH Köln · <a href="mailto:roman.bartnik@th-koeln.de">roman.bartnik@th-koeln.de</a> · Stand 24.11.2026. Inhalte aus dem Buch „Generative KI als Hilfe zum Lehren und Lernen“ (CC BY-SA 4.0); diese Seite steht unter derselben Lizenz.</p>
+    <p>Roman Bartnik, TH Köln · <a href="mailto:roman.bartnik@th-koeln.de">roman.bartnik@th-koeln.de</a> · Stand 25.11.2026. Inhalte aus dem Buch „Generative KI als Hilfe zum Lehren und Lernen“ (CC BY-SA 4.0); diese Seite steht unter derselben Lizenz.</p>
   </footer>
 </section>
 
