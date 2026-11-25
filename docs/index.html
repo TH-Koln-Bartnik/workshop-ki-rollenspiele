@@ -131,7 +131,7 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
   <table>
     <thead><tr><th>Minute</th><th>Block</th><th>Was entsteht</th></tr></thead>
     <tbody>
-      <tr><td>0–8</td><td><a href="#input1">Input 1: Mit Sprachmodellen arbeiten</a></td><td>Vier Angaben für einen Auftrag; der 4D-Kreislauf</td></tr>
+      <tr><td>0–8</td><td><a href="#input1">Input 1: Mit Sprachmodellen arbeiten</a></td><td>Vier Angaben für einen Auftrag; worin sich Modelle unterscheiden</td></tr>
       <tr><td>8–16</td><td><a href="#input2">Input 2: Nutzen und neue Optionen</a></td><td>Wann ein Rollenspiel wirkt; was die Forschung 2026 zeigt</td></tr>
       <tr><td>16–41</td><td><a href="#uebung1"><b>Übung 1: Spielen und schärfen</b></a></td><td>Ein gespieltes Rollenspiel und eine Liste: Was hätte ein Mensch anders getan?</td></tr>
       <tr><td>41–49</td><td><a href="#input3">Input 3: Erste Schritte</a></td><td>Bauplan in fünf Schritten; Testlauf; Debriefing</td></tr>
@@ -180,21 +180,22 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
 
   <p>Für ein Rollenspiel wird der Prompt lang. Schreiben lassen Sie ihn vom Modell; was die Figur leisten soll und was sie nie tun darf, entscheiden Sie. Vor dem Einsatz testen Sie mit sechs bis acht typischen Eingaben, auch unfreundlichen.</p>
 
-  <p>Der 4D-Kreislauf ordnet diese Arbeit in vier Kompetenzen (Dakan &amp; Feller, 2025).</p>
+  <p>Was Sie von „der KI“ bekommen, hängt an drei Entscheidungen: am Modell, an der Denkstufe und an der Arbeitsumgebung (Mollick, 2026). Für ein Rollenspiel nehmen Sie ein großes Modell.</p>
 
   <div class="ia wahl">
     <div class="marke">Anklicken</div>
+    <p class="frage">Worin sich Modelle unterscheiden</p>
     <div class="knoepfe">
-      <button data-t="Was übernimmt die KI, was bleibt bei mir? Im Rollenspiel: Die KI spielt das Gegenüber, das Lernziel und die Nachbesprechung bleiben bei Ihnen.">Delegation</button>
-      <button data-t="Wie sage ich es ihr? Ziel, Grund, Material, Abnahmekriterium; für die Figur: was sie will und was sie nie tun darf.">Description</button>
-      <button data-t="Wie prüfe ich das Ergebnis? Ein Sprachmodell prüft keine Wahrheit. Eigenes Material und eine eigene Prüfung dämmen Fehler ein; abstellen lassen sie sich nicht.">Discernment</button>
-      <button data-t="Wie verantworte ich den Einsatz? Sie testen vor dem Einsatz, geben keine personenbezogenen Daten ein und sagen den Studierenden, womit sie üben.">Diligence</button>
+      <button data-t="Groß oder klein, geschlossen beim Anbieter oder offen. Die leistungsfähigsten offenen Modelle liegen im Mittel rund vier Monate hinter den geschlossenen Spitzenmodellen (Edwards &amp; Emberson, 2026).">Modell</button>
+      <button data-t="Dasselbe Modell antwortet schnell oder denkt länger nach. Wo viel auf dem Spiel steht, wählen Sie ein Spitzenmodell auf der Stufe „hoch“ oder darüber (Mollick, 2026).">Denkstufe</button>
+      <button data-t="Chatfenster, Agent in der Cloud oder Agent auf dem eigenen Rechner. Der Agent auf dem eigenen Rechner kann mehr und birgt mehr Sicherheitsrisiko (Mollick, 2026).">Arbeitsumgebung</button>
+      <button data-t="Kostenlose Modelle genügen für Risikoarmes. Teurere Stufen kaufen vor allem mehr Arbeitsstunden der KI, kein klügeres Modell (Mollick, 2026).">Abo</button>
+      <button data-t="Personenbezogene Daten von Studierenden geben Sie nicht ein. Der Entscheidungsbaum des Buchs führt in diesem Fall zum Zugang Ihrer Hochschule oder zu einem lokalen Modell.">Daten</button>
     </div>
-    <p class="feld" aria-live="polite">Wählen Sie eine der vier Kompetenzen.</p>
+    <p class="feld" aria-live="polite">Wählen Sie ein Merkmal.</p>
   </div>
 
   <div class="karten">
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/4d-kreislauf.html?rolle=simulator"><b>4D-Kreislauf, Ansicht Simulator</b><span>Zwei Schleifen, vier Kompetenzen und der Engpass beim Rollenspiel, zum Anklicken.</span></a>
     <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/chatbot-zu-agent.html"><b>Vom Chatbot zum Agenten</b><span>Was sich seit 2022 um das Modell herum verändert hat.</span></a>
     <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/streich-test-prompting.html"><b>Der Streich-Test</b><span>Welche Prompt-Regeln würden Sie heute streichen?</span></a>
     <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/modellwahl-baum.html"><b>Welches Modell für welche Aufgabe?</b><span>Entscheidungsbaum; Rollenspiele brauchen ein großes Modell.</span></a>
@@ -498,11 +499,12 @@ Abnahmekriterien für den Prompt:
   <p>Ahn, D., Mao, C., &amp; Lee, D. (2026). <i>Item-mean surrogates: Why richer persona data fail to improve LLMs as human surrogates</i> (arXiv:2608.29455). arXiv. <a href="https://doi.org/10.48550/arXiv.2608.29455">https://doi.org/10.48550/arXiv.2608.29455</a></p>
   <p>Anthropic. (2026). <i>Prompting best practices</i>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</a></p>
   <p>Chernikova, O., Heitzmann, N., Stadler, M., Holzberger, D., Seidel, T., &amp; Fischer, F. (2020). Simulation-based learning in higher education: A meta-analysis. <i>Review of Educational Research, 90</i>(4), 499–541. <a href="https://doi.org/10.3102/0034654320933544">https://doi.org/10.3102/0034654320933544</a></p>
-  <p>Dakan, R., &amp; Feller, J. (2025). <i>The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education</i> (Version 1.1). <a href="https://aifluencyframework.org/">https://aifluencyframework.org/</a></p>
+  <p>Edwards, J., &amp; Emberson, L. (2026, 29. Mai). <i>Open models lag state-of-the-art closed models by 4 months</i>. Epoch AI. <a href="https://epoch.ai/data-insights/open-closed-eci-gap">https://epoch.ai/data-insights/open-closed-eci-gap</a></p>
   <p>Kuric, E., Demcak, P., &amp; Krajcovic, M. (2026). <i>What would GPT click: Practical effects of human-AI behavioral misalignment and the cost of synthetic participants in user experience</i> (arXiv:2605.18302). arXiv. <a href="https://doi.org/10.48550/arXiv.2605.18302">https://doi.org/10.48550/arXiv.2605.18302</a></p>
   <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025a). <i>Prompting science report 1: Prompt engineering is complicated and contingent</i> (arXiv:2503.04818). arXiv. <a href="https://doi.org/10.48550/arXiv.2503.04818">https://doi.org/10.48550/arXiv.2503.04818</a></p>
   <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025b). <i>Prompting science report 2: The decreasing value of chain of thought in prompting</i> (arXiv:2506.07142). arXiv. <a href="https://doi.org/10.48550/arXiv.2506.07142">https://doi.org/10.48550/arXiv.2506.07142</a></p>
   <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025c). <i>Prompting science report 3: I'll pay you or I'll kill you – but will you care?</i> (arXiv:2508.00614). arXiv. <a href="https://doi.org/10.48550/arXiv.2508.00614">https://doi.org/10.48550/arXiv.2508.00614</a></p>
+  <p>Mollick, E. (2026, 23. Juli). <i>An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)</i>. One Useful Thing. <a href="https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22">https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22</a></p>
   <p>Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., &amp; Ravipinto, D. (2024). <i>AI agents and education: Simulated practice at scale</i> (arXiv:2407.12796). arXiv. <a href="https://arxiv.org/abs/2407.12796">https://arxiv.org/abs/2407.12796</a></p>
   <p>Mollick, E. R., &amp; Mollick, L. (2024). <i>Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts</i>. SSRN. <a href="https://doi.org/10.2139/ssrn.4802463">https://doi.org/10.2139/ssrn.4802463</a></p>
   <p>Perczel, J., Chow, J., &amp; Demszky, D. (2025). <i>TeachLM: Post-training LLMs for education using authentic learning data</i> (arXiv:2510.05087). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.05087">https://doi.org/10.48550/arXiv.2510.05087</a></p>

@@ -19,6 +19,27 @@ format:
     include-after-body: nachspann.html
 ---
 
+## Alle Texte, Prompts und Folien liegen auf einer Seite
+
+[Workshop · 90 Minuten]{.dach}
+
+:::: {.columns}
+::: {.column width="45%"}
+![](qr-seite.svg){.qr fig-alt="QR-Code zur Workshop-Seite"}
+:::
+::: {.column width="55%"}
+[th-koln-bartnik.github.io/workshop-ki-rollenspiele](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/)
+
+Drei Inputs · zwei Übungen · vier Prompts zum Kopieren
+
+[Sie brauchen ein Sprachmodell mit Chatfenster. Keine personenbezogenen Daten von Studierenden eingeben.]{.unter}
+:::
+::::
+
+::: notes
+Bevor wir anfangen: Scannen Sie den Code oder tippen Sie die Adresse ein. Auf dieser Seite liegt alles, was Sie heute brauchen: die drei Inputs zum Nachlesen und Ausprobieren, die Aufträge für beide Übungen und vier Prompts zum Kopieren. Öffnen Sie daneben ein Sprachmodell Ihrer Wahl. Und eine Bitte: Geben Sie keine personenbezogenen Daten von Studierenden ein.
+:::
+
 ## Ein klarer Auftrag schlägt jeden Prompt-Trick {#input1}
 
 [Input 1 · Mit Sprachmodellen arbeiten]{.dach}
@@ -73,48 +94,48 @@ Aktuelle Sprachmodelle planen ihren Weg selbst und greifen zu Werkzeugen. Was he
 :::
 :::
 
+::: {.unter .fragment}
+Stattdessen: Modell schreibt den Rollen-Prompt · Sie entscheiden · Test mit 6–8 Eingaben
+:::
+
 ::: footer
 Meincke, L., Mollick, E., Mollick, L., & Shapiro, D. (2025a–c). *Prompting science reports 1–3*. arXiv. <https://doi.org/10.48550/arXiv.2503.04818> · <https://doi.org/10.48550/arXiv.2506.07142> · <https://doi.org/10.48550/arXiv.2508.00614>
 :::
 
 ::: notes
-Wer von Ihnen schreibt „Bitte“ in den Prompt? Und wer hat schon einmal ein Trinkgeld versprochen? Diese Hausrezepte stammen aus den ersten Jahren mit ChatGPT. Meincke und Kollegen haben sie systematisch getestet: Höflichkeit, Drohungen, Trinkgeld und „Denke Schritt für Schritt“. Keine dieser Zutaten wirkt verlässlich. Mal hilft sie bei einer Frage, mal schadet sie bei der nächsten. Die Zeit, die Sie in solche Formeln stecken, ist im Abnahmekriterium besser angelegt.
+Wer von Ihnen schreibt „Bitte“ in den Prompt? Und wer hat schon einmal ein Trinkgeld versprochen? Diese Hausrezepte stammen aus den ersten Jahren mit ChatGPT. Meincke und Kollegen haben sie systematisch getestet: Höflichkeit, Drohungen, Trinkgeld und „Denke Schritt für Schritt“. Keine dieser Zutaten wirkt verlässlich. Mal hilft sie bei einer Frage, mal schadet sie bei der nächsten. Die Zeit, die Sie in solche Formeln stecken, ist im Abnahmekriterium besser angelegt. Für ein Rollenspiel wird der Prompt lang. Schreiben lassen Sie ihn vom Modell; was die Figur leisten soll und was sie nie tun darf, entscheiden Sie. Und vor dem Einsatz testen Sie mit sechs bis acht typischen Eingaben, auch unfreundlichen.
 :::
 
-## Vier Kompetenzen ordnen die Arbeit mit der KI
+## Drei Entscheidungen bestimmen, was Ihr Modell leistet
 
-[Input 1 · Mit Sprachmodellen arbeiten]{.dach}
+[Input 1 · Model Awareness]{.dach}
 
-::: {.kacheln}
-::: {.kachel .fragment}
-**Delegation**
-Was übernimmt die KI?
+::: {.kacheln .drei}
+::: {.kachel .akzent}
+**Modell**
+groß ↔ klein · geschlossen ↔ offen
 :::
-::: {.kachel .fragment}
-**Description**
-Wie sage ich es ihr?
+::: {.kachel .akzent .fragment}
+**Denkstufe**
+„hoch“, wenn es stimmen muss
 :::
-::: {.kachel .fragment}
-**Discernment**
-Wie prüfe ich das Ergebnis?
-:::
-::: {.kachel .fragment}
-**Diligence**
-Wie verantworte ich den Einsatz?
+::: {.kachel .akzent .fragment}
+**Arbeitsumgebung**
+Chat · Agent in der Cloud · Agent auf dem Rechner
 :::
 :::
 
 ::: {.unter .fragment}
-Rollen-Prompt: Modell schreibt · Sie entscheiden · Test mit 6–8 Eingaben
-→ [4D-Kreislauf, Ansicht Simulator](https://th-koln-bartnik.github.io/genai4teaching/interactions/4d-kreislauf.html?rolle=simulator)
+Rollenspiel → großes Modell · Teureres Abo → mehr Arbeitszeit, kein klügeres Modell · Offene Modelle → rund 4 Monate hinter der Spitze
+→ [Entscheidungsbaum: Welches Modell für welche Aufgabe?](https://th-koln-bartnik.github.io/genai4teaching/interactions/modellwahl-baum.html)
 :::
 
 ::: footer
-Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/>
+Mollick, E. (2026, 23. Juli). *An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)*. One Useful Thing. <https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22> · Edwards, J., & Emberson, L. (2026, 29. Mai). *Open models lag state-of-the-art closed models by 4 months*. Epoch AI. <https://epoch.ai/data-insights/open-closed-eci-gap>
 :::
 
 ::: notes
-Der 4D-Kreislauf von Dakan und Feller ordnet die Arbeit in vier Kompetenzen. Delegation: Was übernimmt die KI, was bleibt bei mir? Im Rollenspiel spielt die KI das Gegenüber; Lernziel und Nachbesprechung bleiben bei Ihnen. Description: Das sind die vier Angaben von eben. Discernment: Ein Sprachmodell prüft keine Wahrheit. Eigenes Material und eine eigene Prüfung dämmen Fehler ein; abstellen lassen sie sich nicht. Diligence: Sie verantworten den Einsatz. Für das Rollenspiel heißt das: Den langen Rollen-Prompt schreibt das Modell, aber was die Figur leisten soll und was sie nie tun darf, entscheiden Sie. Und vor dem Einsatz testen Sie mit sechs bis acht typischen Eingaben, auch unfreundlichen.
+„Die KI“ gibt es nicht. Was Sie bekommen, hängt an drei Entscheidungen, und Sie treffen sie oft, ohne es zu merken. Erstens das Modell: groß oder klein, geschlossen beim Anbieter oder offen und damit auch auf eigenen Rechnern lauffähig. Zweitens die Denkstufe: Dasselbe Modell antwortet schnell oder denkt länger nach; wo viel auf dem Spiel steht, empfiehlt Mollick ein Spitzenmodell auf der Stufe „hoch“ oder darüber. Drittens die Arbeitsumgebung: das Chatfenster, ein Agent in der Cloud oder ein Agent auf Ihrem Rechner. Was folgt daraus für heute? Für ein Rollenspiel nehmen Sie ein großes Modell. Ein teureres Abo kauft vor allem mehr Arbeitsstunden der KI, kein klügeres Modell. Und offene Modelle liegen nach den Messungen von Epoch AI im Mittel rund vier Monate hinter den geschlossenen Spitzenmodellen. Personenbezogene Daten Ihrer Studierenden geben Sie nicht ein; dafür führt der Entscheidungsbaum im Buch zum Zugang Ihrer Hochschule oder zu einem lokalen Modell.
 :::
 
 ## Simulationen fördern komplexe Fähigkeiten deutlich {#input2}
@@ -252,6 +273,8 @@ Eine letzte Schätzung: Wie viel Prozent der Redezeit lässt ein unangepasstes M
 
 [Übung 1 · 25 Minuten]{.dach}
 
+:::: {.columns}
+::: {.column width="68%"}
 ::: {.auftrag}
 1. **10 min** · Prompt A, B oder C spielen, bis zum Feedback
 2. **10 min** · eine menschliche Eigenheit ergänzen, drei Züge neu spielen
@@ -259,6 +282,11 @@ Eine letzte Schätzung: Wie viel Prozent der Redezeit lässt ein unangepasstes M
 :::
 
 → [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung1](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung1)
+:::
+::: {.column width="32%"}
+![](qr-uebung1.svg){.qr fig-alt="QR-Code zu Übung 1"}
+:::
+::::
 
 ::: notes
 Jetzt sind Sie dran. Auf der Workshop-Seite finden Sie drei Prompts zum Kopieren: eine Verhandlung, ein schwieriges Feedbackgespräch und ein Goal Play, in dem Sie der KI etwas beibringen. Spielen Sie zehn Minuten. Ergänzen Sie dann eine Eigenheit, die ein echter Mensch haben könnte, und spielen Sie drei Züge neu. War das Gegenüber zu nett, zu ausführlich oder zu vernünftig?
@@ -387,6 +415,8 @@ Zwei Dinge stehen nicht im Prompt, weil sie Ihre Arbeit sind. Erstens testen Sie
 
 [Übung 2 · 30 Minuten]{.dach}
 
+:::: {.columns}
+::: {.column width="68%"}
 ::: {.auftrag}
 1. **3 min** · Lernziel in einem Satz, passende Situation
 2. **12 min** · Rollenspiel-Bauer befragen, Entwurf lesen
@@ -395,6 +425,11 @@ Zwei Dinge stehen nicht im Prompt, weil sie Ihre Arbeit sind. Erstens testen Sie
 :::
 
 → [th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2](https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/#uebung2)
+:::
+::: {.column width="32%"}
+![](qr-uebung2.svg){.qr fig-alt="QR-Code zu Übung 2"}
+:::
+::::
 
 ::: notes
 Jetzt bauen Sie Ihr eigenes Rollenspiel. Schreiben Sie zuerst in einem Satz auf, was Ihre Studierenden danach können sollen. Der Rollenspiel-Bauer auf der Workshop-Seite stellt Ihnen fünf Fragen und schreibt den Entwurf. Lesen Sie ihn genau: Was hat das Modell ergänzt, was Sie nicht gesagt haben? Testen Sie in einem neuen Chat und schreiben Sie drei Fragen für Ihre Nachbesprechung auf. Eine davon lautet: Wie hätte ein echtes Gegenüber reagiert?
