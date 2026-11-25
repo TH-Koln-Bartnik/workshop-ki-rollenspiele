@@ -269,7 +269,7 @@ Perczel, J., Chow, J., & Demszky, D. (2025). *TeachLM: Post-training LLMs for ed
 Eine letzte Schätzung: Wie viel Prozent der Redezeit lässt ein unangepasstes Modell als Tutor den Lernenden? (Pause, auflösen.) Fünf bis fünfzehn Prozent. Menschliche Tutoren lassen rund dreißig. Wer übt, muss reden. Die Antwortlänge gehört deshalb in den Auftrag: höchstens drei Sätze je Zug. Achten Sie in der Übung gleich darauf, wer mehr redet, Sie oder die Figur.
 :::
 
-## Übung 1: Spielen Sie ein Rollenspiel und schärfen Sie das Gegenüber
+## Übung 1: Spielen Sie ein Rollenspiel und passen Sie es an
 
 [Übung 1 · 25 Minuten]{.dach}
 

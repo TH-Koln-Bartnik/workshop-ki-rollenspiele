@@ -105,178 +105,79 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
 <header class="kopf">
   <div class="dach">Workshop · TH Köln · Stand 25.11.2026</div>
   <h1>Rollenspiele und Simulationen mit KI in der Lehre</h1>
-  <p>Drei kurze Inputs zum Lesen und Ausprobieren, zwei Übungen, 90 Minuten. Die Inputs gibt es auch als <a href="folien.html">Folien</a>. Die Kern-Inputs des Übungsblatts stehen in <a href="folien-kern.html">acht Folien</a>. Prof. Dr. Roman Bartnik, TH Köln.</p>
+  <p>Sieben Kern-Inputs, zwei Übungen, am Ende Interaktionen zur Vertiefung. Prof. Dr. Roman Bartnik, TH Köln. Die Kern-Inputs gibt es auch als <a href="folien-kern.html">acht Folien</a>.</p>
+  <p class="q">Sie brauchen ein Sprachmodell mit Chatfenster (ChatGPT, Claude, Gemini, Mistral oder das Angebot Ihrer Hochschule). Geben Sie keine personenbezogenen Daten von Studierenden ein.</p>
   <p>Begleitmaterial zum Buch <a href="https://th-koln-bartnik.github.io/genai4teaching/">„Generative KI als Hilfe zum Lehren und Lernen“</a>.</p>
 </header>
 
-<nav class="leiste" aria-label="Ablauf">
+<nav class="leiste" aria-label="Inhalt">
   <ul>
-    <li><a href="#ablauf">Ablauf</a></li>
-    <li><a href="#input1">Input 1</a></li>
-    <li><a href="#input2">Input 2</a></li>
+    <li><a href="#warum">Warum?</a></li>
+    <li><a href="#praxis">Praxis</a></li>
+    <li><a href="#kritik">Kritik</a></li>
+    <li><a href="#cocreation">Co-Creation</a></li>
     <li><a class="ueb" href="#uebung1">Übung 1</a></li>
-    <li><a href="#input3">Input 3</a></li>
+    <li><a href="#interesse">Interesse</a></li>
+    <li><a href="#lernspiele">Lernspiele</a></li>
+    <li><a href="#anwendung">Anwendung</a></li>
     <li><a class="ueb" href="#uebung2">Übung 2</a></li>
-    <li><a href="folien.html">Folien</a></li>
-    <li><a href="#weiter">Weiterlesen</a></li>
+    <li><a href="#vertiefung">Vertiefung</a></li>
+    <li><a href="#skript">Skript</a></li>
     <li><a href="#quellen">Quellen</a></li>
   </ul>
 </nav>
 
 <main>
 
-<section id="ablauf">
-  <h2>Nach 90 Minuten haben Sie ein eigenes Rollenspiel gebaut und einmal getestet</h2>
-  <div class="rollbar">
-  <table>
-    <thead><tr><th>Minute</th><th>Block</th><th>Was entsteht</th></tr></thead>
-    <tbody>
-      <tr><td>0–8</td><td><a href="#input1">Input 1: Mit Sprachmodellen arbeiten</a></td><td>Vier Angaben für einen Auftrag; worin sich Modelle unterscheiden</td></tr>
-      <tr><td>8–16</td><td><a href="#input2">Input 2: Nutzen und neue Optionen</a></td><td>Wann ein Rollenspiel wirkt; was die Forschung 2026 zeigt</td></tr>
-      <tr><td>16–41</td><td><a href="#uebung1"><b>Übung 1: Spielen und schärfen</b></a></td><td>Ein gespieltes Rollenspiel und eine Liste: Was hätte ein Mensch anders getan?</td></tr>
-      <tr><td>41–49</td><td><a href="#input3">Input 3: Erste Schritte</a></td><td>Bauplan in fünf Schritten; Testlauf; Debriefing</td></tr>
-      <tr><td>49–79</td><td><a href="#uebung2"><b>Übung 2: Eigenes Rollenspiel bauen</b></a></td><td>Rollenauftrag für Ihr Lernziel, einmal getestet, mit drei Fragen für die Nachbesprechung</td></tr>
-      <tr><td>79–90</td><td>Austausch</td><td>Ein Ergebnis je Tisch</td></tr>
-    </tbody>
-  </table>
-  </div>
-  <p class="q">Sie brauchen ein Sprachmodell Ihrer Wahl mit Chatfenster (ChatGPT, Claude, Gemini, Mistral oder das Angebot Ihrer Hochschule). Geben Sie keine personenbezogenen Daten von Studierenden ein.</p>
+<section id="warum">
+  <h2>Rollenspiele bedienen zwei Hebel des Lernens: Merken und Motivation</h2>
+  <div class="zeit">1 · Warum? · <a href="folien-kern.html#/warum">Folie 2</a></div>
+  <ul class="kern">
+    <li><b>Merken:</b> testgestütztes Lernen, Verknüpfen durch Chunking und Geschichten, Anpassung an das Vorwissen, zeitliche Verteilung und Mischung, fragebasiertes Ausarbeiten. <span class="q">(Dunlosky et al., 2013)</span></li>
+    <li><b>Motivation:</b> Individualisierung und Interaktion. Interaktion schlägt eigenes Konstruieren, aktive Beteiligung und passives Zuhören: I &gt; C &gt; A &gt; P. <span class="q">(Chi et al., 2018)</span></li>
+    <li><b>Ihre Frage:</b> Welcher Mechanismus ist in Ihrer Lehre am schwersten umzusetzen?</li>
+  </ul>
 </section>
 
-<section id="input1" class="fliess">
-  <h2>Ein klarer Auftrag schlägt jeden Prompt-Trick</h2>
-  <div class="zeit">Input 1 · 8 Minuten · Stand 11/2026 · <a href="folien.html#/input1">Folien zu Input 1</a></div>
-
-  <p>Aktuelle Sprachmodelle planen ihren Weg selbst und greifen dabei zu Werkzeugen. Ein Prompt, der Tätigkeiten vorschreibt, regelt deshalb das Falsche. Ein guter Prompt legt fest, was am Ende vorliegt und woran es gemessen wird.</p>
-
-  <p>Viele Regeln aus den ersten Jahren mit ChatGPT halten sich trotzdem. Prüfen Sie, welche davon einen Auftrag tragen.</p>
-
-  <div class="ia sortier" data-a="Hausrezept" data-b="Trägt den Auftrag">
-    <div class="marke">Sortieren</div>
-    <p class="frage">Hausrezept oder tragende Angabe?</p>
-    <ul>
-      <li data-r="a" data-w="Höflichkeit zeigt in systematischen Tests keine verlässliche Wirkung (Meincke et al., 2025a)."><span>„Bitte“ und „Danke“ im Prompt</span></li>
-      <li data-r="b" data-w="Das ist ein Abnahmekriterium: Es sagt, woran das Ergebnis gemessen wird (Anthropic, 2026)."><span>„Fünf Aufgaben zu Kapitel 3, jede mit Lösungsweg, keine Zahl, die nicht im Skript steht“</span></li>
-      <li data-r="a" data-w="Trinkgeld und Drohungen zeigen keine verlässliche Wirkung (Meincke et al., 2025c)."><span>„Für eine gute Antwort gebe ich dir 100 Euro Trinkgeld“</span></li>
-      <li data-r="a" data-w="Der Nutzen von „Schritt für Schritt“ schwindet bei aktuellen Modellen (Meincke et al., 2025b)."><span>„Denke Schritt für Schritt“</span></li>
-      <li data-r="b" data-w="Das ist Material: Eigene Unterlagen als Grundlage dämmen Fehler ein."><span>„Im Anhang liegt mein Skript zu Kapitel 3“</span></li>
-      <li data-r="a" data-w="Drohungen zeigen keine verlässliche Wirkung (Meincke et al., 2025c)."><span>„Wenn du einen Fehler machst, wirst du abgeschaltet“</span></li>
-    </ul>
-    <p class="stand" aria-live="polite"></p>
-  </div>
-
-  <p>Vier Angaben tragen einen Auftrag: Ziel, Grund, Material und Abnahmekriterium (Anthropic, 2026). Schreiben Sie die vier Zeilen für eine Aufgabe aus Ihrer Lehre; der Auftrag setzt sich darunter zusammen.</p>
-
-  <div class="ia bauer">
-    <div class="marke">Selbst bauen</div>
-    <p class="frage">Ihr Auftrag in vier Angaben</p>
-    <label>Ziel <span class="q">Was liegt am Ende vor?</span><textarea rows="2" data-k="Ziel" placeholder="Fünf Übungsaufgaben zur Bestellmengenrechnung"></textarea></label>
-    <label>Grund <span class="q">Wofür wird es gebraucht?</span><textarea rows="2" data-k="Grund" placeholder="Meine Studierenden im dritten Semester üben damit vor der Klausur"></textarea></label>
-    <label>Material <span class="q">Worauf stützt sich das Modell?</span><textarea rows="2" data-k="Material" placeholder="Mein Skript zu Kapitel 3 (im Anhang)"></textarea></label>
-    <label>Abnahmekriterium <span class="q">Woran messe ich das Ergebnis?</span><textarea rows="2" data-k="Abnahmekriterium" placeholder="Jede Aufgabe mit Lösungsweg; keine Zahl, die nicht im Skript steht"></textarea></label>
-<pre id="p-auftrag"></pre>
-    <button class="kopie" data-ziel="p-auftrag">Auftrag kopieren</button>
-  </div>
-
-  <p>Für ein Rollenspiel wird der Prompt lang. Schreiben lassen Sie ihn vom Modell; was die Figur leisten soll und was sie nie tun darf, entscheiden Sie. Vor dem Einsatz testen Sie mit sechs bis acht typischen Eingaben, auch unfreundlichen.</p>
-
-  <p>Was Sie von „der KI“ bekommen, hängt an drei Entscheidungen: am Modell, an der Denkstufe und an der Arbeitsumgebung (Mollick, 2026). Für ein Rollenspiel nehmen Sie ein großes Modell.</p>
-
-  <div class="ia wahl">
-    <div class="marke">Anklicken</div>
-    <p class="frage">Worin sich Modelle unterscheiden</p>
-    <div class="knoepfe">
-      <button data-t="Groß oder klein, geschlossen beim Anbieter oder offen. Die leistungsfähigsten offenen Modelle liegen im Mittel rund vier Monate hinter den geschlossenen Spitzenmodellen (Edwards &amp; Emberson, 2026).">Modell</button>
-      <button data-t="Dasselbe Modell antwortet schnell oder denkt länger nach. Wo viel auf dem Spiel steht, wählen Sie ein Spitzenmodell auf der Stufe „hoch“ oder darüber (Mollick, 2026).">Denkstufe</button>
-      <button data-t="Chatfenster, Agent in der Cloud oder Agent auf dem eigenen Rechner. Der Agent auf dem eigenen Rechner kann mehr und birgt mehr Sicherheitsrisiko (Mollick, 2026).">Arbeitsumgebung</button>
-      <button data-t="Kostenlose Modelle genügen für Risikoarmes. Teurere Stufen kaufen vor allem mehr Arbeitsstunden der KI, kein klügeres Modell (Mollick, 2026).">Abo</button>
-      <button data-t="Personenbezogene Daten von Studierenden geben Sie nicht ein. Der Entscheidungsbaum des Buchs führt in diesem Fall zum Zugang Ihrer Hochschule oder zu einem lokalen Modell.">Daten</button>
-    </div>
-    <p class="feld" aria-live="polite">Wählen Sie ein Merkmal.</p>
-  </div>
-
-  <div class="karten">
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/chatbot-zu-agent.html"><b>Vom Chatbot zum Agenten</b><span>Was sich seit 2022 um das Modell herum verändert hat.</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/streich-test-prompting.html"><b>Der Streich-Test</b><span>Welche Prompt-Regeln würden Sie heute streichen?</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/modellwahl-baum.html"><b>Welches Modell für welche Aufgabe?</b><span>Entscheidungsbaum; Rollenspiele brauchen ein großes Modell.</span></a>
-  </div>
+<section id="praxis">
+  <h2>Erste Simulatoren sind zu einfach und zu nett</h2>
+  <div class="zeit">2a · Lernen durch Praxis · <a href="folien-kern.html#/praxis">Folie 3</a></div>
+  <ul class="kern">
+    <li><b>Role Play:</b> Verhandeln, Feedback geben, Bewerbungsgespräch, Prüfungsgespräch.</li>
+    <li><b>Goal Play:</b> Escape Room, technische Fehleranalyse, Unternehmenssimulation.</li>
+    <li><b>Umsetzung:</b> Kriterien für das Feedback mitliefern, testen lassen, nachschärfen; die KI kommt sonst vom Lernziel ab. <span class="q">(Mollick &amp; Mollick, 2024)</span></li>
+    <li>Zum Ausprobieren: <a href="https://www.moreusefulthings.com/instructor-prompts">Simulator Creator</a> (More Useful Things, englisch).</li>
+  </ul>
 </section>
 
-<section id="input2" class="fliess">
-  <h2>Simulationen wirken stark, und gelernt wird im Nachgespräch</h2>
-  <div class="zeit">Input 2 · 8 Minuten · <a href="folien.html#/input2">Folien zu Input 2</a></div>
+<section id="kritik">
+  <h2>Wer die KI kritisiert oder unterrichtet, prüft das eigene Verständnis</h2>
+  <div class="zeit">2b · Lernen durch Kritik · <a href="folien-kern.html#/kritik">Folie 4</a></div>
+  <ul class="kern">
+    <li><b>KI-Kritiker:</b> Die KI liefert eine Idee, einen Plan oder einen Entwurf; die Studierenden kritisieren und passen an.</li>
+    <li><b>KI-Nachhilfe:</b> Die KI spielt die Anfängerin; die Studierenden erklären ihr ein Konzept.</li>
+    <li><b>Risiko:</b> Die KI schweift ab und weiß mehr als ein Neuling. Geben Sie bei wichtigen Themen Situationen und Fragen vor. <span class="q">(Mollick &amp; Mollick, 2024)</span></li>
+    <li>Zum Ausprobieren: <a href="https://www.moreusefulthings.com/student-exercises">Student Exercises</a> (More Useful Things, englisch).</li>
+  </ul>
+</section>
 
-  <p>Simulationen fördern komplexe Fähigkeiten. Eine Metaanalyse über 145 Studien aus der Hochschule misst einen Effekt von g = 0,85; Lernende mit wenig Vorwissen profitieren von Beispielen, Fortgeschrittene von Reflexionsphasen (Chernikova et al., 2020). Den Lerngewinn trägt die Nachbesprechung.</p>
-
-  <div class="ia schaetz" data-min="0" data-max="60" data-start="10" data-von="25" data-bis="25"
-       data-balken='[{"l":"Mit Nachbesprechung","v":25,"t":"rund +25 %"}]'>
-    <div class="marke">Erst schätzen</div>
-    <p class="frage">Um wie viel Prozent verbessert eine Nachbesprechung die Leistung?</p>
-    <div class="regler"><input type="range" aria-label="Ihre Schätzung in Prozent"><output></output></div>
-    <button class="aufl">Auflösen</button>
-    <div class="loesung" hidden><p>Debriefings verbessern die Leistung um rund 25 Prozent (d = 0,67, 46 Stichproben) (Tannenbaum &amp; Cerasoli, 2013).</p></div>
-  </div>
-
-  <p>Rollenspiele gibt es in zwei Grundformen. Im <i>Role Play</i> übernehmen Studierende eine fremde Rolle, und die KI spielt das Gegenüber. Im <i>Goal Play</i> bleiben sie sie selbst und leiten eine KI-Figur an (Mollick &amp; Mollick, 2024).</p>
-
-  <div class="ia sortier" data-a="Role Play" data-b="Goal Play">
-    <div class="marke">Sortieren</div>
-    <p class="frage">Welche Grundform ist das?</p>
-    <ul>
-      <li data-r="a" data-w="Die Studentin übernimmt eine fremde Rolle, die KI spielt das Gegenüber."><span>Eine Studentin verhandelt als Einkäuferin mit einem KI-Lieferanten.</span></li>
-      <li data-r="b" data-w="Der Student bleibt er selbst und erklärt; die Lücken seiner Erklärung zeigen sich an Mias Fragen."><span>Ein Student erklärt der KI-Kommilitonin Mia, was eine ZOPA ist.</span></li>
-      <li data-r="a" data-w="Fremde Rolle, die KI als Gegenüber: Beratung, Verhandlung und Prüfungsgespräch sind typische Fälle."><span>Eine Studentin führt als Beraterin ein Erstgespräch mit einem KI-Kunden.</span></li>
-      <li data-r="b" data-w="Der Student leitet als er selbst eine KI-Figur an und wendet dabei das Kurswissen an."><span>Ein Student berät eine KI-Figur, die sich auf eine Verhandlung vorbereitet.</span></li>
-    </ul>
-    <p class="stand" aria-live="polite"></p>
-  </div>
-
-  <p>Die KI bringt drei Dinge mit, die ein menschlicher Spielpartner nicht bieten kann: Sie ist jederzeit verfügbar und spielt dieselbe Lage beliebig oft; eine geänderte Zeile im Auftrag erzeugt eine neue Fallvariante mit anderer Schwierigkeit; und sie übt in der Zielsprache, auch gesprochen.</p>
-
-  <h3>Was die Forschung 2026 zeigt</h3>
-
-  <p>Die KI spielt den Durchschnitt, nicht den Einzelfall. Über vier Datensätze mit mehr als 400.000 Befragten treffen Modelle die Mittelwerte gut. 54 Prozent der individuellen Abweichungen sind stabil und ließen sich vorhersagen.</p>
-
-  <div class="ia schaetz" data-min="0" data-max="60" data-start="30" data-von="3" data-bis="3"
-       data-balken='[{"l":"Stabil, also vorhersagbar","v":54,"t":"54 %"},{"l":"Vom Modell erklärt","v":3,"t":"3 %"}]'>
-    <div class="marke">Erst schätzen</div>
-    <p class="frage">Wie viel Prozent der individuellen Abweichungen erklärt das Modell?</p>
-    <div class="regler"><input type="range" aria-label="Ihre Schätzung in Prozent"><output></output></div>
-    <button class="aufl">Auflösen</button>
-    <div class="loesung" hidden><p>Die Modelle erklären 3 Prozent. Ausführlichere Personas machen die Antworten glaubwürdiger, nicht richtiger (Ahn et al., 2026; Kuric et al., 2026; beides Preprints, keine Lehrstudien).</p></div>
-  </div>
-
-  <p>Getrennte Rollen wirken gezielt. In einem randomisierten Versuch mit 100 Medizinstudierenden spielten drei getrennte Agenten den Patienten, den sokratischen Tutor und den Bewerter. Der Gewinn lag vor allem in der Gesprächsführung; die Diagnosequote blieb gleich (Yang et al., 2026; Preprint).</p>
-
-  <figure class="ia balken" aria-label="Abschlussprüfung: 71,8 Prozent mit getrennten Agenten, 55,6 Prozent in der Vergleichsgruppe">
-    <figcaption class="frage">Ergebnis der Abschlussprüfung</figcaption>
-    <div class="zeile"><span>Getrennte Agenten</span><div class="bahn"><i class="akzent" style="width:71.8%"></i></div><b>71,8 %</b></div>
-    <div class="zeile"><span>Vergleichsgruppe</span><div class="bahn"><i style="width:55.6%"></i></div><b>55,6 %</b></div>
-  </figure>
-
-  <p>Und die KI redet zu viel.</p>
-
-  <div class="ia schaetz" data-min="0" data-max="60" data-start="40" data-von="5" data-bis="15"
-       data-balken='[{"l":"KI-Tutor, unangepasst","v":15,"t":"5–15 %"},{"l":"Menschliche Tutoren","v":30,"t":"rund 30 %"}]'>
-    <div class="marke">Erst schätzen</div>
-    <p class="frage">Wie viel Prozent der Redezeit lässt ein unangepasstes Modell als Tutor den Lernenden?</p>
-    <div class="regler"><input type="range" aria-label="Ihre Schätzung in Prozent"><output></output></div>
-    <button class="aufl">Auflösen</button>
-    <div class="loesung" hidden><p>Unangepasste Modelle lassen Lernenden 5 bis 15 Prozent der Redezeit, Menschen rund 30 Prozent. Die Antwortlänge gehört in den Auftrag (Perczel et al., 2025; Preprint).</p></div>
-  </div>
-
-  <div class="kasten">
-    <b>Folgerung für die Lehre.</b> Sagen Sie Ihren Studierenden, dass sie mit einem simulierten Durchschnitt üben, und fragen Sie in der Nachbesprechung: Wie hätte ein echtes Gegenüber reagiert?
-  </div>
+<section id="cocreation">
+  <h2>Co-Creation setzt Grundwissen voraus und braucht eine zweite Prüfung</h2>
+  <div class="zeit">2c · Lernen durch Co-Creation · <a href="folien-kern.html#/cocreation">Folie 5</a></div>
+  <ul class="kern">
+    <li><b>Input:</b> eigenes Material und Recherche. <b>Transformation:</b> Analyse mit dem Sprachmodell, Code für Berechnungen. <b>Output:</b> Text, Bild, Video, Podcast.</li>
+    <li><b>Voraussetzung:</b> Die Studierenden kennen die Grundlagen und haben Rückmeldung von Ihnen erhalten.</li>
+    <li><b>Qualität:</b> Peer-Review unter Studierenden. <span class="q">(Mollick &amp; Mollick, 2024)</span></li>
+  </ul>
 </section>
 
 <section id="uebung1">
-  <h2>Übung 1: Ein Rollenspiel spielen und das Gegenüber schärfen</h2>
+  <h2>Übung 1: Ein Rollenspiel spielen und anpassen</h2>
   <div class="zeit">25 Minuten · einzeln, Austausch zu zweit</div>
   <div class="kasten auftrag">
     <ol class="schritte">
       <li><span class="min">10 min</span> Wählen Sie einen der drei Prompts, kopieren Sie ihn in ein neues Chatfenster und spielen Sie die Runde bis zum Feedback.</li>
-      <li><span class="min">10 min</span> Schärfen Sie das Gegenüber: Ergänzen Sie im Prompt <b>eine</b> Eigenheit, die ein echter Mensch haben könnte (ein verdecktes Interesse, Zeitdruck, eine Kränkung, knappe Antworten). Spielen Sie in einem neuen Chat noch einmal drei Züge.</li>
+      <li><span class="min">10 min</span> Passen Sie das Rollenspiel an: Ergänzen Sie im Prompt <b>eine</b> Eigenheit, die ein echter Mensch haben könnte (ein verdecktes Interesse, Zeitdruck, eine Kränkung, knappe Antworten). Spielen Sie in einem neuen Chat noch einmal drei Züge.</li>
       <li><span class="min">5 min</span> Notieren Sie zwei Stellen, an denen ein Mensch anders reagiert hätte, und vergleichen Sie mit Ihrer Nachbarin oder Ihrem Nachbarn.</li>
     </ol>
     <p><b>Prüffrage:</b> War das Gegenüber zu nett, zu ausführlich oder zu vernünftig? Was davon hat Ihre Änderung behoben?</p>
@@ -339,7 +240,7 @@ Ende: Als Mentor Feedback: eine Stelle, die gut lief (mit Zitat), eine, die bess
   </details>
 
   <details>
-    <summary>Prompt C · Goal Play: Der KI etwas beibringen</summary>
+    <summary>Prompt C · Lernen durch Kritik: Der KI etwas beibringen</summary>
     <div class="prompt">
       <p class="q">Für diesen Workshop geschrieben, nach der Idee „Teach the AI“ (Mollick &amp; Mollick, 2024, S. 21–24). Stand 24.11.2026.</p>
 <pre id="p-c">Zweck: Lernen durch Lehren. Ich erkläre dir ein Konzept aus meinem Fach, und du spielst eine Studentin im ersten Semester, die es noch nicht kennt. Ich merke dabei, wo meine eigene Erklärung Lücken hat.
@@ -367,71 +268,35 @@ Ende: Verlass die Rolle und gib mir Rückmeldung: Welche zwei Stellen meiner Erk
   </details>
 </section>
 
-<section id="input3" class="fliess">
-  <h2>Klein anfangen, Rollen trennen, das Nachgespräch selbst führen</h2>
-  <div class="zeit">Input 3 · 8 Minuten · <a href="folien.html#/input3">Folien zu Input 3</a></div>
+<section id="interesse">
+  <h2>Sechs Quellen machen eine Lernsituation interessant</h2>
+  <div class="zeit">3 · Wie machen wir Rollenspiele interessant? · <a href="folien-kern.html#/interesse">Folie 6</a></div>
+  <ul class="kern">
+    <li><b>Sechs Quellen:</b> Nutzwert, Neuartigkeit, kognitive Aktivierung, soziale Interaktion, praktisches Tun, Wahlmöglichkeiten. <span class="q">(Guo &amp; Fryer, 2024)</span></li>
+    <li><b>Situativ oder persönlich:</b> Die Situation weckt Interesse; daraus kann persönliches Interesse wachsen. <span class="q">(Hidi &amp; Renninger, 2006)</span></li>
+    <li><b>Geschichten bleiben hängen:</b> starke Figuren, ein zentraler Konflikt, Komplikationen, ursächlich verbundene Ereignisse. <span class="q">(Willingham, 2021)</span></li>
+  </ul>
+</section>
 
-  <p>Der Einstieg gelingt in drei Stufen, und die erste kostet zehn Minuten einer Sitzung (Mollick et al., 2024; Mollick &amp; Mollick, 2024).</p>
+<section id="lernspiele">
+  <h2>Ein Satz genügt für ein erstes Lernspiel; die Arbeit steckt in den Varianten</h2>
+  <div class="zeit">4 · Kleine Lernspiele erstellen und teilen · <a href="folien-kern.html#/lernspiele">Folie 7</a></div>
+  <ul class="kern">
+    <li><b>Bauen:</b> ein Prompt im Canvas, etwa „Entwickle ein kleines Browserspiel zum Thema Abschlussarbeiten schreiben, gestalte es interessant und thematisch, aber vermittle dennoch die wichtigsten Erkenntnisse.“</li>
+    <li><b>Verbessern:</b> zwei Varianten erstellen und vergleichen.</li>
+    <li><b>Teilen:</b> Link, Datei, Google Colab oder GitHub.</li>
+  </ul>
+</section>
 
-  <div class="ia wahl">
-    <div class="marke">Anklicken</div>
-    <div class="knoepfe">
-      <button data-t="Sie geben einen fertigen Rollen-Prompt aus: ein Fall, zehn Minuten. Die Studierenden spielen, Sie besprechen nach.">Stufe 1 · Vorbereiteter Chat</button>
-      <button data-t="Studierende entwerfen in Präsenz kleine Rollenspiele und testen sie gegenseitig.">Stufe 2 · Studierende entwerfen</button>
-      <button data-t="Teams bauen über mehrere Wochen komplexe Simulationen und führen ein Testprotokoll.">Stufe 3 · Teams bauen</button>
-    </div>
-    <p class="feld" aria-live="polite">Wählen Sie eine Stufe.</p>
-  </div>
-
-  <p>Eine Runde hat fünf Schritte, und jeder davon steht als Zeile im Prompt.</p>
-
-  <div class="ia wahl">
-    <div class="marke">Anklicken</div>
-    <div class="knoepfe">
-      <button data-t="Der Mentor begrüßt, fragt nach Erfahrung und passt die Schwierigkeit an.">1 · Begrüßung</button>
-      <button data-t="Szenarien stehen zur Auswahl; die Bühne ist in zwei, drei Sätzen beschrieben.">2 · Bühne</button>
-      <button data-t="Die Züge sind klar abgegrenzt; das Gegenüber bleibt in der Rolle.">3 · Spiel</button>
-      <button data-t="Gegen Ende fällt eine folgenreiche Entscheidung.">4 · Entscheidung</button>
-      <button data-t="Das Feedback bezieht sich auf Stellen im Verlauf. Danach führen Sie das Debriefing.">5 · Feedback</button>
-    </div>
-    <p class="feld" aria-live="polite">Wählen Sie einen Schritt.</p>
-  </div>
-
-  <p>Drei Befunde aus der Forschung werden zu drei Zeilen im Prompt. Schalten Sie sie ein und sehen Sie, wie sich das Gerüst verändert.</p>
-
-  <div class="ia geruest">
-    <div class="marke">Ein- und ausschalten</div>
-    <p class="frage">Vom Befund zur Zeile im Prompt (Beispiel: Lieferantengespräch)</p>
-    <label><input type="checkbox" data-z="Schreib „Rollenspiel beginnt“ und „Rollenspiel endet“. Davor fragst du als Mentor nach Erfahrung, danach gibst du Feedback; im Spiel bist du nur die Gegenseite."> <span><b>Rollen trennen:</b> Gegenüber, Tutor und Bewerter als getrennte Aufträge oder klar getrennte Phasen <span class="q">(Yang et al., 2026)</span></span></label>
-    <label><input type="checkbox" data-z="Antworte mit höchstens drei Sätzen je Zug."> <span><b>Antwortlänge begrenzen</b> <span class="q">(Perczel et al., 2025)</span></span></label>
-    <label><input type="checkbox" data-z="Du hast einen Grund für deine Preisforderung, den du nur auf offene Fragen nennst: Dein Vormaterial ist teurer geworden."> <span><b>Einen verdeckten Grund geben;</b> sonst spielt das Gegenüber den freundlichen Durchschnitt <span class="q">(Ahn et al., 2026)</span></span></label>
-<pre id="p-geruest" data-basis="Zweck: Studierende üben ein Preisgespräch mit einem Lieferanten. Du spielst den Vertriebsleiter des Lieferanten.
-Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pre>
-    <button class="kopie" data-ziel="p-geruest">Gerüst kopieren</button>
-  </div>
-
-  <p>Zwei Regeln stehen nicht im Prompt, weil sie Ihre Arbeit sind. Vor dem Einsatz testen Sie: Bleibt die Figur in der Rolle, hält sie die Schritte ein, und was geschieht bei einer unfreundlichen oder abwegigen Eingabe? Und das Debriefing führen Sie selbst, am Gesprächsprotokoll: Die Studierenden sagen vor dem Lauf voraus, wie er ausgeht, und vergleichen danach (Tannenbaum &amp; Cerasoli, 2013).</p>
-
-  <p>Nicht jede Übung braucht einen Gesprächspartner. Was sich berechnen lässt, übt man verlässlicher an einem rechnenden Widget als an einem Sprachmodell, das eine Rolle spielt.</p>
-
-  <div class="ia sortier" data-a="Gesprächspartner" data-b="Rechner">
-    <div class="marke">Sortieren</div>
-    <p class="frage">Gesprächspartner oder Rechner?</p>
-    <ul>
-      <li data-r="b" data-w="Der Bullwhip-Effekt lässt sich berechnen; ein Widget rechnet jedes Mal richtig."><span>Wie stark schwanken die Bestellungen entlang der Lieferkette?</span></li>
-      <li data-r="a" data-w="Geübt wird ein Gespräch: Fragen stellen, zuhören, reagieren."><span>Wie erkläre ich einer Studentin eine unerwartet schlechte Note?</span></li>
-      <li data-r="b" data-w="Warteschlangen folgen Formeln; hier zählt die richtige Zahl."><span>Wie lang wird die Schlange, wenn eine Kasse ausfällt?</span></li>
-      <li data-r="a" data-w="Geübt wird Verhalten gegenüber einem Gegenüber mit eigenen Interessen."><span>Wie reagiere ich auf das erste Angebot eines Lieferanten?</span></li>
-      <li data-r="b" data-w="Bestände lassen sich berechnen."><span>Wie viel Sicherheitsbestand brauche ich bei schwankender Nachfrage?</span></li>
-    </ul>
-    <p class="stand" aria-live="polite"></p>
-  </div>
-
-  <div class="karten">
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-widget-bullwhip"><b>Bullwhip-Rechner mit Vorhersage</b><span>Erst schätzen, welche Stufe der Lieferkette am stärksten schwankt, dann rechnen lassen.</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/interactions/semester-simulator.html"><b>Semester-Simulator</b><span>Ein Entscheidungsspiel mit Zustand: Sie sind Professorin Albers.</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html#sec-simulator"><b>Buchabschnitt „KI als Simulator“</b><span>Role Play, Goal Play und „Wie echt ist das Gegenüber?“.</span></a>
-  </div>
+<section id="anwendung">
+  <h2>Vier Bausteine tragen das eigene Rollenspiel</h2>
+  <div class="zeit">5 · Anwendung auf eigene Lerninhalte · <a href="folien-kern.html#/anwendung">Folie 8</a></div>
+  <ul class="kern">
+    <li><b>Mechanismus:</b> Welchen Hebel bedient die Übung?</li>
+    <li><b>Form:</b> Praxis, Kritik, Co-Creation oder Lernspiel.</li>
+    <li><b>Interesse:</b> Welche der sechs Quellen, welche Geschichte?</li>
+    <li><b>Test:</b> Ist das Gegenüber zu nett, und bleibt die KI beim Lernziel?</li>
+  </ul>
 </section>
 
 <section id="uebung2">
@@ -483,34 +348,154 @@ Abnahmekriterien für den Prompt:
   </ul>
 </section>
 
-<section id="weiter">
-  <h2>Weiterlesen und weiterbauen</h2>
-  <div class="karten">
-    <a class="karte" href="folien-kern.html"><b>Kern-Inputs in acht Folien</b><span>Zum Übungsblatt: Warum, Praxis, Kritik, Co-Creation, Interesse, Lernspiele, Anwendung.</span></a>
-    <a class="karte" href="folien.html"><b>Folien zu den drei Inputs</b><span>17 Folien mit Schätzfragen, Sprechernotizen und QR-Codes.</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html#sec-simulator"><b>KI als Simulator</b><span>Der Buchabschnitt zu diesem Workshop, mit dem Praxisbeispiel aus Leipzig.</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-appendix02-prompt-sammlung.html#sec-prompt-verhandlungssimulator"><b>Prompt-Sammlung, Teil Simulator</b><span>Verhandlung, Forschungsinterview, Goal Play, Pflege-Telefonat.</span></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel05-4d-phasen.html#sec-4d"><b>Das 4D-Modell</b><span>Die vier Kompetenzen im Zusammenhang.</span></a>
-    <a class="karte" href="skript.html"><b>Skript zum Workshop</b><span>Die ausführliche Fassung: Didaktik, Mehrwert und Grenzen, Umsetzung, neuere Studien, Literaturverzeichnis.</span></a>
-    <a class="karte" href="https://www.moreusefulthings.com/prompts"><b>More Useful Things</b><span>Prompts und Blueprints von Ethan und Lilach Mollick (englisch).</span></a>
+<section id="vertiefung" class="fliess">
+  <h2>Vertiefung der Inhalte durch Interaktion</h2>
+  <div class="zeit">Zum Schätzen, Sortieren und Ausprobieren</div>
+
+  <h3>Wie stark wirkt die Nachbesprechung?</h3>
+  <p>Simulationen fördern komplexe Fähigkeiten; eine Metaanalyse über 145 Studien aus der Hochschule misst g = 0,85 (Chernikova et al., 2020). Den Lerngewinn trägt die Nachbesprechung.</p>
+  <div class="ia schaetz" data-min="0" data-max="60" data-start="10" data-von="25" data-bis="25"
+       data-balken='[{"l":"Mit Nachbesprechung","v":25,"t":"rund +25 %"}]'>
+    <div class="marke">Erst schätzen</div>
+    <p class="frage">Um wie viel Prozent verbessert eine Nachbesprechung die Leistung?</p>
+    <div class="regler"><input type="range" aria-label="Ihre Schätzung in Prozent"><output></output></div>
+    <button class="aufl">Auflösen</button>
+    <div class="loesung" hidden><p>Debriefings verbessern die Leistung um rund 25 Prozent (d = 0,67, 46 Stichproben) (Tannenbaum &amp; Cerasoli, 2013).</p></div>
   </div>
+
+  <h3>Role Play oder Goal Play?</h3>
+  <p>Im Role Play üben Studierende ein Gespräch in einer Rolle, im Goal Play verfolgen sie ein Ziel in einem Szenario.</p>
+  <div class="ia sortier" data-a="Role Play" data-b="Goal Play">
+    <div class="marke">Sortieren</div>
+    <p class="frage">Welche Grundform ist das?</p>
+    <ul>
+      <li data-r="a" data-w="Geübt wird ein Gespräch in einer Rolle."><span>Eine Studentin verhandelt als Einkäuferin mit einem KI-Lieferanten.</span></li>
+      <li data-r="b" data-w="Verfolgt wird ein Ziel in einem Szenario."><span>Ein Team sucht in einem Escape Room den Ausweg, indem es Aufgaben zur Arbeitssicherheit löst.</span></li>
+      <li data-r="a" data-w="Geübt wird ein Gespräch in einer Rolle."><span>Ein Student führt ein Bewerbungsgespräch für ein Praktikum.</span></li>
+      <li data-r="b" data-w="Verfolgt wird ein Ziel in einem Szenario: die Ursache finden."><span>Eine Studentin sucht den Fehler in einer Anlage, die immer wieder ausfällt.</span></li>
+      <li data-r="b" data-w="Verfolgt wird ein Ziel in einem Szenario: das Unternehmen durch mehrere Runden führen."><span>Ein Team leitet ein simuliertes Unternehmen über vier Quartale.</span></li>
+      <li data-r="a" data-w="Geübt wird ein Gespräch in einer Rolle."><span>Ein Student stellt sich einem mündlichen Prüfungsgespräch.</span></li>
+    </ul>
+    <p class="stand" aria-live="polite"></p>
+  </div>
+
+  <h3>Wie echt ist das Gegenüber?</h3>
+  <p>Die KI spielt den Durchschnitt, nicht den Einzelfall. Über vier Datensätze mit mehr als 400.000 Befragten treffen Modelle die Mittelwerte gut. 54 Prozent der individuellen Abweichungen sind stabil und ließen sich vorhersagen.</p>
+  <div class="ia schaetz" data-min="0" data-max="60" data-start="30" data-von="3" data-bis="3"
+       data-balken='[{"l":"Stabil, also vorhersagbar","v":54,"t":"54 %"},{"l":"Vom Modell erklärt","v":3,"t":"3 %"}]'>
+    <div class="marke">Erst schätzen</div>
+    <p class="frage">Wie viel Prozent der individuellen Abweichungen erklärt das Modell?</p>
+    <div class="regler"><input type="range" aria-label="Ihre Schätzung in Prozent"><output></output></div>
+    <button class="aufl">Auflösen</button>
+    <div class="loesung" hidden><p>Die Modelle erklären 3 Prozent. Ausführlichere Personas machen die Antworten glaubwürdiger, nicht richtiger (Ahn et al., 2026; Kuric et al., 2026; beides Preprints, keine Lehrstudien).</p></div>
+  </div>
+  <p>Getrennte Rollen wirken gezielt. In einem randomisierten Versuch mit 100 Medizinstudierenden spielten drei getrennte Agenten den Patienten, den sokratischen Tutor und den Bewerter. Der Gewinn lag vor allem in der Gesprächsführung; die Diagnosequote blieb gleich (Yang et al., 2026; Preprint).</p>
+  <figure class="ia balken" aria-label="Abschlussprüfung: 71,8 Prozent mit getrennten Agenten, 55,6 Prozent in der Vergleichsgruppe">
+    <figcaption class="frage">Ergebnis der Abschlussprüfung</figcaption>
+    <div class="zeile"><span>Getrennte Agenten</span><div class="bahn"><i class="akzent" style="width:71.8%"></i></div><b>71,8 %</b></div>
+    <div class="zeile"><span>Vergleichsgruppe</span><div class="bahn"><i style="width:55.6%"></i></div><b>55,6 %</b></div>
+  </figure>
+
+  <h3>Wer redet?</h3>
+  <div class="ia schaetz" data-min="0" data-max="60" data-start="40" data-von="5" data-bis="15"
+       data-balken='[{"l":"KI-Tutor, unangepasst","v":15,"t":"5–15 %"},{"l":"Menschliche Tutoren","v":30,"t":"rund 30 %"}]'>
+    <div class="marke">Erst schätzen</div>
+    <p class="frage">Wie viel Prozent der Redezeit lässt ein unangepasstes Modell als Tutor den Lernenden?</p>
+    <div class="regler"><input type="range" aria-label="Ihre Schätzung in Prozent"><output></output></div>
+    <button class="aufl">Auflösen</button>
+    <div class="loesung" hidden><p>Unangepasste Modelle lassen Lernenden 5 bis 15 Prozent der Redezeit, Menschen rund 30 Prozent. Die Antwortlänge gehört in den Auftrag (Perczel et al., 2025; Preprint).</p></div>
+  </div>
+
+  <h3>Vom Befund zur Zeile im Prompt</h3>
+  <p>Drei Befunde werden zu drei Zeilen im Prompt. Schalten Sie sie ein und sehen Sie, wie sich das Gerüst verändert.</p>
+  <div class="ia geruest">
+    <div class="marke">Ein- und ausschalten</div>
+    <p class="frage">Beispiel: Preisgespräch mit einem Lieferanten</p>
+    <label><input type="checkbox" data-z="Schreib „Rollenspiel beginnt“ und „Rollenspiel endet“. Davor fragst du als Mentor nach Erfahrung, danach gibst du Feedback; im Spiel bist du nur die Gegenseite."> <span><b>Rollen trennen:</b> Gegenüber, Tutor und Bewerter als getrennte Aufträge oder klar getrennte Phasen <span class="q">(Yang et al., 2026)</span></span></label>
+    <label><input type="checkbox" data-z="Antworte mit höchstens drei Sätzen je Zug."> <span><b>Antwortlänge begrenzen</b> <span class="q">(Perczel et al., 2025)</span></span></label>
+    <label><input type="checkbox" data-z="Du hast einen Grund für deine Preisforderung, den du nur auf offene Fragen nennst: Dein Vormaterial ist teurer geworden."> <span><b>Einen verdeckten Grund geben;</b> sonst spielt das Gegenüber den freundlichen Durchschnitt <span class="q">(Ahn et al., 2026)</span></span></label>
+<pre id="p-geruest" data-basis="Zweck: Studierende üben ein Preisgespräch mit einem Lieferanten. Du spielst den Vertriebsleiter des Lieferanten.
+Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pre>
+    <button class="kopie" data-ziel="p-geruest">Gerüst kopieren</button>
+  </div>
+
+  <h3>Wie anfangen?</h3>
+  <p>Der Einstieg gelingt in drei Stufen (Mollick et al., 2024; Mollick &amp; Mollick, 2024), und eine Runde hat fünf Schritte.</p>
+  <div class="ia wahl">
+    <div class="marke">Anklicken</div>
+    <div class="knoepfe">
+      <button data-t="Sie geben einen fertigen Rollen-Prompt aus: ein Fall, zehn Minuten. Die Studierenden spielen, Sie besprechen nach.">Stufe 1 · Vorbereiteter Chat</button>
+      <button data-t="Studierende entwerfen in Präsenz kleine Rollenspiele und testen sie gegenseitig.">Stufe 2 · Studierende entwerfen</button>
+      <button data-t="Teams bauen über mehrere Wochen komplexe Simulationen und führen ein Testprotokoll.">Stufe 3 · Teams bauen</button>
+    </div>
+    <p class="feld" aria-live="polite">Wählen Sie eine Stufe.</p>
+  </div>
+  <div class="ia wahl">
+    <div class="marke">Anklicken</div>
+    <div class="knoepfe">
+      <button data-t="Der Mentor begrüßt, fragt nach Erfahrung und passt die Schwierigkeit an.">1 · Begrüßung</button>
+      <button data-t="Szenarien stehen zur Auswahl; die Bühne ist in zwei, drei Sätzen beschrieben.">2 · Bühne</button>
+      <button data-t="Die Züge sind klar abgegrenzt; das Gegenüber bleibt in der Rolle.">3 · Spiel</button>
+      <button data-t="Gegen Ende fällt eine folgenreiche Entscheidung.">4 · Entscheidung</button>
+      <button data-t="Das Feedback bezieht sich auf Stellen im Verlauf. Danach führen Sie das Debriefing.">5 · Feedback</button>
+    </div>
+    <p class="feld" aria-live="polite">Wählen Sie einen Schritt.</p>
+  </div>
+
+  <h3>Gesprächspartner oder Rechner?</h3>
+  <p>Was sich berechnen lässt, übt man verlässlicher an einem rechnenden Widget als an einem Sprachmodell, das eine Rolle spielt.</p>
+  <div class="ia sortier" data-a="Gesprächspartner" data-b="Rechner">
+    <div class="marke">Sortieren</div>
+    <p class="frage">Gesprächspartner oder Rechner?</p>
+    <ul>
+      <li data-r="b" data-w="Der Bullwhip-Effekt lässt sich berechnen; ein Widget rechnet jedes Mal richtig."><span>Wie stark schwanken die Bestellungen entlang der Lieferkette?</span></li>
+      <li data-r="a" data-w="Geübt wird ein Gespräch: Fragen stellen, zuhören, reagieren."><span>Wie erkläre ich einer Studentin eine unerwartet schlechte Note?</span></li>
+      <li data-r="b" data-w="Warteschlangen folgen Formeln; hier zählt die richtige Zahl."><span>Wie lang wird die Schlange, wenn eine Kasse ausfällt?</span></li>
+      <li data-r="a" data-w="Geübt wird Verhalten gegenüber einem Gegenüber mit eigenen Interessen."><span>Wie reagiere ich auf das erste Angebot eines Lieferanten?</span></li>
+      <li data-r="b" data-w="Bestände lassen sich berechnen."><span>Wie viel Sicherheitsbestand brauche ich bei schwankender Nachfrage?</span></li>
+    </ul>
+    <p class="stand" aria-live="polite"></p>
+  </div>
+
+  <h3>Worin sich Modelle unterscheiden</h3>
+  <p>Was Sie von „der KI“ bekommen, hängt am Modell, an der Denkstufe und an der Arbeitsumgebung (Mollick, 2026).</p>
+  <div class="ia wahl">
+    <div class="marke">Anklicken</div>
+    <div class="knoepfe">
+      <button data-t="Groß oder klein, geschlossen beim Anbieter oder offen. Die leistungsfähigsten offenen Modelle liegen im Mittel rund vier Monate hinter den geschlossenen Spitzenmodellen (Edwards &amp; Emberson, 2026).">Modell</button>
+      <button data-t="Dasselbe Modell antwortet schnell oder denkt länger nach. Wo viel auf dem Spiel steht, wählen Sie ein Spitzenmodell auf der Stufe „hoch“ oder darüber (Mollick, 2026).">Denkstufe</button>
+      <button data-t="Chatfenster, Agent in der Cloud oder Agent auf dem eigenen Rechner. Der Agent auf dem eigenen Rechner kann mehr und birgt mehr Sicherheitsrisiko (Mollick, 2026).">Arbeitsumgebung</button>
+      <button data-t="Kostenlose Modelle genügen für Risikoarmes. Teurere Stufen kaufen vor allem mehr Arbeitsstunden der KI, kein klügeres Modell (Mollick, 2026).">Abo</button>
+      <button data-t="Personenbezogene Daten von Studierenden geben Sie nicht ein. Dafür gibt es den Zugang Ihrer Hochschule oder ein lokales Modell.">Daten</button>
+    </div>
+    <p class="feld" aria-live="polite">Wählen Sie ein Merkmal.</p>
+  </div>
+</section>
+
+<section id="skript">
+  <h2>Zum Nachlesen: das Skript</h2>
+  <div class="karten">
+    <a class="karte" href="skript.html"><b>Skript zum Workshop</b><span>Die ausführliche Fassung: Didaktik, Mehrwert und Grenzen, Umsetzung, neuere Studien, Literaturverzeichnis.</span></a>
+  </div>
+  <p class="q">Folien: <a href="folien-kern.html">Kern-Inputs in acht Folien</a> · <a href="folien.html">Folien mit Schätzfragen und QR-Codes</a></p>
 </section>
 
 <section id="quellen" class="lit">
   <h2>Quellen</h2>
   <p>Ahn, D., Mao, C., &amp; Lee, D. (2026). <i>Item-mean surrogates: Why richer persona data fail to improve LLMs as human surrogates</i> (arXiv:2608.29455). arXiv. <a href="https://doi.org/10.48550/arXiv.2608.29455">https://doi.org/10.48550/arXiv.2608.29455</a></p>
-  <p>Anthropic. (2026). <i>Prompting best practices</i>. Claude Platform Docs. <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices">https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices</a></p>
   <p>Chernikova, O., Heitzmann, N., Stadler, M., Holzberger, D., Seidel, T., &amp; Fischer, F. (2020). Simulation-based learning in higher education: A meta-analysis. <i>Review of Educational Research, 90</i>(4), 499–541. <a href="https://doi.org/10.3102/0034654320933544">https://doi.org/10.3102/0034654320933544</a></p>
+  <p>Chi, M. T. H., Adams, J., Bogusch, E. B., Bruchok, C., Kang, S., Lancaster, M., et al. (2018). Translating the ICAP theory of cognitive engagement into practice. <i>Cognitive Science, 42</i>(6), 1777–1832. <a href="https://doi.org/10/gd5n5p">https://doi.org/10/gd5n5p</a></p>
+  <p>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology. <i>Psychological Science in the Public Interest, 14</i>(1), 4–58. <a href="https://doi.org/10.1177/1529100612453266">https://doi.org/10.1177/1529100612453266</a></p>
   <p>Edwards, J., &amp; Emberson, L. (2026, 29. Mai). <i>Open models lag state-of-the-art closed models by 4 months</i>. Epoch AI. <a href="https://epoch.ai/data-insights/open-closed-eci-gap">https://epoch.ai/data-insights/open-closed-eci-gap</a></p>
+  <p>Guo, Z., &amp; Fryer, L. K. (2024). What really elicits learners’ situational interest in learning activities: A scoping review of six most commonly researched types of situational interest sources in educational settings. <i>Current Psychology</i>. <a href="https://doi.org/10.1007/s12144-024-07176-x">https://doi.org/10.1007/s12144-024-07176-x</a></p>
+  <p>Hidi, S., &amp; Renninger, K. A. (2006). The four-phase model of interest development. <i>Educational Psychologist, 41</i>(2), 111–127.</p>
   <p>Kuric, E., Demcak, P., &amp; Krajcovic, M. (2026). <i>What would GPT click: Practical effects of human-AI behavioral misalignment and the cost of synthetic participants in user experience</i> (arXiv:2605.18302). arXiv. <a href="https://doi.org/10.48550/arXiv.2605.18302">https://doi.org/10.48550/arXiv.2605.18302</a></p>
-  <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025a). <i>Prompting science report 1: Prompt engineering is complicated and contingent</i> (arXiv:2503.04818). arXiv. <a href="https://doi.org/10.48550/arXiv.2503.04818">https://doi.org/10.48550/arXiv.2503.04818</a></p>
-  <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025b). <i>Prompting science report 2: The decreasing value of chain of thought in prompting</i> (arXiv:2506.07142). arXiv. <a href="https://doi.org/10.48550/arXiv.2506.07142">https://doi.org/10.48550/arXiv.2506.07142</a></p>
-  <p>Meincke, L., Mollick, E., Mollick, L., &amp; Shapiro, D. (2025c). <i>Prompting science report 3: I'll pay you or I'll kill you – but will you care?</i> (arXiv:2508.00614). arXiv. <a href="https://doi.org/10.48550/arXiv.2508.00614">https://doi.org/10.48550/arXiv.2508.00614</a></p>
   <p>Mollick, E. (2026, 23. Juli). <i>An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)</i>. One Useful Thing. <a href="https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22">https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22</a></p>
   <p>Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., &amp; Ravipinto, D. (2024). <i>AI agents and education: Simulated practice at scale</i> (arXiv:2407.12796). arXiv. <a href="https://arxiv.org/abs/2407.12796">https://arxiv.org/abs/2407.12796</a></p>
   <p>Mollick, E. R., &amp; Mollick, L. (2024). <i>Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts</i>. SSRN. <a href="https://doi.org/10.2139/ssrn.4802463">https://doi.org/10.2139/ssrn.4802463</a></p>
   <p>Perczel, J., Chow, J., &amp; Demszky, D. (2025). <i>TeachLM: Post-training LLMs for education using authentic learning data</i> (arXiv:2510.05087). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.05087">https://doi.org/10.48550/arXiv.2510.05087</a></p>
   <p>Tannenbaum, S. I., &amp; Cerasoli, C. P. (2013). Do team and individual debriefs enhance performance? A meta-analysis. <i>Human Factors, 55</i>(1), 231–245. <a href="https://doi.org/10.1177/0018720812448394">https://doi.org/10.1177/0018720812448394</a></p>
+  <p>Willingham, D. T. (2021). <i>Why don’t students like school? A cognitive scientist answers questions about how the mind works and what it means for the classroom</i>. John Wiley &amp; Sons.</p>
   <p>Yang, L., Liu, H., Li, S., Jia, R., Xiao, Y., Chen, G., &amp; Lu, L. (2026). <i>Evaluating scaffolding-oriented multi-agent large language model system for clinical interview training</i> (arXiv:2609.10939). arXiv. <a href="https://doi.org/10.48550/arXiv.2609.10939">https://doi.org/10.48550/arXiv.2609.10939</a></p>
 
   <footer>
