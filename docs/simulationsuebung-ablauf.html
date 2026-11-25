@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ablauf einer Simulationsübung in drei Ausbaustufen</title>
+<style>
+/* Farbbudget: Graustufen + eine Akzentfarbe (TH-Rot) für das Neue des Schritts */
+:root{--grund:#fff;--papier:#f5f5f7;--tinte:#111;--grau:#6b6b73;--linie:#c9c9d1;--hell:#e6e6ea;--akzent:#c81e0f}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--papier);color:var(--tinte);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--akzent);outline-offset:2px}
+.seite{max-width:1280px;margin:0 auto;padding:14px 16px 28px}
+header{display:flex;gap:12px 20px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;border-top:8px solid var(--akzent);padding-top:12px}
+.dach{font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--akzent);margin:0}
+h1{font-size:clamp(1.15rem,2.6vw,1.55rem);line-height:1.2;margin:.15rem 0 0;max-width:34ch;text-wrap:balance}
+.stufen{display:flex;gap:6px;flex-wrap:wrap}
+.tb{border:1px solid var(--linie);background:var(--grund);border-radius:8px;padding:6px 11px;font-size:.88rem;text-align:left;line-height:1.25}
+.tb small{display:block;color:var(--grau);font-size:.74rem}
+.tb[aria-pressed="true"]{background:var(--tinte);border-color:var(--tinte);color:#fff}
+.tb[aria-pressed="true"] small{color:#d8d8de}
+.vorhersage{margin:12px 0 0;display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:.93rem}
+.vorhersage button{border:1px solid var(--linie);background:var(--grund);border-radius:999px;padding:3px 12px;font-size:.88rem}
+.vorhersage button[aria-pressed="true"]{background:var(--tinte);color:#fff;border-color:var(--tinte)}
+main{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:14px;margin-top:12px;align-items:start}
+.bild{background:var(--grund);border:1px solid var(--linie);border-radius:12px;padding:6px;overflow-x:auto}
+.bild svg{display:block;width:100%;height:auto}
+.karte{background:var(--grund);border:1px solid var(--linie);border-radius:12px;padding:14px 16px}
+.karte .eb{font-size:.76rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--akzent);margin:0 0 4px}
+.karte h2{font-size:1.2rem;line-height:1.25;margin:0 0 8px;text-wrap:balance}
+.karte p{margin:0 0 8px}
+.karte .analogie{border-left:3px solid var(--tinte);padding-left:10px}
+.karte .klein{font-size:.83rem;color:var(--grau);margin:0 0 5px}
+.karte .etym{font-style:italic}
+.karte table{border-collapse:collapse;width:100%;font-size:.85rem;margin:4px 0 8px}
+.karte th,.karte td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--hell);vertical-align:top}
+.steuerung{display:flex;gap:8px;align-items:center;margin-top:12px}
+.steuerung button{white-space:nowrap;border:1px solid var(--grau);background:var(--grund);border-radius:8px;padding:7px 14px}
+.steuerung button:disabled{opacity:.4;cursor:default}
+.stand{margin-left:auto;text-align:right;color:var(--grau);font-size:.86rem}
+.leiste{display:flex;gap:4px;margin-top:10px;overflow-x:auto;padding-bottom:4px}
+.leiste .gr{display:flex;gap:4px;padding:4px 6px 6px;border-radius:8px;background:var(--hell);flex-direction:column}
+.leiste .gr b{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--grau);white-space:nowrap}
+.leiste .gr div{display:flex;gap:4px}
+.leiste button{border:1px solid var(--linie);background:var(--grund);border-radius:6px;padding:3px 9px;font-size:.8rem;white-space:nowrap}
+.leiste button.war{color:var(--grau)}
+.leiste button[aria-current="step"]{background:var(--akzent);border-color:var(--akzent);color:#fff}
+details{background:var(--grund);border:1px solid var(--linie);border-radius:10px;margin-top:10px;padding:8px 14px}
+summary{cursor:pointer;font-weight:600}
+.lit p{font-size:.86rem;padding-left:1.4rem;text-indent:-1.4rem;margin:.45rem 0;overflow-wrap:anywhere}
+a{color:var(--akzent)}
+
+/* SVG: unsichtbar, neu (Akzent), bekannt (Tinte) */
+svg text{font-family:inherit;fill:var(--tinte)}
+.bahn{fill:var(--papier)}
+.bahnname{font-size:10.5px;font-weight:700;letter-spacing:.08em;fill:var(--grau)}
+.phase{font-size:12.5px;font-weight:700;fill:var(--tinte)}
+.spalte{stroke:var(--hell);stroke-width:1.5;stroke-dasharray:3 5}
+.x{opacity:0;visibility:hidden;transition:opacity .4s ease,visibility .4s}
+.x.an{opacity:1;visibility:visible}
+.kasten{fill:var(--grund);stroke:var(--c,var(--tinte));stroke-width:1.6}
+.rahmen{fill:#fafafb;stroke:var(--c,var(--tinte));stroke-width:1.6}
+.strich{stroke-dasharray:6 4}
+.lbl{font-size:14px;font-weight:650;fill:var(--c,var(--tinte))}
+.sub{font-size:11px;fill:var(--grau)}
+.kopf{font-size:11.5px;font-weight:650;fill:var(--c,var(--tinte))}
+.pf{stroke:var(--c,var(--tinte));stroke-width:1.8;fill:none}
+.sp{fill:var(--c,var(--tinte))}
+.pl{font-size:11px;fill:var(--c,var(--grau))}
+.akt{font-size:11.5px;fill:var(--c,var(--tinte))}
+.neu{--c:var(--akzent)}
+@media (prefers-reduced-motion:reduce){.x{transition:none}}
+@media (max-width:820px){main{grid-template-columns:1fr}.bild svg{min-width:620px}h1{max-width:none}}
+.druck .vorhersage,.druck .steuerung,.druck .leiste,.druck .stufen,.druck .karte,.druck details{display:none!important}
+.druck main{grid-template-columns:1fr}
+.eingebettet .dach{display:none}.eingebettet header{border-top:0;padding-top:0}.eingebettet .seite{padding:8px 0 12px}
+.hoersaal .karte .text,.hoersaal .karte .klein{display:none}
+</style>
+</head>
+<body>
+<div class="seite">
+<header>
+  <div>
+    <p class="dach">Rollenspiele und Simulationen mit KI · Workshop · TH Köln</p>
+    <h1>Von Stufe zu Stufe kommen KI-Helfer hinzu; die vier Phasen bleiben, und das Nachgespräch führen Sie</h1>
+  </div>
+  <div class="stufen" role="group" aria-label="Ausbaustufe wählen">
+    <button class="tb" data-stufe="1">Stufe 1<small>ein Prompt</small></button>
+    <button class="tb" data-stufe="2">Stufe 2<small>HTML-Interaktion</small></button>
+    <button class="tb" data-stufe="3">Stufe 3<small>Agenten-Simulation</small></button>
+  </div>
+</header>
+
+<div class="vorhersage">
+  <strong>Vorhersage:</strong> Wer führt auf Stufe 3 das Nachgespräch?
+  <button data-tipp="0">ein KI-Agent</button>
+  <button data-tipp="1">die Lehrperson</button>
+  <button data-tipp="2">die Studierenden unter sich</button>
+</div>
+
+<main>
+  <section class="bild" id="bild" aria-label="Ablaufbild">
+    <svg id="buehne" viewBox="0 0 760 552" role="img" aria-label="Vier Phasen von links nach rechts, drei Ebenen von oben nach unten: Lehrende, KI-Helfer, Studierende. Die mittlere Ebene wächst von einem Prompt über eine HTML-Seite zu fünf getrennten Agenten."></svg>
+  </section>
+  <aside class="karte" id="karte" aria-live="polite"></aside>
+</main>
+
+<div class="steuerung">
+  <button id="zurueck">◀ Zurück</button>
+  <button id="weiter">Weiter ▶</button>
+  <button id="voll" title="Vollbild">⛶</button>
+  <span class="stand" id="stand"></span>
+</div>
+<nav class="leiste" id="leiste" aria-label="Schritte"></nav>
+
+<details>
+  <summary>Annahmen und Grenzen dieses Bildes</summary>
+  <p>Das Bild ist ein Schema, keine Messung. Phasen, Rollen und Agenten der Stufen 1 und 3 folgen dem Workshop-Skript (Kapitel 5.1 und 5.2) und den dort zitierten Arbeiten. Stufe 2 fasst die rechnenden Seiten und Entscheidungsspiele des Buchs zusammen; die zuschaltbare Sprechrolle ist ein Bauvorschlag und steht so nicht im Skript. Die Zeit- und Aufwandsangaben im letzten Schritt sind Richtwerte aus dem gestuften Einstieg des Skripts.</p>
+</details>
+<details class="lit">
+  <summary>Quellen</summary>
+  <p>Bartnik, R. (2026). <i>Rollenspiele und Simulationen mit generativer KI in der Lehre nutzen: Skript zum Workshop</i> (Version 3). TH Köln. <a href="https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/skript.html">https://th-koln-bartnik.github.io/workshop-ki-rollenspiele/skript.html</a></p>
+  <p>Kestin, G., Miller, K., Klales, A., Milbourne, T., &amp; Ponti, G. (2025). AI tutoring outperforms in-class active learning: An RCT introducing a novel research-based design in an authentic educational setting. <i>Scientific Reports, 15</i>, 17458. <a href="https://doi.org/10.1038/s41598-025-97652-6">https://doi.org/10.1038/s41598-025-97652-6</a></p>
+  <p>Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., &amp; Ravipinto, D. (2024). <i>AI agents and education: Simulated practice at scale</i> (arXiv:2407.12796). arXiv. <a href="https://doi.org/10.48550/arXiv.2407.12796">https://doi.org/10.48550/arXiv.2407.12796</a></p>
+  <p>Mollick, E. R., &amp; Mollick, L. (2024). <i>Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts</i>. SSRN. <a href="https://doi.org/10.2139/ssrn.4802463">https://doi.org/10.2139/ssrn.4802463</a></p>
+  <p>Perczel, J., Chow, J., &amp; Demszky, D. (2025). <i>TeachLM: Post-training LLMs for education using authentic learning data</i> (arXiv:2510.05087). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.05087">https://doi.org/10.48550/arXiv.2510.05087</a></p>
+  <p>Tannenbaum, S. I., &amp; Cerasoli, C. P. (2013). Do team and individual debriefs enhance performance? A meta-analysis. <i>Human Factors, 55</i>(1), 231–245. <a href="https://doi.org/10.1177/0018720812448394">https://doi.org/10.1177/0018720812448394</a></p>
+  <p>Yang, L., Liu, H., Li, S., Jia, R., Xiao, Y., Chen, G., &amp; Lu, L. (2026). <i>Evaluating scaffolding-oriented multi-agent large language model system for clinical interview training</i> (arXiv:2609.10939). arXiv. <a href="https://doi.org/10.48550/arXiv.2609.10939">https://doi.org/10.48550/arXiv.2609.10939</a></p>
+</details>
+</div>
+
+<script>
+(function () {
+"use strict";
+var NS = "http://www.w3.org/2000/svg", svg = document.getElementById("buehne"), INF = 99;
+
+/* ================= Schritte: Text der Karte ================= */
+var SCHRITTE = [
+ {st:0, kurz:"Gerüst", eb:"Ausgangspunkt",
+  titel:"Jede Simulationsübung hat vier Phasen und drei Ebenen",
+  text:"Vorbereitung, Durchführung, Rückmeldung, Nachgespräch: Diese Folge bleibt auf jeder Ausbaustufe gleich. Es ändert sich die mittlere Ebene: wie viele KI-Helfer dort arbeiten und wie fest ihr Ablauf gebaut ist.",
+  bild:"Die Fahrstunde im Simulator: Einweisung, Fahrt, Auswertung, Gespräch mit der Fahrlehrerin.",
+  etym:"Simulation: lat. simulare, nachbilden, von similis, ähnlich.",
+  wo:"Skript, Kapitel 5"},
+ {st:1, kurz:"Prompt", eb:"Stufe 1 · Vorbereitung",
+  titel:"Ein einziger Prompt trägt Zweck, Ablauf, Regeln und Ende",
+  text:"Ein Prompt ist der schriftliche Auftrag an das Sprachmodell. Sie legen fest, was der Interaktionspartner leisten soll und was er nie tun darf; die Formulierung darf das Modell vorschlagen. Der Text passt auf eine Seite und geht so an die Studierenden.",
+  bild:"Der Regiezettel für eine Stegreifschauspielerin.",
+  etym:"Prompt: lat. promptus, bereit, zur Hand; im englischen Theater ist der prompter der Souffleur.",
+  wo:"Skript 5.1; Workshop-Seite, Übung 2 (Rollenspiel-Bauer)"},
+ {st:1, kurz:"Testlauf", eb:"Stufe 1 · Vorbereitung",
+  titel:"Sechs bis acht Eingaben zeigen vor dem Einsatz, ob der Interaktionspartner in der Rolle bleibt",
+  text:"Drei Züge als gutwillige Studentin, zwei mit einer abwegigen oder unfreundlichen Eingabe: Hält das Modell die Schritte ein? Gibt der Interaktionspartner nach, nur weil jemand freundlich ist? Der Testlauf gilt für alle drei Stufen.",
+  bild:"Die Generalprobe vor leerem Saal.",
+  wo:"Skript 5.2, Qualitätssicherung (Mollick et al., 2024)"},
+ {st:1, kurz:"Runde", eb:"Stufe 1 · Durchführung",
+  titel:"Ein Modell spielt nacheinander Mentor und Gegenüber",
+  text:"Der Mentor fragt nach Erfahrung und bietet Szenarien an. Mit „Rollenspiel beginnt“ wechselt das Modell in die Rolle des Interaktionspartners, antwortet mit höchstens drei Sätzen je Zug und drängt gegen Ende auf eine folgenreiche Entscheidung. Ohne die Längengrenze redet die KI zu viel: Unangepasste Modelle lassen Lernenden 5–15 % der Redezeit (Perczel et al., 2025; Preprint).",
+  bild:"Ein Schauspieler, der auf offener Bühne den Hut wechselt.",
+  etym:"Mentor: in der Odyssee der Freund, dem Odysseus seinen Sohn Telemachos anvertraut.",
+  wo:"Skript 5.2 (Mollick & Mollick, 2024)"},
+ {st:1, kurz:"Feedback", eb:"Stufe 1 · Rückmeldung",
+  titel:"Nach „Rollenspiel endet“ gibt dasselbe Modell Rückmeldung, mit Zitat aus dem Verlauf",
+  text:"Eine Stelle, die gut lief, eine, die besser ginge, und die Konzepte des Kurses, die vorkamen oder fehlten. Jede Aussage bezieht sich auf eine Stelle im Gespräch.",
+  bild:"Der Sparringspartner zieht die Handschuhe aus und wird zum Trainer.",
+  wo:"Skript 5.3, Übersicht Role Play"},
+ {st:1, kurz:"Debriefing", eb:"Stufe 1 · Nachgespräch",
+  titel:"Das Nachgespräch führen Sie, am Protokoll",
+  text:"Vor dem Lauf notieren die Studierenden eine Vorhersage, danach vergleichen sie und begründen den Unterschied. Eine Frage gehört immer dazu: Wie hätte ein echtes Gegenüber reagiert? Debriefings verbessern die Leistung um rund 25 Prozent (d = 0,67; Tannenbaum & Cerasoli, 2013).",
+  bild:"Die Videoanalyse am Tag nach dem Spiel.",
+  etym:"Debriefing: engl. brief, von lat. brevis, kurz; die knappe Einweisung, hier in umgekehrter Richtung.",
+  wo:"Skript, Kapitel 1 und 5.2"},
+ {st:2, kurz:"Bauhelfer", eb:"Stufe 2 · Vorbereitung",
+  titel:"Ein Modell schreibt die Übung als Webseite, bevor jemand spielt",
+  text:"Die KI arbeitet hier vor der Sitzung, als Programmierhilfe. Aus Lernziel und Fall entsteht eine HTML-Datei: HTML ist die Sprache, in der Webseiten geschrieben sind, und eine solche Datei läuft in jedem Browser, ohne Anmeldung und ohne Chatfenster.",
+  bild:"Der Spieleverlag druckt Brett und Karten, bevor die erste Partie beginnt.",
+  wo:"Skript 3.4; Buch, Semester-Simulator und Bullwhip-Rechner"},
+ {st:2, kurz:"Seite", eb:"Stufe 2 · Durchführung und Rückmeldung",
+  titel:"Der Ablauf steht im Code: Szenen, Zustand und Auswertung sind festgelegt",
+  text:"Studierende wählen per Knopf, statt frei zu tippen. Die Seite führt Buch über Budget oder Punkte und wertet nach einer Regel aus, die Sie nachlesen können. Jeder Durchlauf ist wiederholbar; für Zusammenhänge, die sich berechnen lassen, ist sie das verlässlichere Übungsfeld als ein Modell, das eine Rolle spielt.",
+  bild:"Ein Brettspiel: Die Regeln sind gedruckt, niemand improvisiert.",
+  etym:"Code: lat. codex, Holztafel, später Buch und Gesetzessammlung.",
+  wo:"Workshop-Seite, „Gesprächspartner oder Rechner?“"},
+ {st:2, kurz:"Sprechrolle", eb:"Stufe 2 · Option",
+  titel:"Wo freie Sprache nötig ist, spricht ein Modell nur den Interaktionspartner",
+  text:"Schrittfolge und Zahlen bleiben in der Seite; ein Sprachmodell lässt sich für die Antworten des Interaktionspartners zuschalten. Ein Entscheidungsspiel kommt ohne Modell zur Laufzeit aus.",
+  bild:"Die Spielleiterin liest die Ereigniskarte vor und leiht nur dem Händler ihre Stimme.",
+  wo:"Bauvorschlag, nicht aus dem Skript"},
+ {st:3, kurz:"Tutor", eb:"Stufe 3 · Vorbereitung",
+  titel:"Ein Tutor-Agent bringt alle vor dem Spiel auf denselben Stand",
+  text:"Ein Agent ist ein Sprachmodell mit eigenem Auftrag, das mehrere Schritte selbst plant. Der Tutor klärt das Vorwissen mit aktivierenden Aufgaben, schrittweisen Hilfen und eigenem Tempo (Kestin et al., 2025); die Präsenzzeit bleibt für die Praxis. Ein Lernvideo leistet Ähnliches.",
+  bild:"Das Briefing vor dem Flug.",
+  etym:"Agent: lat. agere, handeln. Tutor: lat. tueri, schützen, behüten.",
+  wo:"Skript 5.2 (Kestin et al., 2025; Mollick et al., 2024)"},
+ {st:3, kurz:"Mentor · NPC", eb:"Stufe 3 · Durchführung",
+  titel:"Mentor und Gegenrolle sind getrennte Agenten mit getrennten Aufträgen",
+  text:"Der Mentor-Agent berät und gibt sparsame Hinweise. Der NPC-Agent spielt die Gegenrolle mit fester Persona, etwa die Investorin, vor der ein Gründerteam seine Idee vorstellt (PitchQuest; Mollick et al., 2024). Mit getrennten Agenten erreichten 100 Medizinstudierende in der Abschlussprüfung 71,8 % gegenüber 55,6 % (Yang et al., 2026; Preprint).",
+  bild:"Ein Ensemble statt einer Solistin.",
+  etym:"NPC: non-player character, im Rollenspiel jede Figur, die niemand am Tisch selbst spielt. Persona: lat. die Maske des Schauspielers.",
+  wo:"Skript 3.6 und 5.2"},
+ {st:3, kurz:"Evaluator", eb:"Stufe 3 · Rückmeldung",
+  titel:"Ein Evaluator-Agent liest das Transkript und schreibt das Feedback",
+  text:"Er hat die Szene nicht gespielt und urteilt nach Ihrem Raster: Stärken, Entwicklungsfelder, Hinweise für den nächsten Fall. Das Transkript ist die wörtliche Mitschrift des Gesprächs.",
+  bild:"Die Punktrichterin am Ring.",
+  etym:"Evaluieren: frz. évaluer, von lat. valere, wert sein.",
+  wo:"Skript 5.2 (Mollick et al., 2024)"},
+ {st:3, kurz:"Insights", eb:"Stufe 3 · Nachgespräch",
+  titel:"Ein Insights-Agent fasst alle Transkripte für Sie zusammen und schlägt Fragen für das Debriefing vor",
+  text:"Er arbeitet für die Lehrperson: Muster einzelner Studierender und der ganzen Gruppe, dazu Vorschläge für das Nachgespräch. Das Gespräch selbst führen Sie. Agenten brauchen Raster, Qualitätschecks und menschliche Aufsicht, sonst setzt sich ein Fehler von einem zum nächsten fort.",
+  bild:"Die Assistentin, die vor der Besprechung alle Protokolle liest und drei Auffälligkeiten markiert.",
+  etym:"Protokoll: griech. prōtókollon, das vorn angeleimte erste Blatt einer Schriftrolle.",
+  wo:"Skript 3.6 und 5.2 (Mollick et al., 2024)"},
+ {st:3, kurz:"Lernschleife", eb:"Gesamtbild",
+  titel:"Instruktion, Praxis, Feedback, Reflexion: Die Schleife ist auf jeder Stufe dieselbe",
+  text:"Hinzugekommen sind Helfer, keine Phasen. Beginnen Sie klein und bauen Sie aus, wenn das Lernziel es verlangt.",
+  tabelle:[["Stufe","KI-Helfer","Aufwand"],["1 Prompt","ein Modell, drei Phasen","ein Fall, zehn Minuten"],["2 HTML-Seite","Bauhelfer vorab, Ablauf im Code","eine gebaute, getestete Seite"],["3 Agenten","Tutor, Mentor, NPC, Evaluator, Insights","Team, mehrere Wochen, Testprotokoll"]],
+  bild:"Vom Solo über das Brettspiel zum Ensemble mit Regie.",
+  wo:"Skript 5.1, gestufter Einstieg"}
+];
+var LETZTER = SCHRITTE.length - 1;
+var VORHERSAGE = {richtig:1, optionen:["ein KI-Agent","die Lehrperson","die Studierenden unter sich"], abSchritt:12};
+
+/* ================= Zeichenhilfen ================= */
+function el(tag, a, p) { var e = document.createElementNS(NS, tag); for (var k in a) { if (k === "t") e.textContent = a[k]; else e.setAttribute(k, a[k]); } (p || svg).appendChild(e); return e; }
+var elemente = [];
+function gruppe(ab, bis) { var g = el("g", {}); g.classList.add("x"); g.dataset.ab = ab; g.dataset.bis = bis == null ? INF : bis; elemente.push(g); return g; }
+function kasten(g, x, y, w, h, lbl, sub, o) {
+  o = o || {};
+  el("rect", {x:x, y:y, width:w, height:h, rx:o.rx == null ? 7 : o.rx, "class":"kasten" + (o.strich ? " strich" : "")}, g);
+  el("text", {x:x + w / 2, y:y + (sub ? h / 2 - 2 : h / 2 + 5), "text-anchor":"middle", "class":"lbl", t:lbl}, g);
+  if (sub) el("text", {x:x + w / 2, y:y + h / 2 + 15, "text-anchor":"middle", "class":"sub", t:sub}, g);
+}
+function rahmen(g, x, y, w, h, kopf) {
+  el("rect", {x:x, y:y, width:w, height:h, rx:10, "class":"rahmen"}, g);
+  el("text", {x:x + 12, y:y + 22, "class":"kopf", t:kopf}, g);
+}
+function spitze(g, x1, y1, x2, y2) {
+  var a = Math.atan2(y2 - y1, x2 - x1), L = 9, B = 4.5;
+  var p = [[x2, y2], [x2 - L * Math.cos(a) + B * Math.sin(a), y2 - L * Math.sin(a) - B * Math.cos(a)], [x2 - L * Math.cos(a) - B * Math.sin(a), y2 - L * Math.sin(a) + B * Math.cos(a)]];
+  el("polygon", {points:p.map(function (q) { return q[0].toFixed(1) + "," + q[1].toFixed(1); }).join(" "), "class":"sp"}, g);
+}
+function pfeil(g, pts, o) {
+  o = o || {};
+  el("path", {d:"M" + pts.map(function (q) { return q.join(" "); }).join(" L"), "class":"pf" + (o.strich ? " strich" : "")}, g);
+  var n = pts.length; spitze(g, pts[n - 2][0], pts[n - 2][1], pts[n - 1][0], pts[n - 1][1]);
+  if (o.beide) spitze(g, pts[1][0], pts[1][1], pts[0][0], pts[0][1]);
+  if (o.lbl) el("text", {x:o.lx, y:o.ly, "text-anchor":o.anker || "start", "class":"pl", t:o.lbl}, g);
+}
+
+/* ================= Gerüst (immer sichtbar) ================= */
+var SP = [[10, 200], [210, 450], [460, 610], [620, 750]], MX = [105, 330, 535, 685];
+[[40, 100, "LEHRENDE"], [150, 270, "KI-HELFER"], [430, 112, "STUDIERENDE"]].forEach(function (b) {
+  el("rect", {x:4, y:b[0], width:752, height:b[1], rx:10, "class":"bahn"});
+  el("text", {x:16, y:b[0] + 15, "class":"bahnname", t:b[2]});
+});
+["Vorbereitung", "Durchführung", "Rückmeldung", "Nachgespräch"].forEach(function (t, i) {
+  el("text", {x:MX[i], y:26, "text-anchor":"middle", "class":"phase", t:t});
+  if (i) el("line", {x1:SP[i][0] - 5, y1:44, x2:SP[i][0] - 5, y2:538, "class":"spalte"});
+});
+el("rect", {x:18, y:458, width:726, height:62, rx:7, "class":"kasten"});
+el("text", {x:30, y:480, "class":"lbl", t:"Studierende"});
+(function () { var g = el("g", {}); kasten(g, 18, 70, 84, 54, "Lernziel", "ein Satz"); })();
+
+/* ================= Elemente je Schritt (Pfeile zuerst, Kästen darüber) ================= */
+var g;
+// --- Pfeile zwischen KI-Ebene und Studierenden, je Stufe eigene Kopie
+// Stufe 1
+g = gruppe(1);              pfeil(g, [[60, 124], [60, 200]], {lbl:"Auftrag", lx:67, ly:142});
+var gPrompt = gruppe(1, 5); kasten(gPrompt, 30, 200, 150, 70, "Prompt", "Zweck · Ablauf · Regeln", {rx:3});
+g = gruppe(2);              kasten(g, 108, 70, 86, 54, "Testlauf", "6–8 Eingaben"); pfeil(g, [[151, 124], [151, 200]], {lbl:"Test", lx:158, ly:142});
+g = gruppe(3, 5);
+  pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Züge", lx:338, ly:402});
+  pfeil(g, [[180, 235], [214, 235]]);
+  rahmen(g, 214, 186, 392, 150, "Ein Chat · ein Modell · drei Phasen");
+  kasten(g, 224, 232, 78, 58, "Mentor", "fragt, rahmt"); kasten(g, 314, 232, 150, 58, "Interaktionspartner", "≤ 3 Sätze je Zug");
+  pfeil(g, [[302, 261], [314, 261]]);
+g = gruppe(3);              el("text", {x:MX[1], y:505, "text-anchor":"middle", "class":"akt", t:"spielen · entscheiden"}, g);
+g = gruppe(4, 5);
+  pfeil(g, [[535, 336], [535, 458]], {lbl:"Feedback", lx:543, ly:402});
+  kasten(g, 476, 232, 122, 58, "Mentor", "Feedback mit Zitat"); pfeil(g, [[464, 261], [476, 261]]);
+g = gruppe(4);              el("text", {x:MX[2], y:505, "text-anchor":"middle", "class":"akt", t:"lesen Feedback"}, g);
+g = gruppe(5);
+  kasten(g, 628, 70, 116, 54, "Debriefing", "am Protokoll");
+  el("text", {x:MX[0], y:505, "text-anchor":"middle", "class":"akt", t:"sagen vorher"}, g);
+  el("text", {x:MX[3], y:505, "text-anchor":"middle", "class":"akt", t:"vergleichen"}, g);
+function protokoll(ab, bis) { var q = gruppe(ab, bis); pfeil(q, [[606, 210], [686, 210], [686, 124]], {lbl:"Protokoll", lx:646, ly:203, anker:"middle"}); }
+protokoll(5, 5);
+// Stufe 2
+g = gruppe(6, 8);           kasten(g, 30, 200, 150, 70, "Bauhelfer", "Modell schreibt den Code");
+g = gruppe(7, 8);
+  pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Klicks", lx:338, ly:402});
+  pfeil(g, [[535, 336], [535, 458]], {lbl:"Ergebnis", lx:543, ly:402});
+  pfeil(g, [[180, 235], [214, 235]]);
+  rahmen(g, 214, 186, 392, 150, "HTML-Seite · Ablauf fest im Code");
+  kasten(g, 226, 228, 104, 54, "Szenen", "Wahl per Knopf"); kasten(g, 340, 228, 104, 54, "Zustand", "Budget, Punkte"); kasten(g, 474, 228, 122, 54, "Auswertung", "Regel im Code");
+  pfeil(g, [[330, 255], [340, 255]]); pfeil(g, [[444, 255], [474, 255]]);
+protokoll(7, 8);
+g = gruppe(8, 8);           kasten(g, 226, 292, 218, 34, "Sprechrolle · optional", null, {strich:true});
+// Stufe 3
+g = gruppe(9);
+  pfeil(g, [[105, 458], [105, 262]], {beide:true, lbl:"Vorwissen", lx:113, ly:402});
+  kasten(g, 30, 200, 150, 62, "Tutor-Agent", "gleiches Startniveau");
+g = gruppe(10);
+  pfeil(g, [[330, 458], [330, 336]], {beide:true, lbl:"Züge", lx:338, ly:402});
+  kasten(g, 240, 176, 180, 62, "Mentor-Agent", "berät, gibt Hinweise"); kasten(g, 240, 274, 180, 62, "NPC-Agent", "Gegenrolle, z. B. Investorin");
+  pfeil(g, [[330, 238], [330, 274]]);
+g = gruppe(11);
+  pfeil(g, [[535, 290], [535, 458]], {lbl:"Feedback", lx:543, ly:402});
+  pfeil(g, [[420, 305], [466, 262]]);
+  kasten(g, 466, 222, 138, 68, "Evaluator-Agent", "liest das Transkript");
+g = gruppe(12);
+  pfeil(g, [[604, 256], [626, 256]]);
+  pfeil(g, [[686, 222], [686, 124]], {lbl:"Vorschlag", lx:693, ly:180});
+  kasten(g, 626, 222, 120, 68, "Insights-Agent", "Muster der Gruppe");
+g = gruppe(13);
+  pfeil(g, [[686, 70], [686, 61], [60, 61], [60, 70]]);
+  el("rect", {x:392, y:52, width:150, height:17, rx:9, style:"fill:var(--papier)"}, g);
+  el("text", {x:467, y:65, "text-anchor":"middle", "class":"kopf", t:"nächster Fall, neue Runde"}, g);
+
+/* ================= Steuerung ================= */
+var schritt = 0, tipp = null;
+function esc(s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+function karte(s) {
+  var d = SCHRITTE[s], h = '<p class="eb">' + esc(d.eb) + "</p><h2>" + esc(d.titel) + '</h2><p class="text">' + esc(d.text) + "</p>";
+  if (d.tabelle) { h += "<table>" + d.tabelle.map(function (z, i) { return "<tr>" + z.map(function (c) { return (i ? "<td>" : "<th>") + esc(c) + (i ? "</td>" : "</th>"); }).join("") + "</tr>"; }).join("") + "</table>"; }
+  if (s >= VORHERSAGE.abSchritt && tipp != null) h += '<p class="text"><strong>' + (tipp === VORHERSAGE.richtig ? "Ihre Vorhersage trifft zu." : "Sie hatten „" + VORHERSAGE.optionen[tipp] + "“ vorhergesagt.") + "</strong> Der Agent bereitet vor, die Lehrperson führt das Gespräch.</p>";
+  h += '<p class="analogie"><b>Bild:</b> ' + esc(d.bild) + "</p>";
+  if (d.etym) h += '<p class="klein etym">' + esc(d.etym) + "</p>";
+  h += '<p class="klein">Wo nachlesen: ' + esc(d.wo) + "</p>";
+  document.getElementById("karte").innerHTML = h;
+}
+function darstellen() {
+  var neu = null;
+  elemente.forEach(function (e) {
+    var ab = +e.dataset.ab, bis = +e.dataset.bis, da = schritt >= ab && schritt <= bis;
+    e.classList.toggle("an", da); e.classList.toggle("neu", da && schritt === ab && schritt > 0);
+    if (da && schritt === ab && !neu) neu = e;
+  });
+  karte(schritt);
+  document.getElementById("stand").textContent = "Schritt " + (schritt + 1) + " von " + (LETZTER + 1);
+  document.getElementById("zurueck").disabled = schritt === 0;
+  document.getElementById("weiter").disabled = schritt === LETZTER;
+  document.querySelectorAll("#leiste button").forEach(function (b) { var n = +b.dataset.n; if (n === schritt) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); b.classList.toggle("war", n < schritt); });
+  document.querySelectorAll("[data-stufe]").forEach(function (b) { b.setAttribute("aria-pressed", +b.dataset.stufe === SCHRITTE[schritt].st ? "true" : "false"); });
+  var aktiv = document.querySelector('#leiste button[aria-current="step"]'), bild = document.getElementById("bild");
+  if (aktiv && aktiv.scrollIntoView && !document.documentElement.classList.contains("druck")) { try { aktiv.scrollIntoView({block:"nearest", inline:"nearest"}); } catch (e) {} }
+  if (neu && bild.scrollWidth > bild.clientWidth) { try { var b = neu.getBBox(), f = bild.scrollWidth / 760; bild.scrollTo({left:Math.max(0, (b.x + b.width / 2) * f - bild.clientWidth / 2), behavior:"smooth"}); } catch (e) {} }
+}
+function gehe(n) { schritt = Math.max(0, Math.min(LETZTER, n)); darstellen(); }
+
+// Schrittleiste, nach Stufen gruppiert
+(function () {
+  var leiste = document.getElementById("leiste"), namen = ["Start", "Stufe 1 · ein Prompt", "Stufe 2 · HTML-Interaktion", "Stufe 3 · Agenten-Simulation"], kisten = {};
+  SCHRITTE.forEach(function (d, i) {
+    if (!kisten[d.st]) { var gr = document.createElement("div"); gr.className = "gr"; gr.innerHTML = "<b>" + namen[d.st] + "</b><div></div>"; leiste.appendChild(gr); kisten[d.st] = gr.lastChild; }
+    var b = document.createElement("button"); b.textContent = d.kurz; b.dataset.n = i; b.onclick = function () { gehe(i); }; kisten[d.st].appendChild(b);
+  });
+})();
+document.getElementById("weiter").onclick = function () { gehe(schritt + 1); };
+document.getElementById("zurueck").onclick = function () { gehe(schritt - 1); };
+document.querySelectorAll("[data-stufe]").forEach(function (b) {
+  b.onclick = function () { var st = +b.dataset.stufe; for (var i = 0; i <= LETZTER; i++) if (SCHRITTE[i].st === st) { gehe(i); break; } };
+});
+document.addEventListener("keydown", function (e) {
+  if (e.target && /^(BUTTON|SUMMARY|A)$/.test(e.target.tagName) && e.key === " ") return;
+  if (e.key === "ArrowRight" || e.key === " ") { e.preventDefault(); gehe(schritt + 1); }
+  if (e.key === "ArrowLeft") gehe(schritt - 1);
+});
+document.querySelectorAll("[data-tipp]").forEach(function (b) {
+  b.onclick = function () { tipp = +b.dataset.tipp; document.querySelectorAll("[data-tipp]").forEach(function (o) { o.setAttribute("aria-pressed", o === b ? "true" : "false"); }); darstellen(); };
+});
+document.getElementById("voll").onclick = function () {
+  try { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(function () {}); } catch (e) {}
+};
+try { if (window.self !== window.top) document.documentElement.classList.add("eingebettet"); } catch (e) { document.documentElement.classList.add("eingebettet"); }
+if (/[?&]hoersaal\b/.test(location.search)) document.documentElement.classList.add("hoersaal");
+function hash() {
+  var d = location.hash === "#druck"; document.documentElement.classList.toggle("druck", d);
+  if (d) { elemente.forEach(function (e) { e.style.transition = "none"; }); gehe(LETZTER); }
+}
+window.addEventListener("hashchange", hash); hash(); darstellen();
+window.ANIM = {gehe:gehe, letzter:LETZTER, get schritt() { return schritt; }};
+})();
+</script>
+</body>
+</html>
