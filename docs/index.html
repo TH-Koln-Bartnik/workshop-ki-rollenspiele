@@ -57,6 +57,8 @@ button.kopie:hover{background:var(--rot);color:#fff}
 .karte:hover{border-color:var(--rot)}
 .karte b{color:var(--rot);display:block;margin-bottom:.2rem}
 .karte span{font-size:.9rem;color:var(--g500)}
+.karte small{display:block;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g500);margin-bottom:.25rem}
+.karte em{display:block;font-style:normal;font-size:.82rem;color:var(--ink);margin-top:.45rem}
 ul.check{list-style:none;padding:0}
 ul.check li{margin:.35rem 0}
 ul.check label{display:flex;gap:.55rem;align-items:flex-start;cursor:pointer}
@@ -127,6 +129,7 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
 
 <nav class="leiste" aria-label="Inhalt">
   <ul>
+    <li><a href="#galerie">Galerie</a></li>
     <li><a href="#warum">Warum?</a></li>
     <li><a href="#ablauf">Ablauf</a></li>
     <li><a href="#praxis">Praxis</a></li>
@@ -146,6 +149,73 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
 </nav>
 
 <main>
+
+<section id="galerie">
+  <h2>Zehn Beispiele zeigen, was Rollenspiele und Simulationen mit KI heute leisten</h2>
+  <div class="zeit">Galerie · zum Stöbern vor dem ersten Input</div>
+  <p>Sechs Beispiele stammen von anderen Hochschulen, vier aus der eigenen Lehre an der TH Köln. Jede Karte führt zur Quelle oder direkt zum Prompt.</p>
+  <h3>Von anderen Hochschulen</h3>
+  <div class="karten">
+    <a class="karte" href="https://arxiv.org/abs/2407.05181"><small>Rollenspiel · BWL</small><b>Verhandlung mit einem einzigen Prompt</b><span>Die KI fragt nach der Erfahrung der Studierenden, spielt die Gegenseite und gibt nach der Verhandlung Rückmeldung.</span><em>Wharton · Mollick &amp; Mollick (2024)</em></a>
+    <a class="karte" href="https://arxiv.org/abs/2407.12796"><small>Simulation · Gründung</small><b>PitchQuest: Pitch vor Risikokapitalgebern</b><span>Getrennte KI-Agenten übernehmen drei Aufgaben: Mentor, Gegenüber im Rollenspiel und Auswertung für die Lehrenden.</span><em>Wharton · Mollick et al. (2024)</em></a>
+    <a class="karte" href="https://clinicalmindai.stanford.edu/about/history"><small>Rollenspiel · Medizin</small><b>Clinical Mind AI: Anamnese mit KI-Patienten</b><span>Studierende befragen simulierte Patienten, auch per Stimme. Lehrende legen eigene Fälle an.</span><em>Stanford University (o. J.)</em></a>
+    <a class="karte" href="https://www.srf.ch/news/schweiz/vorbereitung-fuer-den-ernstfall-angehende-lehrkraefte-ueben-heikle-elterngespraeche-mit-ki"><small>Rollenspiel · Lehramt</small><b>Elterngespräch mit einem Avatar</b><span>Angehende Lehrkräfte sprechen mit einem besorgten Vater, den ein KI-Avatar spielt. Am Ende bewertet der Avatar das Gespräch.</span><em>PH Zürich · SRF (2026)</em></a>
+    <a class="karte" href="https://www.it.northwestern.edu/about/news-events/2025/northwestern-it-brings-generative-ai-clients-to-the-northwestern-pritzker-school-of-law-classroom.html"><small>Rollenspiel · Jura</small><b>Mandantengespräch im Gruppenchat</b><span>40 Studierende befragen zwei Gründer und wählen die Rechtsform. Die Lehrenden bewerten das Gesprächsprotokoll.</span><em>Northwestern University (2025)</em></a>
+    <a class="karte" href="https://arxiv.org/abs/2602.20633"><small>Simulation · Ingenieurstudium</small><b>Planspiel mit KI-Verhandlungspartner</b><span>Teams sanieren ein Unternehmen und handeln Lieferverträge mit einem KI-Agenten aus, der an feste Mengenrabatte gebunden ist.</span><em>Centrale Lille · Benkeltoum (2026)</em></a>
+  </div>
+  <h3>Aus der eigenen Lehre</h3>
+  <div class="karten">
+    <a class="karte" href="#uebung1"><small>Rollenspiel · Verhandlung</small><b>Verhandlung mit Mentor</b><span>Die KI ist erst Mentor, dann Verhandlungsgegner, dann wieder Mentor. Prompt A zum Kopieren.</span><em>Auf dieser Seite · Übung 1</em></a>
+    <a class="karte" href="#escape"><small>Goal Play · Grundlagen BWL</small><b>Escape Game „Nachtschicht im Archiv“</b><span>Drei Schlösser, drei Formeln: Deckungsbeitrag, Break-even-Menge, Umsatzrentabilität. Die Uhr läuft.</span><em>Auf dieser Seite · Prompt unten</em></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-widget-bullwhip"><small>Simulation · Lieferkette</small><b>Rechner zum Bullwhip-Effekt</b><span>Vier Stufen einer Lieferkette: Lieferzeit und geteilte Kassendaten verstärken oder dämpfen die Bestellschwankung.</span><em>Lehrbuch · Kapitel 7.3.2</em></a>
+    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-bsp-simulationen-studierende"><small>Simulation · Gruppenprojekt</small><b>Studierende bauen das Modell selbst</b><span>Teams wählen ein reales Produkt mit vier bis sechs Stationen und bauen mit KI-Hilfe eine Simulation seiner Herstellung.</span><em>Lehrbuch · Kapitel 7.3.3</em></a>
+  </div>
+  <details id="escape">
+    <summary>Prompt · Goal Play: Escape Game „Nachtschicht im Archiv“</summary>
+    <div class="prompt">
+      <p class="q">Entwurf 11/2026. Die Spielkarte oben im Prompt lässt sich auf das eigene Fach umschreiben; die Spielregeln darunter bleiben. Die Bilder brauchen einen Chatbot mit Bilderzeugung, sonst beschreibt die Spielleitung die Szene in zwei Zeilen.</p>
+<pre id="p-escape">SPIELKARTE – hier anpassen
+Titel: Nachtschicht im Archiv
+Lernziel: Stückdeckungsbeitrag, Break-even-Menge und Umsatzrentabilität berechnen
+Rolle der Spielerin/des Spielers: Werkstudent:in im Controlling der Fahrradmanufaktur „Bergisch Rad“
+Schauplatz und Gefahr: Kellerarchiv, 23:30 Uhr. Die Stahltür fällt ins Schloss, die Löschanlage zählt herunter und flutet den Raum in 30 Minuten mit Stickstoff.
+Fundstücke im Raum (alle Zahlen, die es gibt):
+- Preisschild Lenkertasche „Agger“: 50 € je Stück
+- Kalkulationszettel: variable Kosten 30 € je Stück
+- Kostenstellenbericht: Fixkosten 60.000 € pro Jahr
+- Absatzplan: 4.000 Stück pro Jahr
+- Falsche Fährte: Vorjahresabsatz 3.500 Stück (wird nicht gebraucht)
+Rätsel 1: Zahlenschloss am Aktenschrank. Code = Stückdeckungsbeitrag in €. Formel: db = p − kv. Lösung: 20
+Rätsel 2: Tastenfeld an der Zwischentür. Code = Break-even-Menge in Stück. Formel: x = Kf / db. Lösung: 3000
+Rätsel 3: Terminal der Löschanlage. Code = Umsatzrentabilität in % beim Planabsatz. Formel: Gewinn / Umsatz × 100, Gewinn = x × db − Kf. Lösung: 10
+Annahme einer Antwort: nur die exakte Zahl.
+
+SPIELREGELN – nicht ändern
+Du bist die Spielleitung eines Escape Games. Die Spielkarte oben legt Thema, Schauplatz, Rätsel und Lösungen fest. Erfinde keine weiteren Zahlen oder Fundstücke.
+
+Ablauf: Auftakt, Rätsel 1, Rätsel 2, Rätsel 3, Finale. Immer nur eine Szene, dann warte auf meine Antwort.
+
+Jede Szene:
+1. Erzeuge zuerst genau ein Bild: ein dramatisches Comic-Panel im Querformat, kräftige Tuschekonturen, harte Schatten, Rasterpunkte, schräge Kameraperspektive, wenige satte Farben, ein großes Soundwort (z. B. KLONK!). Dieselbe Hauptfigur in allen Panels. Im Bild stehen keine Formeln, keine Lösungen und kein Fließtext. Kannst du keine Bilder erzeugen, schreibe stattdessen zwei Zeilen, die mit „PANEL:“ beginnen.
+2. Erzähle in höchstens 80 Wörtern, im Präsens und in der Du-Form, was ich sehe. Nenne die Fundstücke, die ich für das Rätsel brauche, und eine falsche Fährte, falls die Spielkarte eine enthält.
+3. Zeige die Uhr („Noch 30 Minuten“) und stelle das Rätsel in einem Satz.
+
+Uhr: Start bei 30 Minuten. Jede falsche Antwort kostet 5 Minuten, jeder Tipp 2. Steht die Uhr auf null, endet das Spiel mit einem letzten Panel und dem Debriefing.
+
+Antworten prüfen: nur nach der Regel „Annahme einer Antwort“ auf der Spielkarte. Verrate nie eine Lösung. Bei einer falschen Antwort sage, dass das Schloss klemmt, und biete einen Tipp an:
+- Tipp 1: eine Rückfrage, die auf das passende Fundstück lenkt
+- Tipp 2: das Konzept oder die Formel beim Namen
+- Tipp 3: der Lösungsweg ohne Ergebnis
+Bei einer richtigen Antwort frage vor dem Öffnen: „Warum stimmt das? Ein Satz.“ Erst danach springt das Schloss auf.
+
+Finale: ein Panel der Flucht, zwei Sätze Erzählung. Verlasse dann die Rolle und gib ein Debriefing: die drei Formeln oder Konzepte in je einem Satz, die Stelle, an der ich gestolpert bin, und eine Transferfrage zu einem anderen Fall.
+
+Bleibe sonst in der Rolle. Schreibe ich „STOPP“, beende das Spiel und gehe direkt zum Debriefing.
+Beginne jetzt mit dem Auftakt.</pre>
+      <button class="kopie" data-ziel="p-escape">Prompt kopieren</button>
+    </div>
+  </details>
+</section>
 
 <section id="warum">
   <h2>Rollenspiele bedienen zwei Hebel des Lernens: Merken und Motivation</h2>
@@ -575,6 +645,7 @@ Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pr
 <section id="quellen" class="lit">
   <h2>Quellen</h2>
   <p>Ahn, D., Mao, C., &amp; Lee, D. (2026). <i>Item-mean surrogates: Why richer persona data fail to improve LLMs as human surrogates</i> (arXiv:2608.29455). arXiv. <a href="https://doi.org/10.48550/arXiv.2608.29455">https://doi.org/10.48550/arXiv.2608.29455</a></p>
+  <p>Benkeltoum, N. (2026). <i>AI combines, humans socialise: A SECI-based experience report on business simulation games</i> (arXiv:2602.20633). arXiv. <a href="https://arxiv.org/abs/2602.20633">https://arxiv.org/abs/2602.20633</a></p>
   <p>Chernikova, O., Heitzmann, N., Stadler, M., Holzberger, D., Seidel, T., &amp; Fischer, F. (2020). Simulation-based learning in higher education: A meta-analysis. <i>Review of Educational Research, 90</i>(4), 499–541. <a href="https://doi.org/10.3102/0034654320933544">https://doi.org/10.3102/0034654320933544</a></p>
   <p>Chi, M. T. H., Adams, J., Bogusch, E. B., Bruchok, C., Kang, S., Lancaster, M., et al. (2018). Translating the ICAP theory of cognitive engagement into practice. <i>Cognitive Science, 42</i>(6), 1777–1832. <a href="https://doi.org/10/gd5n5p">https://doi.org/10/gd5n5p</a></p>
   <p>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving students’ learning with effective learning techniques: Promising directions from cognitive and educational psychology. <i>Psychological Science in the Public Interest, 14</i>(1), 4–58. <a href="https://doi.org/10.1177/1529100612453266">https://doi.org/10.1177/1529100612453266</a></p>
@@ -585,7 +656,10 @@ Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pr
   <p>Mollick, E. (2026, 23. Juli). <i>An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)</i>. One Useful Thing. <a href="https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22">https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22</a></p>
   <p>Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., &amp; Ravipinto, D. (2024). <i>AI agents and education: Simulated practice at scale</i> (arXiv:2407.12796). arXiv. <a href="https://arxiv.org/abs/2407.12796">https://arxiv.org/abs/2407.12796</a></p>
   <p>Mollick, E. R., &amp; Mollick, L. (2024). <i>Instructors as innovators: A future-focused approach to new AI learning opportunities, with prompts</i>. SSRN. <a href="https://doi.org/10.2139/ssrn.4802463">https://doi.org/10.2139/ssrn.4802463</a></p>
+  <p>Northwestern University Information Technology. (2025, 25. Februar). <i>Northwestern IT brings generative AI “clients” to law school classroom</i>. <a href="https://www.it.northwestern.edu/about/news-events/2025/northwestern-it-brings-generative-ai-clients-to-the-northwestern-pritzker-school-of-law-classroom.html">https://www.it.northwestern.edu/about/news-events/2025/northwestern-it-brings-generative-ai-clients-to-the-northwestern-pritzker-school-of-law-classroom.html</a></p>
   <p>Perczel, J., Chow, J., &amp; Demszky, D. (2025). <i>TeachLM: Post-training LLMs for education using authentic learning data</i> (arXiv:2510.05087). arXiv. <a href="https://doi.org/10.48550/arXiv.2510.05087">https://doi.org/10.48550/arXiv.2510.05087</a></p>
+  <p>SRF. (2026, 14. April). <i>Angehende Lehrkräfte üben heikle Elterngespräche mit KI</i>. Schweizer Radio und Fernsehen. <a href="https://www.srf.ch/news/schweiz/vorbereitung-fuer-den-ernstfall-angehende-lehrkraefte-ueben-heikle-elterngespraeche-mit-ki">https://www.srf.ch/news/schweiz/vorbereitung-fuer-den-ernstfall-angehende-lehrkraefte-ueben-heikle-elterngespraeche-mit-ki</a></p>
+  <p>Stanford University. (o. J.). <i>Clinical Mind AI: History</i>. Abgerufen am 25. November 2026. <a href="https://clinicalmindai.stanford.edu/about/history">https://clinicalmindai.stanford.edu/about/history</a></p>
   <p>Tannenbaum, S. I., &amp; Cerasoli, C. P. (2013). Do team and individual debriefs enhance performance? A meta-analysis. <i>Human Factors, 55</i>(1), 231–245. <a href="https://doi.org/10.1177/0018720812448394">https://doi.org/10.1177/0018720812448394</a></p>
   <p>Willingham, D. T. (2021). <i>Why don’t students like school? A cognitive scientist answers questions about how the mind works and what it means for the classroom</i>. John Wiley &amp; Sons.</p>
   <p>Yang, L., Liu, H., Li, S., Jia, R., Xiao, Y., Chen, G., &amp; Lu, L. (2026). <i>Evaluating scaffolding-oriented multi-agent large language model system for clinical interview training</i> (arXiv:2609.10939). arXiv. <a href="https://doi.org/10.48550/arXiv.2609.10939">https://doi.org/10.48550/arXiv.2609.10939</a></p>
