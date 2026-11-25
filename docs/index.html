@@ -112,9 +112,12 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
   <div class="text">
   <div class="dach">Workshop · TH Köln · Stand 25.11.2026</div>
   <h1>Rollenspiele und Simulationen mit KI in der Lehre</h1>
-  <p>Sieben Kern-Inputs, zwei Übungen, am Ende Interaktionen zur Vertiefung. Prof. Dr. Roman Bartnik, TH Köln. Die Kern-Inputs gibt es auch als <a href="folien-kern.html">elf Folien</a>.</p>
-  <p class="q">Sie brauchen ein Sprachmodell mit Chatfenster (ChatGPT, Claude, Gemini, Mistral oder das Angebot Ihrer Hochschule). Geben Sie keine personenbezogenen Daten von Studierenden ein.</p>
-  <p>Begleitmaterial zum Buch <a href="https://th-koln-bartnik.github.io/genai4teaching/">„Generative KI als Hilfe zum Lehren und Lernen“</a>.</p>
+  <p><b>Lernziele</b></p>
+  <ul class="ziele" style="margin:.2rem 0 0;padding-left:1.2rem;color:var(--g500)">
+    <li>Optionen für Rollenspiele und Simulationen mit KI kennenlernen</li>
+    <li>Lernmechanismen und Trade-offs verstehen</li>
+    <li>Eigene Rollenspiele nach Vorlagen erstellen und anpassen</li>
+  </ul>
   </div>
   <figure class="qr">
     <img src="qr-start.svg" width="152" height="152" alt="QR-Code zu dieser Seite: th-koln-bartnik.github.io/workshop-ki-rollenspiele/index.html#warum">
@@ -135,6 +138,7 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
     <li><a class="ueb" href="#uebung2">Übung 2</a></li>
     <li><a href="#vertiefung">Vertiefung</a></li>
     <li><a href="#skript">Skript</a></li>
+    <li><a href="#bereitstellung">Bereitstellen</a></li>
     <li><a href="#quellen">Quellen</a></li>
   </ul>
 </nav>
@@ -490,6 +494,11 @@ Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pr
     <a class="karte" href="skript.html"><b>Skript zum Workshop</b><span>Die ausführliche Fassung: Didaktik, Mehrwert und Grenzen, Umsetzung, neuere Studien, Literaturverzeichnis.</span></a>
   </div>
   <p class="q">Folien: <a href="folien-kern.html">Kern-Inputs in elf Folien</a> · <a href="folien.html">Folien mit Schätzfragen und QR-Codes</a></p>
+</section>
+
+<section id="bereitstellung" class="fliess">
+  <h2>Vier Wege bringen HTML-Interaktionen zu den Studierenden</h2>
+  <p>Viele Übungen bestehen am Ende aus einer einzigen HTML-Datei, die im Browser läuft. Am nächsten liegt das eigene Lernmanagementsystem: ILIAS und Moodle nehmen die Datei als Lernmaterial auf, und alles bleibt hinter dem Hochschul-Login. Wer einen öffentlichen Link braucht, lädt den Ordner bei Netlify oder einem vergleichbaren Anbieter hoch und erhält in Minuten eine Adresse. GitHub Pages leistet dasselbe kostenlos und hält zusätzlich jede Änderung nach. Komplexere Simulationen, die im Hintergrund ein Sprachmodell aufrufen, Spielstände speichern oder Zugangsschlüssel geheim halten müssen, brauchen einen Server, etwa bei AWS.</p>
 </section>
 
 <section id="quellen" class="lit">
