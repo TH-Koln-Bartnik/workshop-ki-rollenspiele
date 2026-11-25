@@ -38,7 +38,60 @@ format:
 ::::
 
 ::: notes
-Heute bauen Sie Rollenspiele, und zwar in fünf Schritten. Zuerst fragen wir, warum ein Rollenspiel überhaupt beim Lernen hilft. Dann spielen Sie erste Formen durch: Lernen durch Praxis, durch Kritik und durch gemeinsames Erstellen. Nach der Pause geht es darum, was ein Rollenspiel interessant macht. Danach bauen Sie ein kleines Lernspiel und teilen es. Und in der letzten Stunde übertragen Sie alles auf Ihre eigenen Lerninhalte. Über den Code erreichen Sie die Workshop-Seite mit den Prompts.
+Heute bauen Sie Rollenspiele, und zwar in fünf Schritten. Vorab zeige ich Ihnen auf zwei Folien, wie Sie die Planung ordnen und welches Modell Sie wählen. Zuerst fragen wir, warum ein Rollenspiel überhaupt beim Lernen hilft. Dann spielen Sie erste Formen durch: Lernen durch Praxis, durch Kritik und durch gemeinsames Erstellen. Nach der Pause geht es darum, was ein Rollenspiel interessant macht. Danach bauen Sie ein kleines Lernspiel und teilen es. Und in der letzten Stunde übertragen Sie alles auf Ihre eigenen Lerninhalte. Über den Code erreichen Sie die Workshop-Seite mit den Prompts.
+:::
+
+## Das 4D-Schema ordnet die Planung von Rollenspielen und Simulationen {#vierd}
+
+[Planen mit dem 4D-Schema]{.dach}
+
+::: {.wahl}
+::: {.knoepfe}
+<button data-t="Was übernimmt der Mensch, was die KI? Welche Übung verträgt ein simuliertes Gegenüber, welche braucht Menschen? Dazu gehört die Kenntnis der Werkzeuge, also die Modellwahl: nächste Folie.">Delegation</button>
+<button data-t="Wie sage ich der KI klar, was ich will? Rolle, Wissensstand und Verhalten der Figur festlegen: was sie will und was sie nie tun darf.">Description</button>
+<button data-t="Wie beurteile ich, was die KI liefert? Vor dem Einsatz testen, auch ob die Figur mehr als den Durchschnitt spielt. Vier Prüfebenen: Folie 10.">Discernment</button>
+<button data-t="Wie setze ich KI verantwortlich und offen ein? Den Studierenden sagen, dass sie mit einer Simulation üben, keine personenbezogenen Daten eingeben, das Nachgespräch selbst führen.">Diligence</button>
+:::
+<p class="feld" aria-live="polite">Wählen Sie eine der vier Kompetenzen.</p>
+:::
+
+::: {.unter}
+Heute im Blick: **Modellwahl** (Delegation) · **Testen** (Discernment)
+:::
+
+::: footer
+Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/> · Anwendung auf den Simulator: Bartnik, R. (2026). *Generative KI als Hilfe zum Lehren und Lernen*, Kap. 5 und 6. <https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html>
+:::
+
+::: notes
+Wie planen Sie ein Rollenspiel oder eine Simulation? Das 4D-Schema von Dakan und Feller gibt die Reihenfolge vor: vier Kompetenzen, vier Leitfragen. Klicken Sie die Knöpfe nacheinander an. Delegation: Was übernimmt der Mensch, was die KI? Für uns heißt das: Welche Übung verträgt ein simuliertes Gegenüber, und welche braucht Menschen? Zur Delegation zählen Dakan und Feller auch die Kenntnis der Werkzeuge, und dazu gehört die Wahl des Modells. Description: Wie sage ich der KI klar, was ich will? Sie legen Rolle, Wissensstand und Verhalten der Figur fest. Discernment: Wie beurteile ich, was die KI liefert? Sie testen vor dem Einsatz, und Sie prüfen, ob die Figur mehr als den Durchschnitt spielt, denn Sprachmodelle treffen das mittlere Verhalten von Menschen, nicht den Einzelfall. Diligence: Wie setze ich KI verantwortlich und offen ein? Die Studierenden wissen, dass sie mit einer Simulation üben, und das Nachgespräch führen Sie selbst. Zwei dieser Fragen sehen wir uns heute genauer an: die Modellwahl gleich auf der nächsten Folie, das Testen später, bevor Sie Ihr eigenes Lernspiel bauen.
+:::
+
+## Planen mit dem stärksten Modell, durchführen oft mit einem günstigeren {#modellwahl}
+
+[4D · Delegation · Modellwahl]{.dach}
+
+::: {.kacheln .zwei}
+::: {.kachel .akzent}
+**Konzept und Detailplanung**
+starkes Frontier-Modell · Desktop-Variante
+:::
+::: {.kachel .fragment}
+**Durchführung**
+oft genügt ein günstigeres Modell
+:::
+:::
+
+::: {.unter .fragment}
+Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen?
+:::
+
+::: footer
+Empfehlung aus der Workshop-Praxis (Bartnik, 2026). Unterschiede zwischen Modellen und Arbeitsumgebungen: Mollick, E. (2026, 23. Juli). *An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)*. One Useful Thing. <https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22>
+:::
+
+::: notes
+Welches Modell nehmen Sie? Die Antwort hängt an der Phase. Für das Konzept und die Detailplanung empfehle ich ein starkes Frontier-Modell, also eines der leistungsfähigsten Modelle, die gerade zu haben sind, und zwar in der Desktop-Variante: als Programm auf Ihrem Rechner, das mit Ihren Dateien arbeiten kann. In dieser Phase entstehen die Figur, der Ablauf, der lange Rollen-Prompt und die Testfälle; hier zahlt sich jedes bisschen Urteilskraft des Modells aus. Die Durchführung ist eine andere Aufgabe. Das Modell folgt einem fertigen, geprüften Prompt, und das gelingt später oft auch mit einem günstigeren Modell gut. Das ist wichtig, weil Ihre Studierenden selten das teuerste Abo haben. Deshalb die Frage auf der Folie: Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen? Die kostenlosen Zugänge zeigen dabei oft ein zu schwaches Bild; ob Ihr Prompt dort trägt, finden Sie nur durch Testen heraus; die vier Prüfebenen dafür sehen Sie auf Folie 10.
 :::
 
 ## Rollenspiele bedienen zwei Hebel des Lernens: Merken und Motivation {#warum}
@@ -222,59 +275,6 @@ Guo, Z., & Fryer, L. K. (2024). What really elicits learners’ situational inte
 
 ::: notes
 Rollenspiele sollen Interesse wecken. Aber was heißt interessant? Hidi und Renninger unterscheiden situatives und persönliches Interesse: Das situative weckt die Lage, das persönliche bringt jemand mit, und aus dem einen kann sich das andere entwickeln, oder auch nicht. Was Sie gestalten können, ist die Situation. Guo und Fryer haben 35 Studien ausgewertet und finden sechs Quellen: Nutzwert, Neuartigkeit, kognitive Aktivierung, soziale Interaktion, praktisches Tun und Wahlmöglichkeiten. Und Geschichten bleiben hängen. Willingham nennt vier Zutaten: starke Figuren, ein zentraler Konflikt, Komplikationen und Ereignisse, die ursächlich zusammenhängen. In den Übungen bauen Sie beides in Ihre Fallstudie ein, und Sie gestalten die perfekte Lernsituation in einem absurden Rahmen: als Milliardärin, König oder mit den Wünschen eines Dschinns.
-:::
-
-## Das 4D-Schema ordnet die Planung von Rollenspielen und Simulationen {#vierd}
-
-[Planen mit dem 4D-Schema]{.dach}
-
-::: {.wahl}
-::: {.knoepfe}
-<button data-t="Was übernimmt der Mensch, was die KI? Welche Übung verträgt ein simuliertes Gegenüber, welche braucht Menschen? Dazu gehört die Kenntnis der Werkzeuge, also die Modellwahl: nächste Folie.">Delegation</button>
-<button data-t="Wie sage ich der KI klar, was ich will? Rolle, Wissensstand und Verhalten der Figur festlegen: was sie will und was sie nie tun darf.">Description</button>
-<button data-t="Wie beurteile ich, was die KI liefert? Vor dem Einsatz testen, auch ob die Figur mehr als den Durchschnitt spielt. Vier Prüfebenen: übernächste Folie.">Discernment</button>
-<button data-t="Wie setze ich KI verantwortlich und offen ein? Den Studierenden sagen, dass sie mit einer Simulation üben, keine personenbezogenen Daten eingeben, das Nachgespräch selbst führen.">Diligence</button>
-:::
-<p class="feld" aria-live="polite">Wählen Sie eine der vier Kompetenzen.</p>
-:::
-
-::: {.unter}
-Heute im Blick: **Modellwahl** (Delegation) · **Testen** (Discernment)
-:::
-
-::: footer
-Dakan, R., & Feller, J. (2025). *The AI Fluency Framework: A descriptive and normative model of human-AI interaction for higher education* (Version 1.1). <https://aifluencyframework.org/> · Anwendung auf den Simulator: Bartnik, R. (2026). *Generative KI als Hilfe zum Lehren und Lernen*, Kap. 5 und 6. <https://th-koln-bartnik.github.io/genai4teaching/kapitel06-rollen.html>
-:::
-
-::: notes
-Wie planen Sie ein Rollenspiel oder eine Simulation? Das 4D-Schema von Dakan und Feller gibt die Reihenfolge vor: vier Kompetenzen, vier Leitfragen. Klicken Sie die Knöpfe nacheinander an. Delegation: Was übernimmt der Mensch, was die KI? Für uns heißt das: Welche Übung verträgt ein simuliertes Gegenüber, und welche braucht Menschen? Zur Delegation zählen Dakan und Feller auch die Kenntnis der Werkzeuge, und dazu gehört die Wahl des Modells. Description: Wie sage ich der KI klar, was ich will? Sie legen Rolle, Wissensstand und Verhalten der Figur fest. Discernment: Wie beurteile ich, was die KI liefert? Sie testen vor dem Einsatz, und Sie prüfen, ob die Figur mehr als den Durchschnitt spielt, denn Sprachmodelle treffen das mittlere Verhalten von Menschen, nicht den Einzelfall. Diligence: Wie setze ich KI verantwortlich und offen ein? Die Studierenden wissen, dass sie mit einer Simulation üben, und das Nachgespräch führen Sie selbst. Zwei dieser Fragen sehen wir uns jetzt genauer an: die Modellwahl und das Testen.
-:::
-
-## Planen mit dem stärksten Modell, durchführen oft mit einem günstigeren {#modellwahl}
-
-[4D · Delegation · Modellwahl]{.dach}
-
-::: {.kacheln .zwei}
-::: {.kachel .akzent}
-**Konzept und Detailplanung**
-starkes Frontier-Modell · Desktop-Variante
-:::
-::: {.kachel .fragment}
-**Durchführung**
-oft genügt ein günstigeres Modell
-:::
-:::
-
-::: {.unter .fragment}
-Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen?
-:::
-
-::: footer
-Empfehlung aus der Workshop-Praxis (Bartnik, 2026). Unterschiede zwischen Modellen und Arbeitsumgebungen: Mollick, E. (2026, 23. Juli). *An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)*. One Useful Thing. <https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22>
-:::
-
-::: notes
-Welches Modell nehmen Sie? Die Antwort hängt an der Phase. Für das Konzept und die Detailplanung empfehle ich ein starkes Frontier-Modell, also eines der leistungsfähigsten Modelle, die gerade zu haben sind, und zwar in der Desktop-Variante: als Programm auf Ihrem Rechner, das mit Ihren Dateien arbeiten kann. In dieser Phase entstehen die Figur, der Ablauf, der lange Rollen-Prompt und die Testfälle; hier zahlt sich jedes bisschen Urteilskraft des Modells aus. Die Durchführung ist eine andere Aufgabe. Das Modell folgt einem fertigen, geprüften Prompt, und das gelingt später oft auch mit einem günstigeren Modell gut. Das ist wichtig, weil Ihre Studierenden selten das teuerste Abo haben. Deshalb die Frage auf der Folie: Läuft Ihr fertiger Prompt auch auf dem Modell, das Ihre Studierenden nutzen? Die kostenlosen Zugänge zeigen dabei oft ein zu schwaches Bild; ob Ihr Prompt dort trägt, finden Sie nur durch Testen heraus, und damit sind wir bei der nächsten Folie.
 :::
 
 ## Keine Prüfebene genügt allein: Vier Schichten fangen verschiedene Fehler {#tests}
