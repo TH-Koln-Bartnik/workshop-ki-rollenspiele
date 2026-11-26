@@ -59,6 +59,23 @@ button.kopie:hover{background:var(--rot);color:#fff}
 .karte span{font-size:.9rem;color:var(--g500)}
 .karte small{display:block;font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--g500);margin-bottom:.25rem}
 .karte em{display:block;font-style:normal;font-size:.82rem;color:var(--ink);margin-top:.45rem}
+.schau{border:1px solid var(--g200);border-radius:8px;margin:.8rem 0;overflow:hidden;background:#fff}
+.gbahn{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;outline-offset:-3px}
+.gbahn::-webkit-scrollbar{display:none}
+.karte.blatt{flex:0 0 100%;scroll-snap-align:start;border:0;border-radius:0;padding:0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:center}
+.karte.blatt img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-right:1px solid var(--g200)}
+.karte.blatt i{font-style:normal;display:block;padding:1rem 1.2rem}
+.karte.blatt b{font-size:1.15rem;line-height:1.3}
+.karte.blatt span{font-size:.95rem}
+.steuer{display:flex;align-items:center;justify-content:center;gap:1rem;padding:.45rem;border-top:1px solid var(--g200)}
+.steuer button{font:inherit;font-size:1.3rem;line-height:1;width:2.4rem;height:2.4rem;border:1px solid var(--rot);border-radius:50%;background:#fff;color:var(--rot);cursor:pointer}
+.steuer button:hover{background:var(--rot);color:#fff}
+.zaehler{font-size:.85rem;font-weight:700;color:var(--g500);min-width:4rem;text-align:center}
+.streifen{display:flex;gap:.35rem;overflow-x:auto;padding:.5rem;border-top:1px solid var(--g200);background:var(--g100)}
+.streifen button{flex:0 0 auto;padding:0;border:2px solid transparent;border-radius:4px;background:none;cursor:pointer;opacity:.55;line-height:0}
+.streifen button img{display:block;width:64px;height:40px;object-fit:cover;border-radius:2px}
+.streifen button[aria-current="true"]{border-color:var(--rot);opacity:1}
+@media (max-width:40rem){.karte.blatt{grid-template-columns:1fr;align-items:start}.karte.blatt img{border-right:0;border-bottom:1px solid var(--g200)}}
 ul.check{list-style:none;padding:0}
 ul.check li{margin:.35rem 0}
 ul.check label{display:flex;gap:.55rem;align-items:flex-start;cursor:pointer}
@@ -152,29 +169,31 @@ pre mark{background:#fde3df;color:inherit;padding:0 .1em}
 <main>
 
 <section id="galerie">
-  <h2>Zwölf Beispiele zeigen, was Rollenspiele und Simulationen mit KI heute leisten</h2>
-  <div class="zeit">Galerie · zum Stöbern vor dem ersten Input</div>
-  <p>Sechs Beispiele stammen von anderen Hochschulen, zwei aus dem Netz, vier aus der eigenen Lehre an der TH Köln. Jede Karte führt zur Quelle oder direkt zum Prompt.</p>
-  <h3>Von anderen Hochschulen</h3>
-  <div class="karten">
-    <a class="karte" href="https://arxiv.org/abs/2407.05181"><small>Rollenspiel · BWL</small><b>Verhandlung mit einem einzigen Prompt</b><span>Die KI fragt nach der Erfahrung der Studierenden, spielt die Gegenseite und gibt nach der Verhandlung Rückmeldung.</span><em>Wharton · Mollick &amp; Mollick (2024)</em></a>
-    <a class="karte" href="https://arxiv.org/abs/2407.12796"><small>Simulation · Gründung</small><b>PitchQuest: Pitch vor Risikokapitalgebern</b><span>Getrennte KI-Agenten übernehmen drei Aufgaben: Mentor, Gegenüber im Rollenspiel und Auswertung für die Lehrenden.</span><em>Wharton · Mollick et al. (2024)</em></a>
-    <a class="karte" href="https://clinicalmindai.stanford.edu/about/history"><small>Rollenspiel · Medizin</small><b>Clinical Mind AI: Anamnese mit KI-Patienten</b><span>Studierende befragen simulierte Patienten, auch per Stimme. Lehrende legen eigene Fälle an.</span><em>Stanford University (o. J.)</em></a>
-    <a class="karte" href="https://www.srf.ch/news/schweiz/vorbereitung-fuer-den-ernstfall-angehende-lehrkraefte-ueben-heikle-elterngespraeche-mit-ki"><small>Rollenspiel · Lehramt</small><b>Elterngespräch mit einem Avatar</b><span>Angehende Lehrkräfte sprechen mit einem besorgten Vater, den ein KI-Avatar spielt. Am Ende bewertet der Avatar das Gespräch.</span><em>PH Zürich · SRF (2026)</em></a>
-    <a class="karte" href="https://www.it.northwestern.edu/about/news-events/2025/northwestern-it-brings-generative-ai-clients-to-the-northwestern-pritzker-school-of-law-classroom.html"><small>Rollenspiel · Jura</small><b>Mandantengespräch im Gruppenchat</b><span>40 Studierende befragen zwei Gründer und wählen die Rechtsform. Die Lehrenden bewerten das Gesprächsprotokoll.</span><em>Northwestern University (2025)</em></a>
-    <a class="karte" href="https://arxiv.org/abs/2602.20633"><small>Simulation · Ingenieurstudium</small><b>Planspiel mit KI-Verhandlungspartner</b><span>Teams sanieren ein Unternehmen und handeln Lieferverträge mit einem KI-Agenten aus, der an feste Mengenrabatte gebunden ist.</span><em>Centrale Lille · Benkeltoum (2026)</em></a>
-  </div>
-  <h3>Aus dem Netz: Simulationen zum Anfassen</h3>
-  <div class="karten">
-    <a class="karte" href="https://wondering.app/data-centers" target="_blank" rel="noopener"><small>Interaktiver Aufsatz · Informatik</small><b>Was steckt in einem Rechenzentrum?</b><span>Beim Scrollen wächst ein KI-Rechenzentrum in 3D, Bauteil für Bauteil. Ein Knopf schickt eine Frage durchs System, Schalter verändern die Anlage.</span><em>Wondering (2026)</em></a>
-    <a class="karte" href="https://electronics-101-six.vercel.app/" target="_blank" rel="noopener"><small>Virtuelles Experiment · Elektrotechnik</small><b>Electronics 101: Versuche auf der 3D-Werkbank</b><span>68 Lektionen vom ohmschen Gesetz bis zum Logikgatter. Jeder Versuch erscheint als Schaltplan und als Steckbrett.</span><em>Dilum Sanjaya (2026)</em></a>
-  </div>
-  <h3>Aus der eigenen Lehre</h3>
-  <div class="karten">
-    <a class="karte" href="#uebung1"><small>Rollenspiel · Verhandlung</small><b>Verhandlung mit Mentor</b><span>Die KI ist erst Mentor, dann Verhandlungsgegner, dann wieder Mentor. Prompt A zum Kopieren.</span><em>Auf dieser Seite · Übung 1</em></a>
-    <a class="karte" href="#escape"><small>Goal Play · Grundlagen BWL</small><b>Escape Game „Nachtschicht im Archiv“</b><span>Drei Schlösser, drei Formeln: Deckungsbeitrag, Break-even-Menge, Umsatzrentabilität. Die Uhr läuft.</span><em>Auf dieser Seite · Prompt unten</em></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-widget-bullwhip"><small>Simulation · Lieferkette</small><b>Rechner zum Bullwhip-Effekt</b><span>Vier Stufen einer Lieferkette: Lieferzeit und geteilte Kassendaten verstärken oder dämpfen die Bestellschwankung.</span><em>Lehrbuch · Kapitel 7.3.2</em></a>
-    <a class="karte" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-bsp-simulationen-studierende"><small>Simulation · Gruppenprojekt</small><b>Studierende bauen das Modell selbst</b><span>Teams wählen ein reales Produkt mit vier bis sechs Stationen und bauen mit KI-Hilfe eine Simulation seiner Herstellung.</span><em>Lehrbuch · Kapitel 7.3.3</em></a>
+  <h2>Dreizehn Beispiele zeigen, was Rollenspiele und Simulationen mit KI heute leisten</h2>
+  <div class="zeit">Galerie · zum Blättern vor dem ersten Input</div>
+  <p>Sechs Beispiele stammen von anderen Hochschulen, drei aus dem Netz, vier aus der eigenen Lehre an der TH Köln. Jedes Blatt führt zur Quelle oder direkt zum Prompt.</p>
+  <div class="schau" id="schau">
+    <div class="gbahn" tabindex="0" aria-label="Galerie, mit Pfeiltasten blättern">
+      <a class="karte blatt" href="https://arxiv.org/abs/2407.05181"><img src="galerie/mollick-prompt.jpg" alt="Bildschirmfoto: Verhandlung mit einem einzigen Prompt" width="640" height="400"><i><small>Rollenspiel · BWL</small><b>Verhandlung mit einem einzigen Prompt</b><span>Die KI fragt nach der Erfahrung der Studierenden, spielt die Gegenseite und gibt nach der Verhandlung Rückmeldung.</span><em>Wharton · Mollick &amp; Mollick (2024)</em></i></a>
+      <a class="karte blatt" href="https://arxiv.org/abs/2407.12796"><img src="galerie/pitchquest.jpg" alt="Bildschirmfoto: PitchQuest: Pitch vor Risikokapitalgebern" width="640" height="400"><i><small>Simulation · Gründung</small><b>PitchQuest: Pitch vor Risikokapitalgebern</b><span>Getrennte KI-Agenten übernehmen drei Aufgaben: Mentor, Gegenüber im Rollenspiel und Auswertung für die Lehrenden.</span><em>Wharton · Mollick et al. (2024)</em></i></a>
+      <a class="karte blatt" href="https://clinicalmindai.stanford.edu/about/history"><img src="galerie/clinical-mind.jpg" alt="Bildschirmfoto: Clinical Mind AI: Anamnese mit KI-Patienten" width="640" height="400" loading="lazy"><i><small>Rollenspiel · Medizin</small><b>Clinical Mind AI: Anamnese mit KI-Patienten</b><span>Studierende befragen simulierte Patienten, auch per Stimme. Lehrende legen eigene Fälle an.</span><em>Stanford University (o. J.)</em></i></a>
+      <a class="karte blatt" href="https://www.srf.ch/news/schweiz/vorbereitung-fuer-den-ernstfall-angehende-lehrkraefte-ueben-heikle-elterngespraeche-mit-ki"><img src="galerie/elterngespraech.jpg" alt="Bildschirmfoto: Elterngespräch mit einem Avatar" width="640" height="400" loading="lazy"><i><small>Rollenspiel · Lehramt</small><b>Elterngespräch mit einem Avatar</b><span>Angehende Lehrkräfte sprechen mit einem besorgten Vater, den ein KI-Avatar spielt. Am Ende bewertet der Avatar das Gespräch.</span><em>PH Zürich · SRF (2026)</em></i></a>
+      <a class="karte blatt" href="https://www.it.northwestern.edu/about/news-events/2025/northwestern-it-brings-generative-ai-clients-to-the-northwestern-pritzker-school-of-law-classroom.html"><img src="galerie/mandantengespraech.jpg" alt="Bildschirmfoto: Mandantengespräch im Gruppenchat" width="640" height="400" loading="lazy"><i><small>Rollenspiel · Jura</small><b>Mandantengespräch im Gruppenchat</b><span>40 Studierende befragen zwei Gründer und wählen die Rechtsform. Die Lehrenden bewerten das Gesprächsprotokoll.</span><em>Northwestern University (2025)</em></i></a>
+      <a class="karte blatt" href="https://arxiv.org/abs/2602.20633"><img src="galerie/planspiel.jpg" alt="Bildschirmfoto: Planspiel mit KI-Verhandlungspartner" width="640" height="400" loading="lazy"><i><small>Simulation · Ingenieurstudium</small><b>Planspiel mit KI-Verhandlungspartner</b><span>Teams sanieren ein Unternehmen und handeln Lieferverträge mit einem KI-Agenten aus, der an feste Mengenrabatte gebunden ist.</span><em>Centrale Lille · Benkeltoum (2026)</em></i></a>
+      <a class="karte blatt" href="https://wondering.app/data-centers" target="_blank" rel="noopener"><img src="galerie/rechenzentrum.jpg" alt="Bildschirmfoto: Was steckt in einem Rechenzentrum?" width="640" height="400" loading="lazy"><i><small>Interaktiver Aufsatz · Informatik</small><b>Was steckt in einem Rechenzentrum?</b><span>Beim Scrollen wächst ein KI-Rechenzentrum in 3D, Bauteil für Bauteil. Ein Knopf schickt eine Frage durchs System, Schalter verändern die Anlage.</span><em>Wondering (2026)</em></i></a>
+      <a class="karte blatt" href="https://electronics-101-six.vercel.app/" target="_blank" rel="noopener"><img src="galerie/electronics-101.jpg" alt="Bildschirmfoto: Electronics 101: Versuche auf der 3D-Werkbank" width="640" height="400" loading="lazy"><i><small>Virtuelles Experiment · Elektrotechnik</small><b>Electronics 101: Versuche auf der 3D-Werkbank</b><span>68 Lektionen vom ohmschen Gesetz bis zum Logikgatter. Jeder Versuch erscheint als Schaltplan und als Steckbrett.</span><em>Dilum Sanjaya (2026)</em></i></a>
+      <a class="karte blatt" href="https://karpathy.ai/usaciv/#state=16&amp;at=1104,1709,0.92" target="_blank" rel="noopener"><img src="galerie/usaciv.jpg" alt="Bildschirmfoto: usaciv: Die USA als Strategiespiel-Karte" width="640" height="400" loading="lazy"><i><small>Datenkarte · Volkswirtschaft</small><b>usaciv: Die USA als Strategiespiel-Karte</b><span>Die Wirtschaft der USA als Sechseck-Karte im Stil eines Strategiespiels. Ein Klick auf einen Bundesstaat zeigt Beschäftigung, Einkommen und Branchen; Linsen färben die Karte nach Bevölkerung, Einkommen oder Abschlüssen.</span><em>karpathy.ai (o. J.)</em></i></a>
+      <a class="karte blatt" href="#uebung1"><img src="galerie/verhandlung-mentor.jpg" alt="Bildschirmfoto: Verhandlung mit Mentor" width="640" height="400" loading="lazy"><i><small>Rollenspiel · Verhandlung</small><b>Verhandlung mit Mentor</b><span>Die KI ist erst Mentor, dann Verhandlungsgegner, dann wieder Mentor. Prompt A zum Kopieren.</span><em>Auf dieser Seite · Übung 1</em></i></a>
+      <a class="karte blatt" href="#escape"><img src="galerie/escape-game.jpg" alt="Bildschirmfoto: Escape Game „Nachtschicht im Archiv“" width="640" height="400" loading="lazy"><i><small>Goal Play · Grundlagen BWL</small><b>Escape Game „Nachtschicht im Archiv“</b><span>Drei Schlösser, drei Formeln: Deckungsbeitrag, Break-even-Menge, Umsatzrentabilität. Die Uhr läuft.</span><em>Auf dieser Seite · Prompt unten</em></i></a>
+      <a class="karte blatt" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-widget-bullwhip"><img src="galerie/bullwhip.jpg" alt="Bildschirmfoto: Rechner zum Bullwhip-Effekt" width="640" height="400" loading="lazy"><i><small>Simulation · Lieferkette</small><b>Rechner zum Bullwhip-Effekt</b><span>Vier Stufen einer Lieferkette: Lieferzeit und geteilte Kassendaten verstärken oder dämpfen die Bestellschwankung.</span><em>Lehrbuch · Kapitel 7.3.2</em></i></a>
+      <a class="karte blatt" href="https://th-koln-bartnik.github.io/genai4teaching/kapitel07-artefakte.html#sec-bsp-simulationen-studierende"><img src="galerie/studierende-modell.jpg" alt="Bildschirmfoto: Studierende bauen das Modell selbst" width="640" height="400" loading="lazy"><i><small>Simulation · Gruppenprojekt</small><b>Studierende bauen das Modell selbst</b><span>Teams wählen ein reales Produkt mit vier bis sechs Stationen und bauen mit KI-Hilfe eine Simulation seiner Herstellung.</span><em>Lehrbuch · Kapitel 7.3.3</em></i></a>
+    </div>
+    <div class="steuer">
+      <button type="button" class="zur" aria-label="Vorheriges Beispiel">‹</button>
+      <span class="zaehler" aria-live="polite">1 / 13</span>
+      <button type="button" class="vor" aria-label="Nächstes Beispiel">›</button>
+    </div>
+    <div class="streifen"><button type="button" aria-label="Beispiel 1"><img src="galerie/mollick-prompt.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 2"><img src="galerie/pitchquest.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 3"><img src="galerie/clinical-mind.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 4"><img src="galerie/elterngespraech.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 5"><img src="galerie/mandantengespraech.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 6"><img src="galerie/planspiel.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 7"><img src="galerie/rechenzentrum.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 8"><img src="galerie/electronics-101.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 9"><img src="galerie/usaciv.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 10"><img src="galerie/verhandlung-mentor.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 11"><img src="galerie/escape-game.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 12"><img src="galerie/bullwhip.jpg" alt="" width="64" height="40" loading="lazy"></button><button type="button" aria-label="Beispiel 13"><img src="galerie/studierende-modell.jpg" alt="" width="64" height="40" loading="lazy"></button></div>
   </div>
   <details id="escape">
     <summary>Prompt · Goal Play: Escape Game „Nachtschicht im Archiv“</summary>
@@ -742,6 +761,7 @@ Ablauf: Beschreib die Szene in zwei Sätzen und spiel dann die Gegenseite."></pr
   <p>Edwards, J., &amp; Emberson, L. (2026, 29. Mai). <i>Open models lag state-of-the-art closed models by 4 months</i>. Epoch AI. <a href="https://epoch.ai/data-insights/open-closed-eci-gap">https://epoch.ai/data-insights/open-closed-eci-gap</a></p>
   <p>Guo, Z., &amp; Fryer, L. K. (2024). What really elicits learners’ situational interest in learning activities: A scoping review of six most commonly researched types of situational interest sources in educational settings. <i>Current Psychology</i>. <a href="https://doi.org/10.1007/s12144-024-07176-x">https://doi.org/10.1007/s12144-024-07176-x</a></p>
   <p>Hidi, S., &amp; Renninger, K. A. (2006). The four-phase model of interest development. <i>Educational Psychologist, 41</i>(2), 111–127.</p>
+  <p>Karpathy, A. (o. J.). <i>usaciv: The United States as a strategy game</i> [Interaktive Karte]. Abgerufen am 26. November 2026. <a href="https://karpathy.ai/usaciv/">https://karpathy.ai/usaciv/</a></p>
   <p>Kuric, E., Demcak, P., &amp; Krajcovic, M. (2026). <i>What would GPT click: Practical effects of human-AI behavioral misalignment and the cost of synthetic participants in user experience</i> (arXiv:2605.18302). arXiv. <a href="https://doi.org/10.48550/arXiv.2605.18302">https://doi.org/10.48550/arXiv.2605.18302</a></p>
   <p>Mollick, E. (2026, 23. Juli). <i>An opinionated guide to which AI to use to do stuff (The Summer 2026 edition)</i>. One Useful Thing. <a href="https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22">https://www.oneusefulthing.org/p/an-opinionated-guide-to-which-ai-b22</a></p>
   <p>Mollick, E., Mollick, L., Bach, N., Ciccarelli, L. J., Przystanski, B., &amp; Ravipinto, D. (2024). <i>AI agents and education: Simulated practice at scale</i> (arXiv:2407.12796). arXiv. <a href="https://arxiv.org/abs/2407.12796">https://arxiv.org/abs/2407.12796</a></p>
@@ -839,6 +859,16 @@ document.querySelectorAll('button.kopie').forEach(function(b){
     each('input[type=checkbox]',function(c){c.addEventListener('change',bau)},w);bau();
   });
 })();
+</script>
+<script>
+(function(){var s=document.getElementById('schau');if(!s)return;var bahn=s.querySelector('.gbahn'),n=bahn.children.length,z=s.querySelector('.zaehler'),k=s.querySelectorAll('.streifen button'),akt=0;
+function geh(i){i=(i+n)%n;bahn.scrollTo({left:i*bahn.clientWidth,behavior:'smooth'});}
+function zeig(){var i=Math.round(bahn.scrollLeft/bahn.clientWidth);if(i===akt&&z.dataset.ok)return;akt=i;z.dataset.ok=1;z.textContent=(i+1)+' / '+n;k.forEach(function(b,j){if(j===i){b.setAttribute('aria-current','true');var st=b.parentNode;st.scrollTo({left:b.offsetLeft-st.clientWidth/2+b.clientWidth/2,behavior:'smooth'});}else b.removeAttribute('aria-current');});}
+s.querySelector('.zur').onclick=function(){geh(akt-1)};s.querySelector('.vor').onclick=function(){geh(akt+1)};
+k.forEach(function(b,j){b.onclick=function(){geh(j)}});
+bahn.addEventListener('scroll',zeig,{passive:true});
+bahn.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();geh(akt+1)}if(e.key==='ArrowLeft'){e.preventDefault();geh(akt-1)}});
+zeig();})();
 </script>
 </body>
 </html>
